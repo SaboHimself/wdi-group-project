@@ -5,5 +5,5 @@ module.exports = {
     development: 'mongodb://localhost/spaces-development',
     test: 'mongodb://localhost/spaces-test'
   },
-  secret: process.env.SECRET || 'we have a car parking space'
+  secret: process.env.SECRET || 'we have a car parking space for you'
 }
