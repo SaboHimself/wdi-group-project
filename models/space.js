@@ -6,12 +6,12 @@ const commentSchema = new mongoose.Schema({
 })
 
 const spaceSchema = new mongoose.Schema({
-  location: { type: String, required: true, trim: true },
-  type: { type: String, required: true, trim: true },
-  suitability: { type: String, required: true, trim: true },
-  image: { type: String, required: true, trim: true },
-  availability: { type: Boolean, required: true, trim: true },
-  price: { type: Number, required: true, trim: true },
+  location: { type: String, required: true },
+  type: { type: String, required: true },
+  suitability: { type: String, required: true },
+  image: { type: String, required: true },
+  availability: { type: Boolean, required: true },
+  price: { type: Number, required: true },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
 })
