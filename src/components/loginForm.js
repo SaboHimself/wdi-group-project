@@ -9,11 +9,11 @@ class Login extends React.Component {
     return(
       <form>
         <label>
-        Email
+        Email:
           <input/>
         </label>
         <label>
-        Password
+        Password:
           <input />
         </label>
       </form>
