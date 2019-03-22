@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Map from './components/map'
+import Login from './components/loginForm'
+import Register from './components/registerForm'
 
 import './stylesheets/main.scss' //main stylesheet import
 
@@ -13,7 +15,8 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <h1>Hello World</h1>
+        <Login />
+        <Register />
         <Map />
       </div>
     )
