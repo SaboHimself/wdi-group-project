@@ -11,6 +11,7 @@
     "seed": "node ./db/seeds"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
     "copy-webpack-plugin": "^5.0.1",
