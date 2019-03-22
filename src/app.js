@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import Map from './components/map'
+
+import './stylesheets/main.scss'
+
 class App extends React.Component {
   constructor() {
     super()
@@ -8,7 +12,10 @@ class App extends React.Component {
 
   render() {
     return(
-      <h1>Hello World</h1>
+      <div>
+        <h1>Hello World</h1>
+        <Map />
+      </div>
     )
   }
 }
