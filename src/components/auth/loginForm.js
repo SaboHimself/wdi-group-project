@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+import Auth from './auth'
 
 class Login extends React.Component {
   constructor() {
@@ -24,6 +26,11 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    axios.post('/api/login', this.state.data)
+      .then(res => {
+        Auth.setToken(res.data.token)
+      })
+      .catch(err => console.log(err))
   }
 
   render() {

@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+import Auth from './auth'
 
 class Register extends React.Component {
   constructor() {
@@ -8,6 +10,7 @@ class Register extends React.Component {
       data: {
         username: '',
         email: '',
+        number: '',
         password: '',
         passwordConfirmation: ''
       },
@@ -26,6 +29,11 @@ class Register extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    axios.post('/api/register', this.state.data)
+      .then(res => {
+        Auth.setToken(res.data.token)
+      })
+      .catch(err => console.log(err))
   }
 
   render() {
@@ -45,6 +53,14 @@ class Register extends React.Component {
             onChange={ this.handleChange }
             name="email"
             value={ this.state.data.email }
+          />
+        </label>
+        <label>
+        Phone Number
+          <input
+            onChange={ this.handleChange }
+            name="number"
+            value={ this.state.data.number }
           />
         </label>
         <label>
