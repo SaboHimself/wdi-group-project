@@ -5,7 +5,7 @@ function indexBooking(req, res, next){
     .find()
     .populate('space driver')
     .then(bookings => res.status(200).json(bookings))
-    .catch(err => console.log(err))
+    .catch(next)
 }
 
 function showBooking(req, res, next){
@@ -13,7 +13,7 @@ function showBooking(req, res, next){
     .findById(req.params.id)
     .populate('space driver')
     .then(booking => res.status(200).json(booking))
-    .catch(err => console.log(err))
+    .catch(next)
 }
 
 function createBooking(req, res, next){
@@ -21,7 +21,7 @@ function createBooking(req, res, next){
   Booking
     .create(req.body)
     .then(booking => res.status(201).json(booking))
-    .catch(err => res.json(err))
+    .catch(next)
 }
 
 function editBooking(req, res, next){
@@ -34,7 +34,7 @@ function editBooking(req, res, next){
       return booking.update(req.body)
     })
     .then(() => res.sendStatus(202))
-    .catch(err => console.log(err))
+    .catch(next)
 }
 
 function deleteBooking(req, res, next){
@@ -47,7 +47,7 @@ function deleteBooking(req, res, next){
       return booking.remove()
     })
     .then(() => res.sendStatus(204))
-    .catch(err => console.log(err))
+    .catch(next)
 }
 
 module.exports = {

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
-const { dbURI } = require('../config/environment')
+const env = require('../config/environment')
 const Space = require('../models/space')
 const User =  require('../models/user')
 
-mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
+mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
 
   db.dropDatabase()
 
@@ -12,59 +12,70 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
       username: 'Harry1',
       email: 'harrymcdonald@hotmail.com',
       password: 'harry1',
+      passwordConfirmation: 'harry1',
       number: '+447345928372'
     },
     {
       username: 'JaneOwen',
       email: 'jc123@hotmail.co.uk',
       password: 'passwordJane',
-      number: '+447345928374'      },
+      passwordConfirmation: 'passwordJane',
+      number: '+447345928374'
+    },
     {
       username: 'MichealOgrant',
       email: 'mikeyj@hotmail.com',
       password: 'mo246',
+      passwordConfirmation: 'mo246',
       number: '+447345948372'
     },
     {
       username: 'DavetheRave',
       email: 'davidtinkleberry@yahoo.co.uk',
       password: 'tinkers1',
+      passwordConfirmation: 'tinkers1',
       number: '+447745928372'
     },
     {
       username: 'JohnSmith',
       email: 'johnnyboy@hotmail.com',
       password: 'harry1',
+      passwordConfirmation: 'harry1',
       number: '+447345928372'
     },
     {
       username: 'Martinorigin',
       email: 'missionstatement@hotmail.com',
       password: 'Statement1',
+      passwordConfirmation: 'Statement1',
       number: '+447935263374'
     },
     {
       username: 'Luke-Skywalker',
       email: 'thelastjedi@gmail.com',
       password: 'lightsaber',
+      passwordConfirmation: 'lightsaber',
       number: '+447823776732'
     },
     {
       username: 'Adam_O_Reilly',
       email: 'adders90@gmail.com',
       password: 'adam',
+      passwordConfirmation: 'adam',
       number: '+447283494883'
     },
     {
       username: 'ArmyCadet89',
       email: 'camoflauge@gmail.com',
       password: 'camo',
+      passwordConfirmation: 'camo',
       number: '+447283493283'
     },
     {
       username: 'MathewMcdonald',
       email: 'MathewMc@gmail.com',
       password: 'Matty',
+      passwordConfirmation: 'Matty',
       number: '+447283493883'
     }
   ])
@@ -79,7 +90,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.6,
           description: 'One space located on Upper Street in London. The space is close to Central London tube stations allowing easy access to most places. The space is suitable for vehicles up to the size of a Van. On-site there is Electric Charging and Disabled Access. The space is available 24 hours on all days. The parking is available alongside our street (Upper Street) and many neighbouring areas (Highbury & Islington) and there is usually plenty of parking space available.',
-          comments: ['Perfect parking spot in a good location, highly recommend', 'Desperatly needed a parking spot, found this one and booked it in less than 10 seconds.', 'Nice driveway, felt like I knew my car will be safe when I first saw it', 'Bit of a tight squeeze, but well sheltered'],
+          comments: { text: ['Perfect parking spot in a good location, highly recommend', 'Desperatly needed a parking spot, found this one and booked it in less than 10 seconds.', 'Nice driveway, felt like I knew my car will be safe when I first saw it', 'Bit of a tight squeeze, but well sheltered']},
           price: 4,
           owner: user[0]
         },
@@ -91,7 +102,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.3,
           description: 'Parking spaces located on Shaping Change Ltd in Camden London. The spaces are close to St Bedes Hall. The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Allocated Space and Security Lighting. The spaces are available 24 hours on all days.',
-          comments: ['Had a problem with fitting my car into this small place, surrounding houses make it hard to fit your car in to.', 'good price for where its located, found it hard to reverse park into but happy with what i paid for'],
+          comments: { text: ['Had a problem with fitting my car into this small place, surrounding houses make it hard to fit your car in to.', 'good price for where its located, found it hard to reverse park into but happy with what i paid for']},
           price: 3,
           owner: user[0]
         },
@@ -103,7 +114,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.8,
           description: 'Parking spaces located on Islington Park st in London. The spaces are close to Hidden London (TFL Down Street Churchills secret station), Frost & Reed Ltd and Curzon Mayfair. The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Security Guards and Underground Parking. The spaces are available 6AM-7PM on weekdays. Secure underground car park located in Mayfair, excellent central spaces available to rent both daily and monthly. Located a 5 minute walk from Hyde Park and Hyde Park corner station so perfect parking for all nearby attractions. This car park is not open Weekends or Bank Holidays. Overnight parking is not permitted. Height Restriction: 2.50m',
-          comments: ['Perfect safe parking spot, in a good location, highly recommend', 'Could rest and relax knowing my car was parked in a locked garage', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot'],
+          comments: { text: ['Perfect safe parking spot, in a good location, highly recommend', 'Could rest and relax knowing my car was parked in a locked garage', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
           price: 8,
           owner: user[1]
         },
@@ -115,7 +126,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: false,
           rating: 3.9,
           description: 'Parking available at a central London basement car park located on Upper Street in Mayfair. Located right by the BT Tower, and a 5 minute walk from Great Portland Street tube station, 8 minute walk to Oxford Circus, 5 minute walk to University College London. The car park is located inside the Congestion Charge Zone. If you drive a van please be aware there is a height restriction of 1.90m in place at this car park. When booking monthly you will be contacted to provide your postal address as a permit will need to be sent to you. Please note, it takes CitiPark 2 full working days to process a monthly booking request, so your start date may need to be adjusted to accommodate this. Any monthly bookings received after 3pm Friday, will not be processed until the following Monday, and therefore you start date will need to be adjusted to ensure you receive the permit',
-          comments: ['Came back to my vehicle after leaving it there for the weekend, my wingmirror was missing, didnt get any compensation, do not use', 'Dark and dingy underground parking, not the most secure spot'],
+          comments: { text: ['Came back to my vehicle after leaving it there for the weekend, my wingmirror was missing, didnt get any compensation, do not use', 'Dark and dingy underground parking, not the most secure spot']},
           price: 2,
           owner: user[2]
         },
@@ -127,7 +138,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.0,
           description: 'Parking available on driveway, located within a 25 minute walk to Kings Cross Station (ideal for Eurostar trips) and a 20 minute walk to the Emirates. The space can be accessed 24/7. Suitable for vehicles up to the size of a Large - (4x4). Important notice: The full address of the parking space/garage/car park will be provided following a successful booking',
-          comments: ['Quite far away from where we wanted to be but not a bad spot, for a good price.', 'Had no problems parking here, highly recommend'],
+          comments: { text: ['Quite far away from where we wanted to be but not a bad spot, for a good price.', 'Had no problems parking here, highly recommend']},
           price: 9,
           owner: user[3]
         },
@@ -139,7 +150,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.6,
           description: 'Parking spaces located on Marylebone Road in London . The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Covered Parking, CCTV and Security Guards. The spaces are available 6:30AM-7PM on weekdays. Road-side park available in Farringdon. Great location, walking distance to City University London. Close to Sadlers Wells Theatre. IMPORTANT: Only open Monday to Friday from 6.30am to 7pm - you cannot enter/exit the car park outside of these hours.',
-          comments: ['Luxury location.', 'Slightly concerned leaving my car on the side of the road for the weekend, but very nice area', 'No problems parking here, worked out well in the end'],
+          comments: { text: ['Luxury location.', 'Slightly concerned leaving my car on the side of the road for the weekend, but very nice area', 'No problems parking here, worked out well in the end']},
           price: 11,
           owner: user[4]
         },
@@ -151,7 +162,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.8,
           description: 'Parking spaces located on Ebury Bridge Road in London . The spaces are close to Peace and Colour Gallery, 88-GALLERY and Movie Starr. The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Covered Parking.The spaces are available 24 hours on all days. Only vehicles up to the size of a 4x4 are permitted',
-          comments: ['Perfect safe parking spot, in a good location, highly recommend', 'Could rest and relax knowing my car was parked in a locked garage', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot'],
+          comments: { text: ['Perfect safe parking spot, in a good location, highly recommend', 'Could rest and relax knowing my car was parked in a locked garage', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
           price: 8,
           owner: user[5]
         },
@@ -163,7 +174,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.9,
           description: 'Parking spaces located on George Street in London . The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Covered Parking, CCTV, Security Lighting and Security Guards. The spaces are available 24 hours on all days. Secure car park located in the heart of central London. Situated just off Oxford Street this car park is perfect for anyone shopping or visiting the nearby attractions, including Hyde Park. Spaces available for both daily and monthly bookings. Covered parking, open 24/7, with CCTV access. If you\'\re driving a van please be aware that there is a height restriction of 1.98m. The car park is located inside the Congestion Charge Zone.',
-          comments: ['Easy to find and fairly near to where i needed to get to. Lots of good sized spaces when i arrived at 0745. i would recommend pre-booking and will be back again next week', 'best car park ever best value wide spaces secure staff very attentive could be cleaner but then again people could be less of pigs', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot'],
+          comments: { text: ['Easy to find and fairly near to where i needed to get to. Lots of good sized spaces when i arrived at 0745. i would recommend pre-booking and will be back again next week', 'best car park ever best value wide spaces secure staff very attentive could be cleaner but then again people could be less of pigs', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
           price: 12,
           owner: user[6]
         },
@@ -175,7 +186,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.2,
           description: 'One allocated space located on Abbey Road in London. The space is suitable for vehicles up to the size of a Large - (4x4). On-site there is Covered Parking, CCTV, Security Lighting and Underground Parking. The space is available 24 hours on all days. The space is accessed via a security fob which will be provided to you on arrival.',
-          comments: ['Possibly the cheapest parking for lengths up to 4-5hrs. Very secure underground parking and easy to set up contact with conceirge.', 'CAmazing spot, very private!', 'Very private, secure and good price'],
+          comments: { text: ['Possibly the cheapest parking for lengths up to 4-5hrs. Very secure underground parking and easy to set up contact with conceirge.', 'CAmazing spot, very private!', 'Very private, secure and good price']},
           price: 10,
           owner: user[7]
         },
@@ -187,7 +198,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true }, (err, db) => {
           availability: true,
           rating: 4.8,
           description: 'Parking available at a central London basement car park located on Clipstone Street in Clipstone Mews. Located right by the BT Tower, and a 5 minute walk from Great Portland Street tube station, 8 minute walk to Oxford Circus, 5 minute walk to University College London. The car park is located inside the Congestion Charge Zone. If you drive a van please be aware there is a height restriction of 1.90m in place at this car park.',
-          comments: ['Prepaid on line and all was well. Needed to extend time by half hour so did this on line and paid the extra required and received reciept and verification of extended time. On exiting 10 minutes before expiry time the ticket machine asked for £6 extra which I reluctantly paid as I was in a hurry YPS EDIT: Funds refunded', 'For parking in central London, I thought this was good value. The information on entry and exit procedure worked well. however it is a bit dark and dingy, compared to the most modern places', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot'],
+          comments: { text: ['Prepaid on line and all was well. Needed to extend time by half hour so did this on line and paid the extra required and received reciept and verification of extended time. On exiting 10 minutes before expiry time the ticket machine asked for £6 extra which I reluctantly paid as I was in a hurry YPS EDIT: Funds refunded', 'For parking in central London, I thought this was good value. The information on entry and exit procedure worked well. however it is a bit dark and dingy, compared to the most modern places', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
           price: 8,
           owner: user[8]
         }

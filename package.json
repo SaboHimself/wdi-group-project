@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start:server": "nodemon",
-    "start:client": "webpack-dev-server --mode=development"
+    "start:client": "webpack-dev-server --mode=development",
+    "seed": "node ./db/seeds"
   },
   "dependencies": {
     "bcrypt": "^3.0.5",
