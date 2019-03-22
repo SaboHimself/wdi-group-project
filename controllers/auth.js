@@ -6,26 +6,9 @@ function register(req, res, next) {
   User
     .create(req.body)
     .then(user => {
-      const token = jwt.sign({ sub: user._id }, secret)
+      const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '6h' })
       res.json({
-        message: `Hello, ${user.username}. Thanks for signing up to Spaces`,
-        token,
-        user
-      })
-    })
-    .catch(next)
-}
-
-function login(req, res) {
-  User
-    .findOne({ username: req.body.username })
-    .then(user => {
-      if(!user || !user.validatePassword(req.body.password)) {
-        return status(401).json({ message: 'Unauthorized' })
-      }
-      const token = jwt.sign({ sub: user._id }, secret)
-      res.json({
-        message: `Welcome back to Spaces ${user.username}`,
+        message: `Thanks for registering ${user.username}`,
         token,
         user
       })
@@ -33,7 +16,24 @@ function login(req, res) {
     .catch(err => res.json(err))
 }
 
-module.export = {
+function login(req, res, next) {
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      if (!user || !user.validatePassword(req.body.password)) {
+        return res.status(401).json({ message: 'Unauthorized'})
+      }
+
+      const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '6h' })
+      res.json({
+        message: `Welcome back ${user.username}`,
+        token,
+        user
+      })
+    })
+    .catch(next)
+}
+
+module.exports = {
   register,
   login
 }
