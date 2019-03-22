@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Auth from './auth'
+import Auth from './userAuthentication'
 
 class Login extends React.Component {
   constructor() {
