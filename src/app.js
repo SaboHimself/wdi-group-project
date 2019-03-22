@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Map from './components/map'
 
-import './stylesheets/main.scss'
+import './stylesheets/main.scss' //main stylesheet import
 
 class App extends React.Component {
   constructor() {
