@@ -17,10 +17,13 @@ function showSpace(req, res, next){
 }
 
 function createSpace(req, res, next){
-  req.body.user = req.currentUser
+  req.body.owner = req.currentUser
   Space
     .create(req.body)
-    .then(space => res.status(201).json(space))
+    .then(space => {
+      console.log(req.body)
+      res.status(201).json(space)
+    })
     .catch(err => res.json(err))
 }
 
@@ -28,7 +31,7 @@ function editSpace(req, res, next){
   Space
     .findById(req.params.id)
     .then(space => {
-      if(!space || !space.user || !space.user._id.equals(req.currentUser._id)){
+      if(!space || !space.owner || !space.owner._id.equals(req.currentUser._id)){
         return res.json({ message: 'Unauthorized' })
       }
       return space.update(req.body)
@@ -41,7 +44,7 @@ function deleteSpace(req, res, next){
   Space
     .findById(req.params.id)
     .then(space => {
-      if (!space || !space.user || !space.user._id.equals(req.currentUser._id)) {
+      if (!space || !space.owner || !space.owner._id.equals(req.currentUser._id)) {
         return res.json({ message: 'Unauthorized' })
       }
       return space.remove()

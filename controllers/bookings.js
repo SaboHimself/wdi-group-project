@@ -17,7 +17,7 @@ function showBooking(req, res, next){
 }
 
 function createBooking(req, res, next){
-  req.body.user = req.currentUser
+  req.body.driver = req.currentUser
   Booking
     .create(req.body)
     .then(booking => res.status(201).json(booking))
@@ -28,7 +28,7 @@ function editBooking(req, res, next){
   Booking
     .findById(req.params.id)
     .then(booking => {
-      if(!booking || !booking.user || !booking.user._id.equals(req.currentUser._id)){
+      if(!booking || !booking.driver || !booking.driver._id.equals(req.currentUser._id)){
         return res.json({ message: 'Unauthorized' })
       }
       return booking.update(req.body)
@@ -41,7 +41,7 @@ function deleteBooking(req, res, next){
   Booking
     .findById(req.params.id)
     .then(booking => {
-      if (!booking || !booking.user || !booking.user._id.equals(req.currentUser._id)) {
+      if (!booking || !booking.driver || !booking.driver._id.equals(req.currentUser._id)) {
         return res.json({ message: 'Unauthorized' })
       }
       return booking.remove()
