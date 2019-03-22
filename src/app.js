@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Map from './components/map'
-import Login from './components/loginForm'
-import Register from './components/registerForm'
+import Login from './components/auth/loginForm'
+import Register from './components/auth/registerForm'
 
 import './stylesheets/main.scss' //main stylesheet import
 
