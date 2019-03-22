@@ -1,19 +1,20 @@
 const mongoose = require('mongoose')
 
 const commentSchema = new mongoose.Schema({
-  comment: { type: String },
-  rating: { type: Number }
+  text: { type: String },
+  createdAt: { type: Date, default: Date.now }
 })
 
-const spaceSchema = new mongoose.Schema({
-  location: { type: String, required: true },
+const spacesSchema = new mongoose.Schema({
+  location: { type: Number, required: true },
   type: { type: String, required: true },
   suitability: { type: String, required: true },
-  image: { type: String, required: true },
+  image: { type: String },
   availability: { type: Boolean, required: true },
+  rating: { type: Number, required: true, min: 0, max: 5},
   price: { type: Number, required: true },
-  owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
+
 })
 
-module.exports = mongoose.model('Space', spaceSchema)
+module.exports = mongoose.model('Space', spacesSchema)
