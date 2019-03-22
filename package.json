@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start:server": "nodemon",
-    "start:client": "webpack-dev-server --mode=development"
+    "start:client": "webpack-dev-server --mode=development",
+    "seed": "node ./db/seeds"
   },
   "dependencies": {
     "bcrypt": "^3.0.5",
@@ -18,10 +19,10 @@
     "mapbox-gl": "^0.53.1",
     "mongoose": "^5.4.19",
     "mongoose-validator": "^2.1.0",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
