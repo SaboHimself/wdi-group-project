@@ -267,7 +267,7 @@ describe('Space tests', () => {
 
   })
 
-  describe('GET /api/shoes/:id', () => {
+  describe('GET /api/spaces/:id', () => {
 
     let space
 
