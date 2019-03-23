@@ -1,9 +1,20 @@
 const mongoose = require('mongoose')
-const validate = require('mongoose-validator')
+// const validate = require('mongoose-validator')
 
 const commentSchema = new mongoose.Schema({
   text: { type: Array },
   createdAt: { type: Date, default: Date.now }
+})
+
+const geoSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    default: 'Point'
+  },
+  coordinates: {
+    type: [Number],
+    index: '2dsphere'
+  }
 })
 
 const spacesSchema = new mongoose.Schema({
@@ -16,6 +27,7 @@ const spacesSchema = new mongoose.Schema({
     // })],
     required: true
   },
+  geometry: geoSchema,
   type: { type: String, required: true },
   suitability: { type: String, required: true },
   images: { type: Array },

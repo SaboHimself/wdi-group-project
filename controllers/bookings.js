@@ -1,3 +1,4 @@
+
 const Booking = require('../models/booking')
 
 function indexBooking(req, res, next){
