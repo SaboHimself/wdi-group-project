@@ -18,7 +18,7 @@ const spacesSchema = new mongoose.Schema({
   },
   type: { type: String, required: true },
   suitability: { type: String, required: true },
-  image: { type: Array },
+  images: { type: Array },
   availability: { type: Boolean, required: true },
   price: { type: Number, required: true },
   description: { type: String },

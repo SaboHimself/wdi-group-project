@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 const bookingSchema = new mongoose.Schema({
   space: { type: mongoose.Schema.ObjectId, ref: 'Space' },
   driver: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  from: { type: Date, default: Date.now },
-  to: { type: Date, default: Date.now }
+  startDate: { type: Date, default: Date.now },
+  endDate: { type: Date, default: Date.now }
 },{
   timestamps: true
 })
