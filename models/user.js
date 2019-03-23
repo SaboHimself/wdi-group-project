@@ -49,10 +49,7 @@ userSchema.virtual('bookings', {
 })
 
 userSchema.set('toJSON', {
-  virtuals: true
-})
-
-userSchema.set('toJSON', {
+  virtuals: true,
   transform(doc, json) {
     delete json.password
     return json
