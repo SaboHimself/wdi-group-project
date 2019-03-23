@@ -9,7 +9,7 @@ import Home from './components/page/home'
 
 import ShowSpace from './components/spaces/showSpace'
 import BookingSpace from './components/spaces/bookingSpace'
-
+import ConfirmSpace from './components/spaces/confirmSpace'
 import IndexSpace from './components/spaces/indexSpace'
 //this and bulma will be removed later on - only for testing
 
@@ -34,6 +34,7 @@ class App extends React.Component {
           <Switch>
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
+            <Route path='/bookings/:id' component={ConfirmSpace} />
             <Route path='/bookings' component={BookingSpace} />
             <Route path='/spaces/:id' component={ShowSpace} />
             <Route path='/spaces' component={IndexSpace} />

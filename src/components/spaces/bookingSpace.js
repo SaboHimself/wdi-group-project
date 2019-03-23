@@ -1,7 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 
+import SpaceRepeatedField from '../lib/spaceRepeatedField'
 import Calender from '../lib/calender'
+import Auth from '../auth/auth'
 
 class BookingSpace extends React.Component{
   constructor() {
@@ -14,6 +16,7 @@ class BookingSpace extends React.Component{
 
     this.handleChangeStart = this.handleChangeStart.bind(this)
     this.handleChangeEnd = this.handleChangeEnd.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChangeStart(date) {
@@ -32,31 +35,34 @@ class BookingSpace extends React.Component{
       .then(res => this.setState({ space: res.data }))
   }
 
+  handleSubmit(e) {
+    e.preventDefault()
+    axios.post('/api/bookings',
+      this.state,
+      { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(res => {
+        console.log('submitted')
+        this.props.history.push(`/bookings/${res.data._id}`)
+      })
+      .catch(err => this.setState({ errors: err.response.data.errors}))
+  }
+
   render() {
     if(!this.state.space) return null
-    const { space } = this.state
     return(
       <main>
-        <div>{space.location}</div>
-        <div>{space.suitability}</div>
-        {space.images.map((image, id) => (
-          <img key={id} src={image} />
-        ))}
-        <hr />
-        <div>{space.type}</div>
-        <div>{space.availability.toString()}</div>
-        <div>£{space.price}</div>
-        <div>{space.description}</div>
-        <div>{space.electricChargingPoint.toString()}</div>
-        <div>{space.owner.username}</div>
-        <div>{space.comments[0].text}</div>
-        <Calender
-          handleChangeEnd={this.handleChangeEnd}
-          handleChangeStart={this.handleChangeStart}
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
+        <SpaceRepeatedField
+          space={this.state.space}
         />
-        <button>Confirm</button>
+        <form onSubmit={this.handleSubmit}>
+          <Calender
+            handleChangeEnd={this.handleChangeEnd}
+            handleChangeStart={this.handleChangeStart}
+            startDate={this.state.startDate}
+            endDate={this.state.endDate}
+          />
+          <button>Confirm</button>
+        </form>
       </main>
     )
   }

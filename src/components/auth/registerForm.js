@@ -32,6 +32,7 @@ class Register extends React.Component {
     axios.post('/api/register', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
+        this.props.history.push('/login')
       })
       .catch(err => console.log(err))
   }
