@@ -1,17 +1,34 @@
 import React from 'react'
 import axios from 'axios'
 
-import { Link } from 'react-router-dom'
+import Calender from '../lib/calender'
 
-class ShowSpace extends React.Component{
+class BookingSpace extends React.Component{
   constructor() {
     super()
 
-    this.state = {}
+    this.state = {
+      startDate: new Date(),
+      endDate: new Date()
+    }
+
+    this.handleChangeStart = this.handleChangeStart.bind(this)
+    this.handleChangeEnd = this.handleChangeEnd.bind(this)
+  }
+
+  handleChangeStart(date) {
+    this.setState({
+      startDate: date
+    })
+  }
+  handleChangeEnd(date) {
+    this.setState({
+      endDate: date
+    })
   }
 
   componentDidMount(){
-    axios.get(`/api/spaces/${this.props.match.params.id}`)
+    axios.get(`/api/spaces/${this.props.location.state}`)
       .then(res => this.setState({ space: res.data }))
   }
 
@@ -33,15 +50,16 @@ class ShowSpace extends React.Component{
         <div>{space.electricChargingPoint.toString()}</div>
         <div>{space.owner.username}</div>
         <div>{space.comments[0].text}</div>
-        <Link to={{
-          pathname: '/bookings',
-          state: `${space._id}`}
-        }>
-          <div>booking</div>
-        </Link>
+        <Calender
+          handleChangeEnd={this.handleChangeEnd}
+          handleChangeStart={this.handleChangeStart}
+          startDate={this.state.startDate}
+          endDate={this.state.endDate}
+        />
+        <button>Confirm</button>
       </main>
     )
   }
 }
 
-export default ShowSpace
+export default BookingSpace
