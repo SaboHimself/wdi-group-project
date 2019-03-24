@@ -14,7 +14,10 @@ class SpaceForm extends React.Component {
     this.state = {
       data: {
         currentStep: 1,
-        location: '',
+        geometry: {
+          type: 'Point',
+          coordinates: []
+        },
         type: '',
         suitability: '',
         description: '',
