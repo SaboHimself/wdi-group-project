@@ -1,8 +1,13 @@
 import React from 'react'
 
+import CreateSpace from '../spaces/createSpace'
+
 const Home = () => {
   return(
-    <h1>hello World</h1>
+    <div>
+      <h1>hello World</h1>
+      <CreateSpace />
+    </div>
   )
 }
 
