@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const validate = require('mongoose-validator')
+// const validate = require('mongoose-validator')
 
 const commentSchema = new mongoose.Schema({
   text: { type: Array },
