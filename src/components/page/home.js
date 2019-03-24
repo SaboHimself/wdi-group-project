@@ -1,8 +1,13 @@
 import React from 'react'
 
+import SpaceForm from '../spaces/new-space-forms/spaceForm'
+
 const Home = () => {
   return(
-    <h1>hello World</h1>
+    <div>
+      <h1>hello World</h1>
+      <SpaceForm />
+    </div>
   )
 }
 

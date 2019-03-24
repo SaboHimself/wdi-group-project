@@ -19,21 +19,20 @@ const geoSchema = new mongoose.Schema({
 
 const spacesSchema = new mongoose.Schema({
   location: {
-    type: String,
+    type: String
     // validate: [ validate({
     //   validator: 'isPostalCode',
     //   arguments: 'GB',
     //   message: 'Invalid post code'
     // })],
-    required: true
   },
   geometry: geoSchema,
   type: { type: String, required: true },
   suitability: { type: String, required: true },
   images: { type: Array },
-  availability: { type: Boolean, required: true },
+  availability: { type: Boolean },
   price: { type: Number, required: true },
-  description: { type: String },
+  description: { type: String, required: true },
   electricChargingPoint: { type: Boolean },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
