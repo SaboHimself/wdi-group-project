@@ -10,7 +10,8 @@ class Step3 extends React.Component{
   }
 
   render() {
-    if(this.props.currentStep !== 1) {
+    // console.log(this.props)
+    if(this.props.currentStep !== 3) {
       return null
     }
 

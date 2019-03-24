@@ -2,24 +2,24 @@ import React from 'react'
 
 // GET LOCATION DATA
 
-class Step1 extends React.Component{
+class Step1 extends React.Component {
   constructor() {
     super()
-
-    this.state = {}
   }
 
   render() {
-    if(this.props.currentStep !== 1) {
+    console.log(this.props)
+    if(this.props.data.currentStep !== 1) {
       return null
     }
 
+    const { data } = this.props
     return(
       <input
         name="location"
         placeholder="Location"
         onChange={this.props.handleChange}
-        value={this.props.location}
+        value={data.location}
       />
     )
   }

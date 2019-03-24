@@ -29,7 +29,7 @@ class SpaceForm extends React.Component {
 
   handleChange({ target: {name, value}}) {
     const data ={...this.state.data, [name]: value}
-    this.setState({ data})
+    this.setState({ data })
   }
 
   handleSubmit(e) {
@@ -39,25 +39,27 @@ class SpaceForm extends React.Component {
   }
 
   handleNext() {
-    let currentStep = this.state.currentStep
-    currentStep = currentStep >= 2? 3: currentStep + 1
+    let currentStep = this.state.data.currentStep
+    currentStep = currentStep >= 2 ? 3 : currentStep + 1
+    const data = {...this.state.data, currentStep}
     this.setState({
-      currentStep: currentStep
+      data
     })
   }
 
   handlePrev() {
-    let currentStep = this.state.currentStep
-    currentStep = currentStep <= 1? 1: currentStep - 1
+    let currentStep = this.state.data.currentStep
+    currentStep = currentStep <= 1 ? 1 : currentStep - 1
+    const data = {...this.state.data, currentStep}
     this.setState({
-      currentStep: currentStep
+      data
     })
   }
 
   get previousButton(){
-    const currentStep = this.state.currentStep
+    const currentStep = this.state.data.currentStep
 
-    if(currentStep !==1){
+    if(currentStep !== 1){
       return (
         <button
           type="button"
@@ -70,9 +72,9 @@ class SpaceForm extends React.Component {
   }
 
   get nextButton(){
-    const currentStep = this.state.currentStep
+    const currentStep = this.state.data.currentStep
 
-    if(currentStep <3){
+    if(currentStep < 3){
       return (
         <button
           type="button"
@@ -85,27 +87,31 @@ class SpaceForm extends React.Component {
   }
 
   render() {
+    console.log(this.state.data)
+    const { data } = this.state
     return(
       <React.Fragment>
-        <form onSumbit={this.handleSubmit()}>
+        <form onSubmit={this.handleSubmit}>
+          <p>Step {this.state.data.currentStep}</p>
           <Step1
-            currentStep={this.state.currentStep}
+            data={data}
             handleChange={this.handleChange}
-            location={this.state.location}
           />
           <Step2
-            currentStep={this.state.currentStep}
+            currentStep={this.state.data.currentStep}
             handleChange={this.handleChange}
-            type={this.state.type}
-            suitability={this.state.suitability}
-            description={this.state.description}
-            electricChargingPoint={this.state.electricChargingPoint}
+            type={this.state.data.type}
+            suitability={this.state.data.suitability}
+            description={this.state.data.description}
+            electricChargingPoint={this.state.data.electricChargingPoint}
           />
           <Step3
-            currentStep={this.state.currentStep}
+            currentStep={this.state.data.currentStep}
             handleChange={this.handleChange}
-            price={this.state.price}
+            price={this.state.data.price}
           />
+          {this.previousButton}
+          {this.nextButton}
         </form>
       </React.Fragment>
     )

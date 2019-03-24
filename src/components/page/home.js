@@ -1,12 +1,12 @@
 import React from 'react'
 
-import CreateSpace from '../spaces/createSpace'
+import SpaceForm from '../spaces/new-space-forms/spaceForm'
 
 const Home = () => {
   return(
     <div>
       <h1>hello World</h1>
-      <CreateSpace />
+      <SpaceForm />
     </div>
   )
 }
