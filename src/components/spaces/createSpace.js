@@ -1,19 +1,21 @@
 import React from 'react'
 
-class CreateSpace {
-  constructor(){
+class CreateSpace extends React.Component{
+  constructor() {
     super()
-  }
 
-  this.state = {}
-}
+    this.state = {}
+
+    
+  }
 
   render() {
     return(
       <div>
+
       </div>
     )
   }
-})
+}
 
 export default CreateSpace
