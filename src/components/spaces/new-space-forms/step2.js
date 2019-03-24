@@ -1,4 +1,17 @@
 import React from 'react'
+import Select from 'react-select'
+
+const typeOptions = [
+  { value: 'drive', label: 'Drive' },
+  { value: 'off-road', label: 'Off Road' },
+  { value: 'garage', label: 'Garage' }
+]
+
+const suitabilityOptions = [
+  { value: 'car', label: 'Car' },
+  { value: 'van', label: 'Van' },
+  { value: 'bike', label: 'Bike' }
+]
 
 class Step2 extends React.Component{
   constructor() {
@@ -14,21 +27,19 @@ class Step2 extends React.Component{
 
     return(
       <div>
-        <input
+        <Select
           name="type"
-          placeholder="Type"
-          onChange={this.props.handleChange}
-          value={this.props.type}
+          options={typeOptions}
+          onChange={this.props.handleTypeSelect}
         />
-        <input
+        <Select
           name="suitability"
-          placeholder="Suitability"
-          onChange={this.props.handleChange}
-          value={this.props.suitability}
+          options={suitabilityOptions}
+          onChange={this.props.handleSuitabilitySelect}
         />
-        <input
+        <textarea
+          placeholder="description"
           name="description"
-          placeholder="Description"
           onChange={this.props.handleChange}
           value={this.props.description}
         />

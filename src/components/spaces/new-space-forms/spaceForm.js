@@ -24,6 +24,8 @@ class SpaceForm extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleTypeSelect = this.handleTypeSelect.bind(this)
+    this.handleSuitabilitySelect = this.handleSuitabilitySelect.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
@@ -31,6 +33,16 @@ class SpaceForm extends React.Component {
 
   handleChange({ target: {name, value}}) {
     const data = {...this.state.data, [name]: value}
+    this.setState({ data })
+  }
+
+  handleTypeSelect({ value }) {
+    const data = { ...this.state.data, type: value }
+    this.setState({ data })
+  }
+
+  handleSuitabilitySelect({ value }) {
+    const data = { ...this.state.data, suitability: value }
     this.setState({ data })
   }
 
@@ -90,6 +102,7 @@ class SpaceForm extends React.Component {
 
   render() {
     const { data } = this.state
+    console.log(this.state)
     return(
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
@@ -101,6 +114,8 @@ class SpaceForm extends React.Component {
           <Step2
             currentStep={this.state.data.currentStep}
             handleChange={this.handleChange}
+            handleTypeSelect={this.handleTypeSelect}
+            handleSuitabilitySelect={this.handleSuitabilitySelect}
             type={this.state.data.type}
             suitability={this.state.data.suitability}
             description={this.state.data.description}
