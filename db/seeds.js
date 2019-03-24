@@ -83,6 +83,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
       return Space.create([
         {
         // mini-map on profile site?, people only give first part  of address? google street view??
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.103425, 51.536756]
+          },
           location: '83 Upper St, London, N1 0NU',
           type: 'Sheletered drive-way',
           suitability: 'Motorcyle, Car, Bicycle, Van',
@@ -95,6 +99,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[0]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.193197, 51.560576]
+          },
           location: '47, FLAT 6, Hollycroft Avenue, Camden Town, Greater London, London, NW3 7QJ',
           type: 'Roadside parking',
           suitability: 'Car, Motorcyle, Small van',
@@ -107,6 +115,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[0]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.103819, 51.543103]
+          },
           location: '54 Islington Park St, London, N1 1PX',
           type: 'Underground parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -119,6 +131,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[1]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.103403, 51.543224]
+          },
           location: '207 Upper Street, Islington, LONDON, N1 1RL',
           type: 'Underground parking',
           suitability: 'Motorcyle, Hatchback, Car, 4X4, small van',
@@ -131,6 +147,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[2]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.193900, 51.502866]
+          },
           location: 'Holland Street, London W8',
           type: 'Sheletered driveway',
           suitability: 'Motorcyle, Hatchback, Estate, Car, Not 4X4',
@@ -143,6 +163,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[3]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.155492, 51.522263]
+          },
           location: 'Marylebone Road, London NW1',
           type: 'Roadside parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -155,6 +179,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[4]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.162630, 51.518369]
+          },
           location: 'Seymour Place, London W1H',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -167,6 +195,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[5]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.158978, 51.513454]
+          },
           location: 'Fursecroft, George Street, Marble Arch, London W1H',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -179,6 +211,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[6]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.183281, 51.537019]
+          },
           location: 'Abbey Road, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, 4X4, Estate',
@@ -191,6 +227,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[7]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.177465, 51.532196]
+          },
           location: 'Neville Court, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
