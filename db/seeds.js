@@ -1015,6 +1015,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
         {
           // 143
         // mini-map on profile site?, people only give first part  of address? google street view??
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.101490, 51.536592]
+          },
           location: '83 Upper St, London, N1 0NU',
           type: 'Sheletered drive-way',
           suitability: 'Motorcyle, Car, Bicycle, Van',
@@ -1028,6 +1032,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[0]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.192907, 51.560046]
+          },
           location: '47, FLAT 6, Hollycroft Avenue, Camden Town, Greater London, London, NW3 7QJ',
           type: 'Roadside parking',
           suitability: 'Car, Motorcyle, Small van',
@@ -1040,20 +1048,27 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           electricChargingPoint: false,
           owner: user[1]
         },
-        {
-          location: '54 Islington Park St, London, N1 1PX',
-          type: 'Underground parking',
-          suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
-          images: ['https://static.yourparkingspace.co.uk/large/e0810ece91b52a6ace3c701e0943d1a2.png', 'https://static.yourparkingspace.co.uk/large/b085ebf836699f666c89cb5018cf4621.png', 'https://static.yourparkingspace.co.uk/large/30690419b7308bdc2f7a5fc973e9d183.png'],
-          availability: true,
-          rating: 4.8,
-          description: 'Parking spaces located on Islington Park st in London. The spaces are close to Hidden London (TFL Down Street Churchills secret station), Frost & Reed Ltd and Curzon Mayfair. The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Security Guards and Underground Parking. The spaces are available 6AM-7PM on weekdays. Secure underground car park located in Mayfair, excellent central spaces available to rent both daily and monthly. Located a 5 minute walk from Hyde Park and Hyde Park corner station so perfect parking for all nearby attractions. This car park is not open Weekends or Bank Holidays. Overnight parking is not permitted. Height Restriction: 2.50m',
-          comments: { text: ['Perfect safe parking spot, in a good location, highly recommend', 'Could rest and relax knowing my car was parked in a locked garage', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
-          price: 8,
-          electricChargingPoint: false,
-          owner: user[1]
+        {  geometry: {
+          type: 'Point',
+          coordinates: [-0.104060, 51.543260]
+        },
+        location: '54 Islington Park St, London, N1 1PX',
+        type: 'Underground parking',
+        suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
+        images: ['https://static.yourparkingspace.co.uk/large/e0810ece91b52a6ace3c701e0943d1a2.png', 'https://static.yourparkingspace.co.uk/large/b085ebf836699f666c89cb5018cf4621.png', 'https://static.yourparkingspace.co.uk/large/30690419b7308bdc2f7a5fc973e9d183.png'],
+        availability: true,
+        rating: 4.8,
+        description: 'Parking spaces located on Islington Park st in London. The spaces are close to Hidden London (TFL Down Street Churchills secret station), Frost & Reed Ltd and Curzon Mayfair. The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Security Guards and Underground Parking. The spaces are available 6AM-7PM on weekdays. Secure underground car park located in Mayfair, excellent central spaces available to rent both daily and monthly. Located a 5 minute walk from Hyde Park and Hyde Park corner station so perfect parking for all nearby attractions. This car park is not open Weekends or Bank Holidays. Overnight parking is not permitted. Height Restriction: 2.50m',
+        comments: { text: ['Perfect safe parking spot, in a good location, highly recommend', 'Could rest and relax knowing my car was parked in a locked garage', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
+        price: 8,
+        electricChargingPoint: false,
+        owner: user[1]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.104790, 51.534530]
+          },
           location: '207 Upper Street, Islington, LONDON, N1 1RL',
           type: 'Underground parking',
           suitability: 'Motorcyle, Hatchback, Car, 4X4, small van',
@@ -1067,6 +1082,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[2]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.100950, 51.507240]
+          },
           location: 'Holland Street, London W8',
           type: 'Sheletered driveway',
           suitability: 'Motorcyle, Hatchback, Estate, Car, Not 4X4',
@@ -1080,6 +1099,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[3]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.155260, 51.522480]
+          },
           location: 'Marylebone Road, London NW1',
           type: 'Roadside parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1093,6 +1116,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[4]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.161440, 51.515440]
+          },
           location: 'Seymour Place, London W1H',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1106,6 +1133,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[5]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.159150, 51.513321]
+          },
           location: 'Fursecroft, George Street, Marble Arch, London W1H',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1119,6 +1150,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[6]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.189350, 51.540852]
+          },
           location: 'Abbey Road, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, 4X4, Estate',
@@ -1132,6 +1167,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[7]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.108640, 51.515770]
+          },
           location: 'Neville Court, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1145,6 +1184,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[8]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.055910, 51.529330]
+          },
           location: 'Bethnal Green, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1158,6 +1201,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[9]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.0497, 51.4980]
+          },
           location: 'Canada Water, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1171,6 +1218,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[10]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.046400, 51.518820]
+          },
           location: 'Stepney Green, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1184,7 +1235,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[11]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.252370, 51.513300]
+          },
+          location: 'East Acton, London W3 7EF',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/c62fee9fdcec06cc2073a7786c5b328d.jpeg', 'https://static.yourparkingspace.co.uk/large/a68efed783d855ffc1bb66d716b45527.jpeg'],
@@ -1197,6 +1252,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[8]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.131400, 51.511639]
+          },
           location: 'Soho, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1210,6 +1269,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[12]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.119800, 51.479270]
+          },
           location: 'Vauxhall, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1223,6 +1286,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[13]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.1115, 51.501519]
+          },
           location: 'Vauxhall, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1236,6 +1303,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[14]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.035680, 51.576630]
+          },
           location: 'Essex Road, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1249,6 +1320,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[15]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.099900, 51.542770]
+          },
           location: 'Canonbury Street, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1262,6 +1337,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[16]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.116773, 51.510357]
+          },
           location: 'Westminster, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1275,6 +1354,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[17]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.041160, 51.482960]
+          },
           location: 'Trundleys Road, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1288,6 +1371,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[18]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.142410, 51.493470]
+          },
           location: 'Gillingham St, London NW8',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1301,6 +1388,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[19]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.028759, 51.515400]
+          },
           location: 'Riverside, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1314,6 +1405,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[20]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.148370, 51.505170]
+          },
           location: 'Brick St, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1327,6 +1422,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[21]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.073590, 51.503470]
+          },
           location: 'Shad Thames, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1340,7 +1439,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[22]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.095654, 51.516040]
+          },
+          location: 'St Thomas Court, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle',
           images: ['https://static.yourparkingspace.co.uk/large/6e367aa03deb333a6e29a56a28be0131.jpeg'],
@@ -1353,7 +1456,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[23]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.095605, 51.512366]
+          },
+          location: 'Friday Street, London NW8',
           type: 'Sheltered drive-way',
           suitability: 'Motorcyle, Hatchback, Car, 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/0a39a688fcd7b50651b266f96d1b42c9.jpeg', 'https://static.yourparkingspace.co.uk/large/139ed5efde61c3d52983e329e43d5020.jpeg'],
@@ -1366,7 +1473,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[24]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.099735, 51.528851]
+          },
+          location: 'Moreland Street, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/5c9225475d4271392a135e395819c108.png', 'https://static.yourparkingspace.co.uk/large/f9863d3d498096f4ebf77822fdaad282.png'],
@@ -1379,7 +1490,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[25]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.120818, 51.562464]
+          },
+          location: 'Shaw Court, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/5409841dcd462-normal.jpg', 'https://uploads.justpark.com/media/uploaded/listing-photos/54098434b2a47-normal.jpg'],
@@ -1392,7 +1507,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[26]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.150320, 51.563627]
+          },
+          location: 'Langbourne Avenue, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/cdn/media/uploaded/listing-photos/5b76a69e5e087-normal.jpg'],
@@ -1405,7 +1524,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[13]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.173443, 51.556677]
+          },
+          location: 'Willoughby Road, London NW8',
           type: 'Sheltered  driveway',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://uploads.justpark.com/cdn/media/uploaded/listing-photos/583aee09b5076-normal.jpg'],
@@ -1418,7 +1541,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[14]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.187323, 51.558247]
+          },
+          location: 'Reddington Gardens, London NW7',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://www.yourparkingspace.co.uk/search?end_date=26-03-2019&end_time=11%3A30&lat=51.5078788&lng=-0.08773210000003928&location=London%20Bridge%2C%20London%2C%20UK&page=3&per_page=50&radius=10mi&rental=long&space_size=&spaces_available=1&start_date=26-03-2019&start_time=11%3A00&type=both', 'https://www.yourparkingspace.co.uk/search?end_date=26-03-2019&end_time=11%3A30&lat=51.5078788&lng=-0.08773210000003928&location=London%20Bridge%2C%20London%2C%20UK&page=3&per_page=50&radius=10mi&rental=long&space_size=&spaces_available=1&start_date=26-03-2019&start_time=11%3A00&type=both'],
@@ -1431,7 +1558,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[15]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.118084, 51.501979]
+          },
+          location: 'Belvedere Rd, London SE4',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/3eab234063d6095ad9a516338144a3bb.jpeg', 'https://static.yourparkingspace.co.uk/large/a0e8a8316c442cdaf335eec3e130096b.jpeg'],
@@ -1444,7 +1575,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[16]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.120299, 51.481570]
+          },
+          location: 'Fentiman Road, London SE3',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/56703d9e671c4-normal.jpg', 'hhttps://uploads.justpark.com/media/uploaded/listing-photos/56703d922e217-normal.jpg'],
@@ -1457,7 +1592,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[17]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.141598, 51.489880]
+          },
+          location: 'St Georges Drive, London W3',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/56703de711438-normal.jpg', 'https://uploads.justpark.com/media/uploaded/listing-photos/56703dd859395-normal.jpg'],
@@ -1470,7 +1609,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[18]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.120020, 51.518160]
+          },
+          location: 'Catton Street, London W2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/51af1fb1c0e9d-normal.jpg'],
@@ -1483,7 +1626,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[19]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.087350, 51.505630]
+          },
+          location: 'Tooley Street, London SE1',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/52fb7c561fec0-normal.jpg', 'https://uploads.justpark.com/media/uploaded/listing-photos/52fb78f1912df-normal.jpg'],
@@ -1496,7 +1643,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[20]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.090910, 51.521700]
+          },
+          location: 'Lambs Passage, London NW2',
           type: 'Secure car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/3ab8285ba37055e0b036820e922dca38.png'],
@@ -1509,7 +1660,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[21]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.089170, 51.494250]
+          },
+          location: 'New Kent Road, London SE1',
           type: 'Gated car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/9ba0c444d9364b752bfb614518de7ae5.png', 'https://static.yourparkingspace.co.uk/large/0b7843c1f1dc2c8e2d90da9a93b2e1a4.png'],
@@ -1522,7 +1677,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[22]
         },
         {
-          location: 'Clipstone Street, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.141680, 51.521030]
+          },
+          location: 'Clipstone Street, London WC2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://uploads.justpark.com/cdn/media/uploaded/listing-photos/5ab0dea7a37fe-normal.jpg'],
@@ -1535,6 +1694,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[23]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.089170, 51.494251]
+          },
           location: 'New Kent Road, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1548,6 +1711,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[24]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.065110, 51.514820]
+          },
           location: 'Commercial Rd, London NW8',
           type: 'Car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1561,6 +1728,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[25]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.060604, 51.515702]
+          },
           location: 'Aldgate, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
@@ -1574,7 +1745,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[26]
         },
         {
-          location: 'Wapping, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.058830, 51.509510]
+          },
+          location: 'Wapping, London E8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/a31b1432e9f4d1a1b220a121c9c840c8.png', 'https://static.yourparkingspace.co.uk/large/0a60767da45c1563b28d6a0b94e0edcf.png'],
@@ -1587,6 +1762,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[27]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.079720, 51.497730]
+          },
           location: 'Bermondsey, London NW8',
           type: 'Roadside',
           suitability: 'Motorcyle, Hatchback, Car, Van',
@@ -1600,7 +1779,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[28]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.052680, 51.549740]
+          },
+          location: 'Deadstone Drive, London N8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/77a61a638fb5009aa22afee9cb16e465.jpeg', 'https://static.yourparkingspace.co.uk/large/7197865962bd25498c5ac2b019346b17.jpeg'],
@@ -1613,7 +1796,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[29]
         },
         {
-          location: 'Robin Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [0.028790, 51.431000]
+          },
+          location: 'Robin Court, London S16',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, 4X4, Van',
           images: ['https://static.yourparkingspace.co.uk/large/a914fb48dc43ea21e1c293beec24aa67.jpeg'],
@@ -1626,6 +1813,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[30]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.058830, 51.509510]
+          },
           location: 'Wapping Lane, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1639,7 +1830,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[31]
         },
         {
-          location: 'Clipstone St, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.140316, 51.521302]
+          },
+          location: 'Clipstone St, London WC2',
           type: 'Sheleted Carpark',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/4d2fe77341969a099ea0b8d9ef1275bf.jpeg', 'https://static.yourparkingspace.co.uk/large/ae3b034f7973b97f2f0687b4c83d33b6.jpeg'],
@@ -1652,6 +1847,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[32]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.100489, 51.49472]
+          },
           location: 'Elephant & Castle, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1665,7 +1864,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[33]
         },
         {
-          location: 'Cheshire St, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.071208, 51.52349]
+          },
+          location: 'Cheshire St, London NW4',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/d31a4eb0065ed79120627c0263957a7f.jpeg', 'https://static.yourparkingspace.co.uk/large/bd5830f68cbc9452eca57e52fa5e1089.jpeg'],
@@ -1678,7 +1881,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[34]
         },
         {
-          location: 'Waterloo, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.116806, 51.501587]
+          },
+          location: 'Waterloo, London SE2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/528fb5788209fd5f9a77cdb08535f70d.jpeg'],
@@ -1691,7 +1898,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[35]
         },
         {
-          location: 'St John\'s St, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.102283, 51.5213]
+          },
+          location: 'St John\'s St, London N3',
           type: 'Roadside',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/5381f570cdb6e5629411b1dc47af74fd.jpeg'],
@@ -1704,7 +1915,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[36]
         },
         {
-          location: 'Clerkenwell, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.102200, 51.5150]
+          },
+          location: 'Clerkenwell, London N3',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/a68efed783d855ffc1bb66d716b45527.jpeg', 'https://static.yourparkingspace.co.uk/large/c62fee9fdcec06cc2073a7786c5b328d.jpeg'],
@@ -1717,6 +1932,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[37]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.119304, 51.51832]
+          },
           location: 'Catton St, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
@@ -1730,7 +1949,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[38]
         },
         {
-          location: 'The Strand, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.121485, 51.510636]
+          },
+          location: 'The Strand, London WC2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/87c8e4f3eb33e717e234e2abd58025e3.jpeg', 'https://static.yourparkingspace.co.uk/large/322ed77ae0e4323309a6d6ff5f249854.jpeg'],
@@ -1743,7 +1966,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[39]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.119594, 51.50329]
+          },
+          location: 'York Road, London SE5',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/8813c357bbcdbe36010e350d7ffadd2d.jpeg', 'https://static.yourparkingspace.co.uk/large/3584d3ecb8f045f2c538d3886b663e7b.jpeg'],
@@ -1756,6 +1983,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[40]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.084502, 51.52845]
+          },
           location: 'Hoffman Square, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
@@ -1769,7 +2000,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[41]
         },
         {
-          location: 'Morton Close, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.054586, 51.513392]
+          },
+          location: 'Morton Close, London E3',
           type: 'Car park',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/6c8ccc543ae767a6aaade6006caea463.jpeg', 'https://static.yourparkingspace.co.uk/large/48382755645c475aff7ed982a39b2fbc.jpeg'],
@@ -1782,6 +2017,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[42]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.085383, 51.529683]
+          },
           location: 'Bevenden Street, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
@@ -1795,7 +2034,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[43]
         },
         {
-          location: 'Shadwell, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.0521, 51.5106]
+          },
+          location: 'Shadwell, London SE7',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/96cd23d47a4aacd3c8eaafc5dfe23690.jpeg'],
@@ -1808,6 +2051,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[44]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.11726, 51.51969]
+          },
           location: 'Holborn, London NW8',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car',
@@ -1821,7 +2068,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[45]
         },
         {
-          location: 'Bevenden Street, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.10490, 51.52786]
+          },
+          location: 'Bevendens Street, London NW8',
           type: 'Secure gated parking',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/e4d7df218f4123ae2785bc56b20719a3.jpeg'],
@@ -1834,7 +2085,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[46]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.12466, 51.55818]
+          },
+          location: 'Tuffnell Park Road, London N18',
           type: 'Sheltered driveway',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/299b5ab37d2ea84b7dfe6681b7a29050.jpeg', 'https://static.yourparkingspace.co.uk/large/1bfad0183490a2ef224daa5167ef70db.jpeg'],
@@ -1847,7 +2102,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[47]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.13365, 51.53129]
+          },
+          location: 'Polygon Road, London NW3',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/645e529ee66fdcea81557424efa95585.jpeg', 'https://static.yourparkingspace.co.uk/large/f289e14634c3f8b385907d40ca5e0748.jpeg'],
@@ -1860,6 +2119,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[48]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.066822, 51.490654]
+          },
           location: 'Simms Rd, London NW8',
           type: 'Driveway',
           suitability: 'Motorcyle, Hatchback, Car, Van',
@@ -1873,7 +2136,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[49]
         },
         {
-          location: 'Hoxton Street, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.082880, 51.535638]
+          },
+          location: 'Hoxton Street, London NW2',
           type: 'Roadside parking',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/7e8db1728dcfacba5b4b7b8414b51b5b.jpeg', 'https://static.yourparkingspace.co.uk/large/e82d8867ed80532cb64baad498f49bb5.jpeg'],
@@ -1886,7 +2153,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[50]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.067870, 51.506726]
+          },
+          location: 'Thomas More Street, London SW4',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car, 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/e4d7df218f4123ae2785bc56b20719a3.jpeg'],
@@ -1899,7 +2170,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[51]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.065499, 51.522369]
+          },
+          location: 'Selby Street, London E4',
           type: 'Secure car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/f2f0b786a927118614ad1c92fbe54929.png', 'https://static.yourparkingspace.co.uk/large/2373d0eadd01367eda7fc25de1673e6a.png', 'https://static.yourparkingspace.co.uk/large/bf01bd1b495d989a4bb1c50d9c93297e.png'],
@@ -1912,7 +2187,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[52]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.087729, 51.490562]
+          },
+          location: 'Flint Street, London SE10',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/02b7389c31b51babad2b380e2ba1c5ae.jpeg', 'https://static.yourparkingspace.co.uk/large/0436803127a988d7e2ffbb09b2b95f65.jpeg'],
@@ -1925,7 +2204,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[53]
         },
         {
-          location: 'Holborn, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.108973, 51.517515]
+          },
+          location: 'Holborn, London WC1',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/118ddbe0709f6cd3ece3149735641e38.png', 'https://static.yourparkingspace.co.uk/large/1aa47845d8b2bf321d878a10e36ff7ab.png'],
@@ -1938,7 +2221,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[54]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.137211, 51.516588]
+          },
+          location: 'Wells Street, London WC2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/b357e1acaa2861d18562359dc44855f4.jpeg'],
@@ -1951,7 +2238,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[55]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.060124, 51.530173]
+          },
+          location: 'Temple Street, Bethnal Green, London E2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/f2f0b786a927118614ad1c92fbe54929.png', 'https://static.yourparkingspace.co.uk/large/2373d0eadd01367eda7fc25de1673e6a.png', 'https://static.yourparkingspace.co.uk/large/bf01bd1b495d989a4bb1c50d9c93297e.png'],
@@ -1964,6 +2255,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[56]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.055008, 51.483628]
+          },
           location: 'Bermondsey, London NW8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -1977,7 +2272,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[57]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.104914, 51.530902]
+          },
+          location: 'Owen Street, London E3',
           type: 'Car Park',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/92113090de1a01cd78f7fe6d40aa71b8.jpeg', 'https://static.yourparkingspace.co.uk/large/67f24a64fc9a5da8148785094d8ce591.jpeg'],
@@ -1990,7 +2289,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[58]
         },
         {
-          location: 'Albany Mews, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.108408, 51.543317]
+          },
+          location: 'Albany Mews, London N8',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/f4f22d31ab151046dcf461f5b3a0fd78.jpeg'],
@@ -2003,7 +2306,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[59]
         },
         {
-          location: 'The Highway, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.045797, 51.510212]
+          },
+          location: 'The Highway, London E1',
           type: 'Car Park',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/a2decabfc00fcfa3dace7bc9bc7d86e0.jpeg', 'https://static.yourparkingspace.co.uk/large/35a448a8c18b6ae0dd1fcd0702facb2e.jpeg'],
@@ -2016,7 +2323,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[60]
         },
         {
-          location: 'Holborn, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.127227, 51.517317]
+          },
+          location: 'Holborn, London WC2',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/6e95b8997674d1ed56b1fac1cc5cf046.jpeg', 'https://static.yourparkingspace.co.uk/large/b6c1399be372826709f90d51b064d6d7.jpeg'],
@@ -2029,7 +2340,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[18]
         },
         {
-          location: 'Coopers Close, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.051851, 51.522275]
+          },
+          location: 'Coopers Close, London E3',
           type: 'Gated Car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/ab0a78d877c4aa9511a54d11fdfa6f4c.jpeg', 'https://static.yourparkingspace.co.uk/large/df7a6aa56db5cc2ce24c0e4fb8394298.jpeg'],
@@ -2042,7 +2357,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[28]
         },
         {
-          location: 'Canada Water, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [0.067730, 51.501040]
+          },
+          location: 'Canada Water, London SE16',
           type: 'Roadside Parking',
           suitability: 'Motorcyle, Hatchback, Car, 4X4, Van',
           images: ['https://static.yourparkingspace.co.uk/large/0d624bea327d2897aef4f9a8f076f223.jpeg', 'https://static.yourparkingspace.co.uk/large/b2799ecc662b59483a60b00166d3e6b0.jpeg'],
@@ -2055,7 +2374,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[29]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.114142, 51.528922]
+          },
+          location: 'Percy Circus, London W4',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/1a95c91703d9b61f6040394fa5bbb485.jpeg', 'https://static.yourparkingspace.co.uk/large/5b55bb23e7207df0aad6a1415296e92b.jpeg'],
@@ -2068,10 +2391,14 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[61]
         },
         {
-          location: 'Vernon Rise, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.347122, 51.553360]
+          },
+          location: 'Vernon Rise, London W13',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
-          images: ['https://static.yourparkingspace.co.uk/large/8cb726c8b7ef9b48bad65a6bc6835df6.jpeg', 'https://static.yourparkingspace.co.uk/large/d34f0647498679cf79aa41e88031c4ec.jpeg'],
+          images: ['https://static.yourparkingspace.co.uk/large/8cb726c8b7ef9b48bad65a6bc6835df6.jpeg', 'https://static.yourparkingspace.co.uk/larged/d34f0647498679cf79aa41e88031c4ec.jpeg'],
           availability: true,
           rating: 3.9,
           description: 'One allocated space located on Vernon Rise in London. The space is suitable for vehicles up to the size of a Large - (4x4). On-site there is CCTV and Security Lighting.',
@@ -2081,7 +2408,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[51]
         },
         {
-          location: 'Tabard Street, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.089859, 51.498627]
+          },
+          location: 'Tabard Street, London SE5',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/3fcd27babff8db37c04780e5a222afbb.jpeg'],
@@ -2094,7 +2425,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[22]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.129433, 51.472542]
+          },
+          location: 'Priory Grove, London SW8',
           type: 'Garage',
           suitability: 'Motorcyle',
           images: ['https://static.yourparkingspace.co.uk/large/6e367aa03deb333a6e29a56a28be0131.jpeg'],
@@ -2107,7 +2442,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[17]
         },
         {
-          location: 'Bermondsey, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.086699, 51.492767]
+          },
+          location: 'Bermondsey, London SE4',
           type: 'Residential Parking',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/ee61a35f58915dd5b590c736818221e0.jpeg', 'https://static.yourparkingspace.co.uk/large/d006f2970624f91b4111fe051dca62ee.jpeg'],
@@ -2120,7 +2459,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[71]
         },
         {
-          location: 'Bermondsey, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.088491, 51.502262]
+          },
+          location: 'Bermondsey, London SE1',
           type: 'Secure parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/3eab234063d6095ad9a516338144a3bb.jpeg', 'https://static.yourparkingspace.co.uk/large/a0e8a8316c442cdaf335eec3e130096b.jpeg'],
@@ -2133,7 +2476,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[15]
         },
         {
-          location: 'Stewart House, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.082483, 51.495607]
+          },
+          location: 'Rothsay Street, London SE1',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/f2f0b786a927118614ad1c92fbe54929.png', 'https://static.yourparkingspace.co.uk/large/2373d0eadd01367eda7fc25de1673e6a.png', 'https://static.yourparkingspace.co.uk/large/bf01bd1b495d989a4bb1c50d9c93297e.png'],
@@ -2146,7 +2493,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[62]
         },
         {
-          location: 'Central London, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.117395, 51.503344]
+          },
+          location: 'Central London, London SE2',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/a31b1432e9f4d1a1b220a121c9c840c8.png', 'https://static.yourparkingspace.co.uk/large/0a60767da45c1563b28d6a0b94e0edcf.png'],
@@ -2159,7 +2510,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[64]
         },
         {
-          location: 'Elephant & Castle, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.096388, 51.496621]
+          },
+          location: 'Elephant & Castle, London SE2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/77a61a638fb5009aa22afee9cb16e465.jpeg', 'https://static.yourparkingspace.co.uk/large/7197865962bd25498c5ac2b019346b17.jpeg'],
@@ -2172,20 +2527,28 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[65]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.182186, 51.487984]
+          },
+          location: 'Gilston Road, London SW1',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/be6d02c0d028f74c399db86ea159f1e5.jpeg', 'https://static.yourparkingspace.co.uk/large/a38efb9325ca78c1b8102d2d104ced73.jpeg'],
           availability: false,
           rating: 4.1,
-          description: 'One allocated space located on Eluna Apartments in London. The space is close to Paulina Berry creative art direction, Health Centre and Shadwell. The space is suitable for vehicles up to the size of a Large - (4x4). On-site there is Allocated Space. The space is available 24 hours on all days. The space is accessed via a security fob which will be provided to you on arrival.',
+          description: 'One allocated space located on Eluna Apartments in London. The space is close to Paulina Berry creative art direction, Health Centre. The space is suitable for vehicles up to the size of a Large - (4x4). On-site there is Allocated Space. The space is available 24 hours on all days. The space is accessed via a security fob which will be provided to you on arrival.',
           comments: { text: []},
           price: 9.90,
           electricChargingPoint: false,
           owner: user[66]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.115455, 51.499530]
+          },
+          location: 'Waterloo, London SE2',
           type: 'Roadside Parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/2512eef51d4ea7b84cae6bce7b29411f.png', 'https://static.yourparkingspace.co.uk/large/03eeeded8289b4e186c48f0a96861f2d.png'],
@@ -2198,6 +2561,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[67]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.102359, 51.523328]
+          },
           location: 'Clerkenwell, London NW8',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car',
@@ -2211,7 +2578,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[68]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.068948, 51.524958]
+          },
+          location: 'Goldman Close, London E3',
           type: 'Residential Driveway',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/8a144059ef4f326aded89b0d3e0b397b.png', 'https://static.yourparkingspace.co.uk/large/8ed37e42d7d95aafc097e5a71351d434.png'],
@@ -2224,7 +2595,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[69]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.071998, 51.524774]
+          },
+          location: 'Granby Street, London E2',
           type: 'Residential Driveway',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/bd0d56629e531d2c5944d4f136f9fcda.jpeg'],
@@ -2237,7 +2612,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[69]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.121079, 51.424429]
+          },
+          location: 'Streatham, London SW8',
           type: 'Private parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/70c9b7dc7e59b65d236d0fc307943032.jpeg'],
@@ -2250,7 +2629,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[27]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.097046, 51.406948]
+          },
+          location: 'Crystal Palace, London SE19',
           type: 'Private Residential',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/7e8db1728dcfacba5b4b7b8414b51b5b.jpeg', 'https://static.yourparkingspace.co.uk/large/e82d8867ed80532cb64baad498f49bb5.jpeg'],
@@ -2263,7 +2646,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[70]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.061884, 51.496548]
+          },
+          location: 'Canada Water, London SE4',
           type: 'Residential driveway',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/a7e426aca21146fb23a53e6d65c1f63e.jpeg', 'https://static.yourparkingspace.co.uk/large/bca09ebf463645fa66d40e87a626b3f3.jpeg'],
@@ -2276,6 +2663,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[71]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.109685, 51.479556]
+          },
           location: 'Kennington, London NW8',
           type: 'Residential Parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -2289,7 +2680,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[54]
         },
         {
-          location: 'Conduit St, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.141739, 51.512268]
+          },
+          location: 'Conduit St, London WC2',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/118ddbe0709f6cd3ece3149735641e38.png', 'https://static.yourparkingspace.co.uk/large/1aa47845d8b2bf321d878a10e36ff7ab.png'],
@@ -2302,6 +2697,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[72]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.074158, 51.530046]
+          },
           location: 'Hackney Rd, London NW8',
           type: 'Gated car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -2315,6 +2714,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[73]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.122609, 51.519319]
+          },
           location: 'Bloomsbury, London NW8',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -2328,7 +2731,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[74]
         },
         {
-          location: 'Neville Court, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.138200, 51.506491]
+          },
+          location: 'St James, London SW1',
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/54b3605df2de7904a8e34047f48e1d0f.jpeg', 'https://static.yourparkingspace.co.uk/large/f4f22d31ab151046dcf461f5b3a0fd78.jpeg'],
@@ -2341,7 +2748,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[75]
         },
         {
-          location: 'Coopers Close, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.051851, 51.522275]
+          },
+          location: 'Coopers Close, London E2',
           type: 'Gated residential space',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/df7a6aa56db5cc2ce24c0e4fb8394298.jpeg', 'https://static.yourparkingspace.co.uk/large/ab0a78d877c4aa9511a54d11fdfa6f4c.jpeg'],
@@ -2354,6 +2765,10 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[76]
         },
         {
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.119171, 51.489868]
+          },
           location: 'Vauxhall, London NW8',
           type: 'Roadside parking',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
@@ -2367,7 +2782,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[77]
         },
         {
-          location: 'Westminster, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.137767, 51.496721]
+          },
+          location: 'Westminster, London WC1',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/890839c490c70b7e513cd86e8e8be71b.jpeg', 'https://static.yourparkingspace.co.uk/large/9cf70b20d6c066724fe543ce9d673835.jpeg'],
@@ -2380,7 +2799,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           owner: user[54]
         },
         {
-          location: 'Westminster, London NW8',
+          geometry: {
+            type: 'Point',
+            coordinates: [-0.131707, 51.497502]
+          },
+          location: 'Westminster, London WC1',
           type: 'Underground Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/fe5c960fceeb46b718afa3bc0a1a022c.jpeg'],
