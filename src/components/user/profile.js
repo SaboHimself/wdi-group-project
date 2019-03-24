@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import Auth from '../auth/auth'
+import Auth from '../auth/userAuthentication'
 
 class Profile extends React.Component{
   constructor() {
