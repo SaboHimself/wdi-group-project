@@ -8,7 +8,6 @@ class Step2 extends React.Component{
   }
 
   render() {
-    // console.log(this.props)
     if(this.props.currentStep !== 2) {
       return null
     }
@@ -33,15 +32,16 @@ class Step2 extends React.Component{
           onChange={this.props.handleChange}
           value={this.props.description}
         />
-        <input
-          name="electricChargingPoint"
-          placeholder="Electric Charging"
-          onChange={this.props.handleChange}
-          value={this.props.electricChargingPoint}
-        />
       </div>
     )
   }
 }
 
 export default Step2
+
+// <input
+//   name="electricChargingPoint"
+//   placeholder="Electric Charging"
+//   onChange={this.props.handleChange}
+//   value={this.props.electricChargingPoint}
+// />

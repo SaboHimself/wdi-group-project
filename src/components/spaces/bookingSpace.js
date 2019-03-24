@@ -41,7 +41,6 @@ class BookingSpace extends React.Component{
       this.state,
       { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
       .then(res => {
-        console.log('submitted')
         this.props.history.push(`/bookings/${res.data._id}`)
       })
       .catch(err => this.setState({ errors: err.response.data.errors}))

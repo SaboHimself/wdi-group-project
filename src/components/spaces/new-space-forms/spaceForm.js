@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import Auth from '../../auth/userAuthentication'
+
 import Step1 from './step1'
 import Step2 from './step2'
 import Step3 from './step3'
@@ -28,13 +30,13 @@ class SpaceForm extends React.Component {
   }
 
   handleChange({ target: {name, value}}) {
-    const data ={...this.state.data, [name]: value}
+    const data = {...this.state.data, [name]: value}
     this.setState({ data })
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    axios.post('/api/spaces', this.state.data)
+    axios.post('/api/spaces', this.state.data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
       .then(res => console.log(res))
   }
 
@@ -87,7 +89,6 @@ class SpaceForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
     const { data } = this.state
     return(
       <React.Fragment>

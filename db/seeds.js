@@ -9,6 +9,13 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
 
   User.create([
     {
+      username: 'sabo',
+      email: 'sabo@sabo.com',
+      password: 'sabo',
+      passwordConfirmation: 'sabo',
+      number: '+447777777777'
+    },
+    {
       username: 'Harry1',
       email: 'harrymcdonald@hotmail.com',
       password: 'harry1',

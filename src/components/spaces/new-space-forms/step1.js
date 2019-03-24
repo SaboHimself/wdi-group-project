@@ -8,7 +8,6 @@ class Step1 extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     if(this.props.data.currentStep !== 1) {
       return null
     }
