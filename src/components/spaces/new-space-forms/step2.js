@@ -31,6 +31,7 @@ class Step2 extends React.Component{
           name="type"
           options={typeOptions}
           onChange={this.props.handleTypeSelect}
+          value={this.props.type}
         />
         <Select
           name="suitability"
