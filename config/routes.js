@@ -18,6 +18,8 @@ router.route('/spaces')
   .get(spaces.index)
   .post(secureRoute, spaces.create)
 
+// router.get('/nearspaces', spaces.query)
+
 router.route('/spaces/:id')
   .get(spaces.show)
   .put(secureRoute, spaces.edit)
