@@ -14,11 +14,6 @@ const suitabilityOptions = [
   { value: 'Bike', label: 'Bike' }
 ]
 
-const electricChargingOptions = [
-  { value: true, label: 'Yes' },
-  { value: false, label: 'No' }
-]
-
 class Step2 extends React.Component{
   constructor() {
     super()
@@ -56,12 +51,12 @@ class Step2 extends React.Component{
         <div>
           <input
             type="radio"
-            name="yes"
+            name="electricChargingPoint"
             value="true"
           />
           <input
             type="radio"
-            name="no"
+            name="electricChargingPoint"
             value="false"
           />
         </div>
