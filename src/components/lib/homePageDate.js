@@ -1,14 +1,25 @@
 class HomePageDate {
-  static setDate(date) {
-    localStorage.setItem('date', date)
+  static setStartDate(date) {
+    localStorage.setItem('startDate', date)
   }
 
-  static getDate() {
-    return localStorage.getItem('date')
+  static getStartDate() {
+    return localStorage.getItem('startDate')
   }
 
-  static removeDate() {
-    localStorage.removeItem('date')
+  static setEndDate(date) {
+    localStorage.setItem('endDate', date)
+  }
+
+  static getEndDate() {
+    return localStorage.getItem('endDate')
+  }
+
+  static removeStartDate() {
+    localStorage.removeItem('startDate')
+  }
+  static removeEndDate() {
+    localStorage.removeItem('endDate')
   }
 }
 

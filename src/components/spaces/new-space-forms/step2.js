@@ -26,6 +26,7 @@ class Step2 extends React.Component{
     }
 
     return(
+
       <div>
         <Select
           name="type"
