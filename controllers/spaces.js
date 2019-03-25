@@ -8,6 +8,16 @@ function indexSpace(req, res, next){
     .catch(next)
 }
 
+// function querySpace(req, res, next){
+//   Space
+//     .geoNear(
+//       {type: 'Point', coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]},
+//       {maxDistance: 100, spherical: true}
+//     )
+//     .then(spaces => res.json(spaces))
+//     .catch(next)
+// }
+
 function showSpace(req, res, next){
   Space
     .findById(req.params.id)
