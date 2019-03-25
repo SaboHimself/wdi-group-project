@@ -24,9 +24,7 @@ class Step2 extends React.Component{
     if(this.props.currentStep !== 2) {
       return null
     }
-
     return(
-
       <div>
         <Select
           name="type"
@@ -50,10 +48,3 @@ class Step2 extends React.Component{
 }
 
 export default Step2
-
-// <input
-//   name="electricChargingPoint"
-//   placeholder="Electric Charging"
-//   onChange={this.props.handleChange}
-//   value={this.props.electricChargingPoint}
-// />

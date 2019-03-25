@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import Auth from '../../auth/userAuthentication'
+import Map2 from './spacemap'
 
 import Step1 from './step1'
 import Step2 from './step2'
@@ -32,6 +33,7 @@ class SpaceForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
+    this.handleGeometryChange = this.handleGeometryChange.bind(this)
   }
 
   handleChange({ target: {name, value}}) {
@@ -103,13 +105,21 @@ class SpaceForm extends React.Component {
     return null
   }
 
+  handleGeometryChange(value) {
+    const data = {...this.state.data.geometry, coordinates: value}
+    this.setState(state => ({...state, data: {...state.data, geometry: data} }), () => console.log(this.state.data))
+  }
+
   render() {
+    console.log(this.state.data)
     const { data } = this.state
-    console.log(this.state)
     return(
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
           <p>Step {this.state.data.currentStep}</p>
+          <Map2
+            geometryChange={this.handleGeometryChange}
+          />
           <Step1
             data={data}
             handleChange={this.handleChange}
