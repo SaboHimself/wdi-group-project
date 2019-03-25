@@ -5,6 +5,8 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g'
 import { Link } from 'react-router-dom'
 
+import MapModal from './map/mapModal'
+
 const bounds = [[-0.483702, 51.334679], [0.190262, 51.655070]] // Restricts map bounds to London
 
 class Map extends React.Component {
@@ -96,7 +98,7 @@ class Map extends React.Component {
     console.log(this.state.spaces)
     const { spaces } = this.state
     return(
-      <div>
+      <div id="main">
         <div className='sidebar pad2' ref={el => this.sidebar = el}>
           <div className='heading'>
             <h1>Our locations</h1>
@@ -109,6 +111,7 @@ class Map extends React.Component {
                 <div>{space.suitability}</div>
                 <div>£{space.price}</div>
               </Link>
+              <MapModal />
             </div>
           ))}
         </div>
