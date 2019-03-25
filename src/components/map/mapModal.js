@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactModal from 'react-modal'
-
-import ShowSpace from '../spaces/showSpace'
+import { Link } from 'react-router-dom'
 
 class MapModal extends React.Component {
   constructor () {
@@ -24,10 +23,9 @@ class MapModal extends React.Component {
 
   render () {
     const space = this.props.space
-    // console.log(space)
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Book this space</button>
+        <button onClick={this.handleOpenModal}>More details</button>
         <ReactModal
           isOpen={this.state.showModal}
           ariaHideApp={false}
@@ -44,8 +42,13 @@ class MapModal extends React.Component {
             <div>{space.suitability}</div>
             <span>Cost per hour</span>
             <div>£{space.price}</div>
+            <Link to={{
+              pathname: '/bookings',
+              state: `${space._id}`}}>
+              <button>Book this Space</button>
+            </Link>
           </div>
-          <button onClick={this.handleCloseModal}>Close Modal</button>
+          <button onClick={this.handleCloseModal}>X</button>
         </ReactModal>
       </div>
     )

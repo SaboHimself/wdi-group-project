@@ -4,6 +4,7 @@ import axios from 'axios'
 import SpaceRepeatedField from '../lib/spaceRepeatedField'
 import Calender from '../lib/calender'
 import Auth from '../auth/userAuthentication'
+import BookingModal from './bookingModal'
 
 class BookingSpace extends React.Component{
   constructor() {
@@ -40,9 +41,6 @@ class BookingSpace extends React.Component{
     axios.post('/api/bookings',
       this.state,
       { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-      .then(res => {
-        this.props.history.push(`/bookings/${res.data._id}`)
-      })
       .catch(err => this.setState({ errors: err.response.data.errors}))
   }
 
@@ -60,7 +58,7 @@ class BookingSpace extends React.Component{
             startDate={this.state.startDate}
             endDate={this.state.endDate}
           />
-          <button>Confirm</button>
+          <BookingModal />
         </form>
       </main>
     )

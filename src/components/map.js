@@ -98,7 +98,10 @@ class Map extends React.Component {
     const { spaces } = this.state
     return(
       <div id="main">
-        <div className='sidebar pad2' ref={el => this.sidebar = el}>
+        <div
+          className='sidebar pad2'
+          ref={el => this.sidebar = el}
+        >
           <div className='heading'>
             <h1>Our locations</h1>
           </div>
