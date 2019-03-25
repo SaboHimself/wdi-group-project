@@ -25,12 +25,6 @@ class ShowSpace extends React.Component{
         <SpaceRepeatedField
           space={space}
         />
-        <Link to={{
-          pathname: '/bookings',
-          state: `${space._id}`}
-        }>
-          <div>booking</div>
-        </Link>
       </main>
     )
   }
