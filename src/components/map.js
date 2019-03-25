@@ -105,7 +105,10 @@ class Map extends React.Component {
 
   flytoSelectedSide({ _id }){
     const lnglat = this.state.lnglat.find(space => space._id === _id).geometry.coordinates
-    this.map.flyTo({center: lnglat})
+    this.map.flyTo({
+      center: lnglat,
+      zoom: 15
+    })
   }
 
   render() {
