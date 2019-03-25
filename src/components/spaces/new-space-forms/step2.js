@@ -26,11 +26,13 @@ class Step2 extends React.Component{
     }
 
     return(
+
       <div>
         <Select
           name="type"
           options={typeOptions}
           onChange={this.props.handleTypeSelect}
+          value={typeOptions.find(option => option.label === this.state.data.type)}
         />
         <Select
           name="suitability"
