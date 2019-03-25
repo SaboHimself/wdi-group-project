@@ -95,7 +95,6 @@ class Map extends React.Component {
   // }
 
   render() {
-    console.log(this.state.spaces)
     const { spaces } = this.state
     return(
       <div id="main">
@@ -105,13 +104,13 @@ class Map extends React.Component {
           </div>
           {spaces && spaces.map((space, id) => (
             <div key={id} className='listings'>
-              <Link to={`/spaces/${space._id}`}>
-                <div>{space.geometry}</div>
-                <div>{space.type}</div>
-                <div>{space.suitability}</div>
-                <div>£{space.price}</div>
-              </Link>
-              <MapModal />
+              <div>{space.geometry}</div>
+              <div>{space.type}</div>
+              <div>{space.suitability}</div>
+              <div>£{space.price}</div>
+              <MapModal
+                space={space}
+              />
             </div>
           ))}
         </div>

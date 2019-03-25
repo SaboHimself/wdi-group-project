@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 
+import ShowSpace from '../spaces/showSpace'
+
 class MapModal extends React.Component {
   constructor () {
     super()
@@ -21,14 +23,28 @@ class MapModal extends React.Component {
   }
 
   render () {
+    const space = this.props.space
+    // console.log(space)
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Trigger Modal</button>
+        <button onClick={this.handleOpenModal}>Book this space</button>
         <ReactModal
           isOpen={this.state.showModal}
-          contentLabel="Yay!"
           ariaHideApp={false}
+          // className="map-modal"
         >
+          <div>
+            {space.images.map((image, id) => (
+              <img key={id} src={image} />
+            ))}
+            <div>{space.type}</div>
+            <span>At</span>
+            <div>{space.geometry}</div>
+            <span>Suitable for</span>
+            <div>{space.suitability}</div>
+            <span>Cost per hour</span>
+            <div>£{space.price}</div>
+          </div>
           <button onClick={this.handleCloseModal}>Close Modal</button>
         </ReactModal>
       </div>
