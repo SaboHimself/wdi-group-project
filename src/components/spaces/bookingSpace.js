@@ -4,19 +4,21 @@ import axios from 'axios'
 import SpaceRepeatedField from '../lib/spaceRepeatedField'
 import Calender from '../lib/calender'
 import Auth from '../auth/userAuthentication'
+import HomePageDate from '../lib/homePageDate'
 
 class BookingSpace extends React.Component{
   constructor() {
     super()
 
     this.state = {
-      startDate: new Date(),
-      endDate: new Date()
+      startDate: new Date(Date.parse(HomePageDate.getStartDate())) || new Date(),
+      endDate: new Date(Date.parse(HomePageDate.getEndDate())) || new Date()
     }
 
     this.handleChangeStart = this.handleChangeStart.bind(this)
     this.handleChangeEnd = this.handleChangeEnd.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleChangeStart(date) {
@@ -33,6 +35,12 @@ class BookingSpace extends React.Component{
   componentDidMount(){
     axios.get(`/api/spaces/${this.props.location.state}`)
       .then(res => this.setState({ space: res.data }))
+  }
+
+  handleClick(e) {
+    e.preventDefault()
+    HomePageDate.removeStartDate()
+    HomePageDate.removeEndDate()
   }
 
   handleSubmit(e) {
@@ -60,7 +68,7 @@ class BookingSpace extends React.Component{
             startDate={this.state.startDate}
             endDate={this.state.endDate}
           />
-          <button>Confirm</button>
+          <button onClick={this.handleClick}>Confirm</button>
         </form>
       </main>
     )

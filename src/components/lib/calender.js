@@ -35,6 +35,7 @@ class Calender extends React.Component{
           startDate={startDate}
           endDate={endDate}
           onChange={handleChangeEnd}
+          showTimeSelect
           timeFormat="HH:mm"
           injectTimes={[
             setHours(setMinutes(new Date(), 1), 0),
