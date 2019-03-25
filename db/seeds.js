@@ -404,7 +404,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
       username: 'MathewMcdonald',
       email: 'MathewMc@gmail.com',
       password: 'Matty5',
-      passwordConfirmation: 'Matty',
+      passwordConfirmation: 'Matty5',
       number: '+447283493883'
     },
     {
@@ -432,7 +432,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
       username: 'GutenWabbit',
       email: 'offthelip@gmail.com',
       password: 'Matty3',
-      passwordConfirmation: 'Matty',
+      passwordConfirmation: 'Matty3',
       number: '+447283493883'
     },
     {
