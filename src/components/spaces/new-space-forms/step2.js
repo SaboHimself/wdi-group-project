@@ -2,15 +2,21 @@ import React from 'react'
 import Select from 'react-select'
 
 const typeOptions = [
-  { value: 'drive', label: 'Drive' },
-  { value: 'off-road', label: 'Off Road' },
-  { value: 'garage', label: 'Garage' }
+  { value: 'On Road', label: 'On Road' },
+  { value: 'Off Road', label: 'Off Road' },
+  { value: 'Drive', label: 'Drive' },
+  { value: 'Garage', label: 'Garage' }
 ]
 
 const suitabilityOptions = [
-  { value: 'car', label: 'Car' },
-  { value: 'van', label: 'Van' },
-  { value: 'bike', label: 'Bike' }
+  { value: 'Car', label: 'Car' },
+  { value: 'Van', label: 'Van' },
+  { value: 'Bike', label: 'Bike' }
+]
+
+const electricChargingOptions = [
+  { value: true, label: 'Yes' },
+  { value: false, label: 'No' }
 ]
 
 class Step2 extends React.Component{
@@ -28,16 +34,42 @@ class Step2 extends React.Component{
     return(
 
       <div>
+        <label>
+          Type
+        </label>
         <Select
           name="type"
           options={typeOptions}
           onChange={this.props.handleTypeSelect}
+          value={!this.props.type || {value: this.props.type, label: this.props.type}}
         />
+        <label>
+          Suitability
+        </label>
         <Select
           name="suitability"
           options={suitabilityOptions}
           onChange={this.props.handleSuitabilitySelect}
+          value={!this.props.suitability || {value: this.props.suitability, label: this.props.suitability}}
         />
+        <label>
+          Electric Charging Point
+        </label>
+        <div>
+          <input
+            type="radio"
+            name="yes"
+            value="true"
+          />
+          <input
+            type="radio"
+            name="no"
+            value="false"
+          />
+        </div>
+        <label>
+          Description
+        </label>
         <textarea
           placeholder="description"
           name="description"
@@ -50,10 +82,3 @@ class Step2 extends React.Component{
 }
 
 export default Step2
-
-// <input
-//   name="electricChargingPoint"
-//   placeholder="Electric Charging"
-//   onChange={this.props.handleChange}
-//   value={this.props.electricChargingPoint}
-// />

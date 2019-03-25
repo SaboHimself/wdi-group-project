@@ -22,13 +22,14 @@ class SpaceForm extends React.Component {
         suitability: '',
         description: '',
         electricChargingPoint: false,
-        price: 0
+        price: ''
       }
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleTypeSelect = this.handleTypeSelect.bind(this)
     this.handleSuitabilitySelect = this.handleSuitabilitySelect.bind(this)
+    this.handleChargeSelect = this.handleChargeSelect.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
@@ -46,6 +47,11 @@ class SpaceForm extends React.Component {
 
   handleSuitabilitySelect({ value }) {
     const data = { ...this.state.data, suitability: value }
+    this.setState({ data })
+  }
+
+  handleChargeSelect({ value }) {
+    const data = { ...this.state.data, electricChargingPoint: value }
     this.setState({ data })
   }
 
@@ -119,6 +125,7 @@ class SpaceForm extends React.Component {
             handleChange={this.handleChange}
             handleTypeSelect={this.handleTypeSelect}
             handleSuitabilitySelect={this.handleSuitabilitySelect}
+            handleChargeSelect={this.handleChargeSelect}
             type={this.state.data.type}
             suitability={this.state.data.suitability}
             description={this.state.data.description}
