@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Browser , Link, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Browser, Switch, Route } from 'react-router-dom'
 
 import Map from './components/map'
 import Login from './components/auth/loginForm'
 import Register from './components/auth/registerForm'
 import Home from './components/page/home'
 import Profile from './components/user/profile'
+import Nav from './components/common/nav'
 
 import ShowSpace from './components/spaces/showSpace'
 import BookingSpace from './components/spaces/bookingSpace'
@@ -26,15 +27,7 @@ class App extends React.Component {
     return(
       <Browser>
         <div>
-          <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/map'>Map</Link>
-            <Link to='/spaces'>Spaces</Link>
-            <Link to='/register'>Register</Link>
-            <Link to='/login'>login</Link>
-            <Link to='/account'>Account</Link>
-            <Link to='/spaces/new'>Create Space</Link>
-          </nav>
+          <Nav />
           <Switch>
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />

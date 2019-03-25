@@ -29,7 +29,6 @@ class Step1 extends React.Component {
     }
     return(
       <div>
-
       </div>
     )
   }

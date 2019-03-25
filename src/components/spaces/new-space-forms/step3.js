@@ -19,6 +19,7 @@ class Step3 extends React.Component{
         <input
           name="price"
           placeholder="Price"
+          type="number"
           onChange={this.props.handleChange}
           value={this.props.price}
         />
