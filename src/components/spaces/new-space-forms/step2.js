@@ -30,9 +30,7 @@ class Step2 extends React.Component{
     if(this.props.currentStep !== 2) {
       return null
     }
-
     return(
-
       <div>
         <label>
           Type

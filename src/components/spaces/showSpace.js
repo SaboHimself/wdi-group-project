@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import SpaceRepeatedField from '../lib/spaceRepeatedField'
+import Auth from '../auth/userAuthentication'
 
 class ShowSpace extends React.Component{
   constructor() {
@@ -17,6 +18,15 @@ class ShowSpace extends React.Component{
       .then(res => this.setState({ space: res.data }))
   }
 
+  handleDelete() {
+    axios.delete(`/api/spaces${this.props.match.params.id}`,{ headers: { Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(()=> {
+        // Flash.setMessage('danger', 'Cheese deleted')
+        this.props.history.push('/cheeses')
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
     if(!this.state.space) return null
     const { space } = this.state
@@ -25,6 +35,8 @@ class ShowSpace extends React.Component{
         <SpaceRepeatedField
           space={space}
         />
+        <Link className="button is-warning" to={`/spaces/${space._id}/edit`}>Edit</Link>
+        <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
       </main>
     )
   }
