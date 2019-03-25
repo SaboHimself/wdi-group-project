@@ -29,6 +29,7 @@
     "react": "^16.8.4",
     "react-datepicker": "^2.2.0",
     "react-dom": "^16.8.5",
+    "react-modal": "^3.8.1",
     "react-router-dom": "^5.0.0",
     "react-select": "^2.4.2",
     "request": "^2.88.0",
