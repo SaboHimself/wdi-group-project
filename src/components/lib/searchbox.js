@@ -33,7 +33,7 @@ class Search extends React.Component {
     const inputValue = value.trim().toLowerCase()
     const inputLength = inputValue.length
 
-    return inputLength < 6 ? [] : axios.get('https://geocoder.api.here.com/6.2/geocode.json?', {
+    return inputLength < 5 ? [] : axios.get('https://geocoder.api.here.com/6.2/geocode.json?', {
       params: {
         searchtext: `${this.props.value}`,
         mapview: '51.7131,-0.5775;51.2685,0.2905',

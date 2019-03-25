@@ -3,7 +3,6 @@ import mapboxgl from 'mapbox-gl'
 import axios from 'axios'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g'
-import { Link } from 'react-router-dom'
 
 import MapModal from './map/mapModal'
 
@@ -24,6 +23,7 @@ class Map extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.flytoSelectedSide = this.flytoSelectedSide.bind(this)
   }
 
   handleChange({ target }) {
@@ -35,6 +35,7 @@ class Map extends React.Component {
     this.map()
     this.getValue()
     this.getDataToPopulate()
+    this.setCenterMarkers()
   }
 
   componentDidUpdate(){
@@ -47,7 +48,7 @@ class Map extends React.Component {
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [this.props.location.state.lnglat.Longitude, this.props.location.state.lnglat.Latitude],
+      center: this.state.center,
       zoom: 15,
       maxBounds: bounds
     })
@@ -64,6 +65,14 @@ class Map extends React.Component {
         .setLngLat({ lng: coordinates.geometry.coordinates[0], lat: coordinates.geometry.coordinates[1]})
         .addTo(this.map)
     })
+  }
+
+  setCenterMarkers(){
+    if(!this.props.location.state) return null
+    this.map.jumpTo({center: [this.props.location.state.Longitude, this.props.location.state.Latitude]})
+    return new mapboxgl.Marker()
+      .setLngLat([this.props.location.state.Longitude, this.props.location.state.Latitude])
+      .addTo(this.map)
   }
 
   getLocation(){
@@ -94,9 +103,15 @@ class Map extends React.Component {
   //     .then(res => console.log(res))
   // }
 
+  flytoSelectedSide({ _id }){
+    const lnglat = this.state.lnglat.find(space => space._id === _id).geometry.coordinates
+    this.map.flyTo({center: lnglat})
+  }
+
   render() {
-    console.log(this.props.location.state.lnglat.Latitude,this.props.location.state.lnglat.Longitude)
     const { spaces } = this.state
+    // console.log(this.state.lnglat)
+    // console.log(spaces)
     return(
       <div id="main">
         <div
@@ -107,7 +122,7 @@ class Map extends React.Component {
             <h1>Our locations</h1>
           </div>
           {spaces && spaces.map((space, id) => (
-            <div key={id} className='listings'>
+            <div onClick={() => this.flytoSelectedSide(space)} key={id} className='listings'>
               <div>{space.geometry}</div>
               <div>{space.type}</div>
               <div>{space.suitability}</div>
