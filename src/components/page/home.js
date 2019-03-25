@@ -12,7 +12,8 @@ class Home extends React.Component {
     this.state = {
       startDate: new Date(),
       endDate: new Date(),
-      value: ''
+      value: '',
+      lnglat: { Latitude: '', Longitude: ''}
     }
 
     this.onChange = this.onChange.bind(this)
@@ -45,8 +46,7 @@ class Home extends React.Component {
   }
 
   handleLngLatChange(value) {
-    const lnglat = {...this.state.lnglat, lnglat: value}
-    this.setState({ lnglat })
+    this.setState({...this.state, lnglat: value })
   }
 
   render() {
