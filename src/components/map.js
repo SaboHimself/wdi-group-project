@@ -95,10 +95,7 @@ class Map extends React.Component {
   // }
 
   render() {
-<<<<<<< HEAD
-=======
     console.log(this.props.location.state.lnglat.Latitude,this.props.location.state.lnglat.Longitude)
->>>>>>> development
     const { spaces } = this.state
     return(
       <div id="main">

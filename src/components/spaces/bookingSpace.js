@@ -4,11 +4,8 @@ import axios from 'axios'
 import SpaceRepeatedField from '../lib/spaceRepeatedField'
 import Calender from '../lib/calender'
 import Auth from '../auth/userAuthentication'
-<<<<<<< HEAD
 import BookingModal from './bookingModal'
-=======
 import HomePageDate from '../lib/homePageDate'
->>>>>>> development
 
 class BookingSpace extends React.Component{
   constructor() {
