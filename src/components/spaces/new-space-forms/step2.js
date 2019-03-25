@@ -58,13 +58,13 @@ class Step2 extends React.Component{
         <div>
           <input
             type="radio"
-            name="ecp"
-            value="true"
+            name="electricChargingPoint"
+            value={true}
           />
           <input
             type="radio"
-            name="ecp"
-            value="false"
+            name="electricChargingPoint"
+            value={false}
           />
         </div>
         <label>
