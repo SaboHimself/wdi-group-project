@@ -9,7 +9,7 @@ import Step1 from './step1'
 import Step2 from './step2'
 import Step3 from './step3'
 
-const client = filestack.init('ArdDAxpRxTtSDt3PVqOXrz')
+const client = filestack.init('A4TDqBlHpRmZTAuIpcMYJz')
 
 class SpaceForm extends React.Component {
   constructor(props) {
@@ -68,9 +68,7 @@ class SpaceForm extends React.Component {
     this.setState({ data })
   }
 
-  handlePhotoModal(e) {
-    // e.preventDefault()
-
+  handlePhotoModal() {
     const options = {
       fromSources: ['local_file_system','instagram','facebook'],
       accept: ['image/*'],
