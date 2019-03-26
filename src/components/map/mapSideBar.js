@@ -7,7 +7,7 @@ class SideBarItem extends React.Component {
     super()
 
     this.state = {
-      active: ''
+      active: false
     }
 
     this.flytoSelectedSide = this.flytoSelectedSide.bind(this)
@@ -21,11 +21,12 @@ class SideBarItem extends React.Component {
     })
   }
 
+
+
   render() {
     const { space } = this.props
     return(
       <div
-        className={`${this.state.active ? 'active' : ''}`}
         onClick={() => {
           this.flytoSelectedSide(space)
         }}

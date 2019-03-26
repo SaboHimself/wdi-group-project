@@ -20,9 +20,10 @@ class Map extends React.Component {
       data: { geocoder: '' },
       spaces: [],
       markers: [],
+      active: false
     }
 
-
+    this.toggleSelected = this.toggleSelected.bind(this)
   }
 
   componentDidMount() {
@@ -84,6 +85,11 @@ class Map extends React.Component {
       .then(res => this.setState({spaces: res}))
   }
 
+  toggleSelected(e) {
+    console.log(e.target)
+    this.setState({ active: !this.state.active })
+  }
+
   render() {
     const { spaces } = this.state
     return(
@@ -96,11 +102,12 @@ class Map extends React.Component {
             <h1>Our locations</h1>
             {spaces && spaces.map((space, id) => (
               <SideBarItem
-                className="listings"
+                className={`listings ${this.state.active ? 'active' : ''}`}
                 key={id}
                 space={space}
                 lnglat={this.state.lnglat}
                 map={this.map}
+                onClick={this.toggleSelected}
               />
             ))}
           </div>
