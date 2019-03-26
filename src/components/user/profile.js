@@ -2,11 +2,12 @@ import React from 'react'
 import axios from 'axios'
 
 import Auth from '../auth/userAuthentication'
+import { Link } from 'react-router-dom'
 
 class Profile extends React.Component{
   constructor() {
+    console.log('up and runnning')
     super()
-
     this.state = {}
   }
 
@@ -15,16 +16,43 @@ class Profile extends React.Component{
       .then(res => this.setState({ user: res.data }))
   }
 
-  render() {
+  // logout() {
+  //   Auth.logout()
+  //   this.props.history.push('/')
+  // }
+
+  render(){
     if(!this.state.user) return null
-    console.log(Auth.getPayload())
-    console.log(this.state.user)
+    const { user } = this.state
     return(
-      <div>
-        <h1>hello</h1>
+
+      <div id="main">
+        <div>
+          <p>{user.username}</p>
+          <div>{user.email}</div>
+          <hr />
+        </div>
+        <h1>Spaces Available</h1>
+
+        {user.userSpaces.map((user, id) => (
+          <div key={id}>
+            <div>{user.location}</div>
+            <div>{user.type}</div>
+            <div>{user.suitability}</div>
+            <div>{user.description}</div>
+            <div>{user.price}</div>
+            {user.images.map((image, id) => (
+              <img key={id} src={image} />
+            ))}
+          </div>
+
+        ))}
+
       </div>
+
     )
   }
+
 }
 
 export default Profile

@@ -1,0 +1,43 @@
+// <div>{this.state.address}</div>
+
+
+//
+// <h1>hello mate</h1>
+// <div><p>{user.availability.toString()}</p></div>
+// <div>£{space.price}</div>
+// <div>{space.description}</div>
+//
+// <div>{space.owner.username}</div>
+// <div>{space.comments[0].text}</div>
+
+
+// {user.userSpaces.map((space, id) => (
+//   <div key={id}>
+//     <div>{user.location}</div>
+//     <div>{user.description}</div>
+//   </div>
+//
+
+<div>
+{user.images.map((image, id) => (
+  <img key={id} src={image} />
+))}
+
+
+// isOwner() {
+//   return Auth.isAuthenticated() && this.state.user._id === Auth.getPayload().sub
+// }
+
+
+  // logout() {
+  //   console.log('up and running')
+  //   Auth.logout()
+  //   this.props.history.push('/')
+  // }
+
+
+
+
+
+  // <button className="log-out" onClick={this.logout} />
+  // {<Link className="button is-warning" to={`/users/${user._id}`}>Show</Link>}
