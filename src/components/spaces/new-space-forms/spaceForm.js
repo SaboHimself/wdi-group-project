@@ -117,7 +117,6 @@ class SpaceForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
     const { data } = this.state
     return(
       <React.Fragment>
