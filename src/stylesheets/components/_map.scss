@@ -31,4 +31,13 @@
   border-bottom: 1px solid #eee;
   padding: 10px;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.active {
+  background: blue;
+}
+
+.noClick {
+  // pointer-events: none;
 }
