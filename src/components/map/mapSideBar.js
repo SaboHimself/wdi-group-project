@@ -11,6 +11,11 @@ class SideBarItem extends React.Component {
     }
 
     this.flytoSelectedSide = this.flytoSelectedSide.bind(this)
+    this.toggleSelected = this.toggleSelected.bind(this)
+  }
+
+  toggleSelected() {
+    this.setState({active: !this.state.active})
   }
 
   flytoSelectedSide({ _id }){
@@ -21,14 +26,14 @@ class SideBarItem extends React.Component {
     })
   }
 
-
-
   render() {
     const { space } = this.props
     return(
       <div
+        className={`listing ${this.state.active ? 'active' : ''}`}
         onClick={() => {
           this.flytoSelectedSide(space)
+          this.toggleSelected()
         }}
       >
         <div>{space.geometry}</div>
