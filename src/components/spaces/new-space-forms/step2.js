@@ -32,7 +32,6 @@ class Step2 extends React.Component{
           onChange={this.props.handleChange}
           value={this.props.description}
         />
-        <button>Submit</button>
       </div>
     )
   }

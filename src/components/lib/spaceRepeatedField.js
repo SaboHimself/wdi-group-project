@@ -11,7 +11,6 @@ class SpaceRepeatedField extends React.Component{
 
   componentDidMount() {
     axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${this.props.space.geometry.coordinates[0]},${this.props.space.geometry.coordinates[1]}.json?access_token=pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g`)
-      // .then(res => console.log(res))
       .then(res => this.setState({
         address: res.data.features[0].place_name
       }))
@@ -29,12 +28,12 @@ class SpaceRepeatedField extends React.Component{
         ))}
         <hr />
         <div>{space.type}</div>
-        <div>{space.availability.toString()}</div>
+        <div>{!space.availability || space.availability.toString()}</div>
         <div>£{space.price}</div>
         <div>{space.description}</div>
         <div>{space.electricChargingPoint.toString()}</div>
         <div>{space.owner.username}</div>
-        <div>{space.comments[0].text}</div>
+        <div>{!space.comments[0] || space.comments[0].text}</div>
       </div>
     )
   }

@@ -1,11 +1,15 @@
 import React from 'react'
 import axios from 'axios'
+import * as filestack from 'filestack-js'
 
 import Auth from '../../auth/userAuthentication'
 import Map2 from './spacemap'
 
 import Step1 from './step1'
 import Step2 from './step2'
+import Step3 from './step3'
+
+const client = filestack.init('ArdDAxpRxTtSDt3PVqOXrz')
 
 class SpaceForm extends React.Component {
   constructor(props) {
@@ -22,8 +26,10 @@ class SpaceForm extends React.Component {
         suitability: '',
         description: '',
         electricChargingPoint: false,
-        price: ''
-      }
+        price: '',
+        images: ''
+      },
+      image: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -34,6 +40,12 @@ class SpaceForm extends React.Component {
     this.handleNext = this.handleNext.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
     this.handleGeometryChange = this.handleGeometryChange.bind(this)
+    this.handlePhotoModal = this.handlePhotoModal.bind(this)
+  }
+
+  returnURL(url){
+    console.log('here')
+    console.log(url)
   }
 
   handleChange({ target: {name, value}}) {
@@ -56,9 +68,23 @@ class SpaceForm extends React.Component {
     this.setState({ data })
   }
 
+  handlePhotoModal(e) {
+    e.preventDefault()
+
+    const options = {
+      fromSources: ['local_file_system','instagram','facebook'],
+      accept: ['image/*'],
+      onFileUploadFinished: file => {
+        this.setState({ image: file.url })
+      }
+    }
+    client.picker(options).open()
+  }
+
   handleSubmit(e) {
     e.preventDefault()
-    axios.post('/api/spaces', this.state.data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
+    const data = {...this.state.data, images: [this.state.image] }
+    axios.post('/api/spaces', data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
       .then(res => console.log(res))
   }
 
@@ -98,7 +124,7 @@ class SpaceForm extends React.Component {
   get nextButton(){
     const currentStep = this.state.data.currentStep
 
-    if(currentStep < 2){
+    if(currentStep < 3){
       return (
         <button
           type="button"
@@ -116,8 +142,6 @@ class SpaceForm extends React.Component {
   }
 
   render() {
-    const { data } = this.state
-    console.log(data)
     return(
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
@@ -141,9 +165,13 @@ class SpaceForm extends React.Component {
             handleChange={this.handleChange}
             price={this.state.data.price}
           />
+          <Step3
+            currentStep={this.state.data.currentStep}
+          />
           {this.previousButton}
           {this.nextButton}
         </form>
+        <button onClick={this.handlePhotoModal}>upload photo</button>
       </React.Fragment>
     )
   }

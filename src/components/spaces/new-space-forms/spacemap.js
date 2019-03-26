@@ -27,7 +27,6 @@ class Map2 extends React.Component {
   }
 
   handleClick(e){
-    console.log(e.lngLat)
     this.map.flyTo({
       center: [e.lngLat.lng, e.lngLat.lat],
       zoom: 16
