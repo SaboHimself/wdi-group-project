@@ -1,0 +1,21 @@
+// Colors
+
+$red: red;
+$blue: blue;
+$green: green;
+
+$primary-color: $red;
+$primary-color-light: lighten($primary-color, 15%);
+$primary-color-dark: darken($primary-color, 15%);
+
+$secondary-color: $blue;
+$secondary-color-light: lighten($secondary-color, 15%);
+$secondary-color-light: darken($secondary-color, 15%);
+
+// Fonts
+$serif: serif;
+$sans-serif: sans-serif;
+$monospace: monospace;
+
+$primary-font: $sans-serif;
+$secondary-font: $serif;
