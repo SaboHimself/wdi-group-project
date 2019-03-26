@@ -31,7 +31,7 @@ class App extends React.Component {
           <Switch>
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
-            <Route path='/account' component={Profile} />
+            <Route path='/users/:id' component={Profile} />
             <Route path='/bookings/:id' component={ConfirmSpace} />
             <Route path='/bookings' component={BookingSpace} />
             <Route path='/spaces/new' component={SpaceForm} />
