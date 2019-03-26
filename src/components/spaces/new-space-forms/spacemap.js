@@ -19,10 +19,25 @@ class Map2 extends React.Component {
         lng: -0.127758
       }
     }
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
     this.map()
+  }
+
+  handleClick( e ){
+    console.log(e.lngLat)
+    this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
+    const {lng, lat} = e.lngLat
+    this.setMarkers({lng, lat})
+  }
+
+  setMarkers({lng, lat}){
+    this.marker = new mapboxgl.Marker()
+      .setLngLat({ lng, lat})
+      .addTo(this.map)
+    return this.marker
   }
 
   map(){
@@ -35,6 +50,7 @@ class Map2 extends React.Component {
     })
       .addControl(geocoder)
 
+    this.map.on('click', this.handleClick)
     geocoder.on('result', e => {
       this.setState({...this.state, coordinates: e.result.geometry.coordinates}, () => {
         this.props.geometryChange(this.state.coordinates)

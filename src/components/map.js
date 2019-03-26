@@ -110,8 +110,6 @@ class Map extends React.Component {
 
   render() {
     const { spaces } = this.state
-    // console.log(this.state.lnglat)
-    // console.log(spaces)
     return(
       <div id="main">
         <div
