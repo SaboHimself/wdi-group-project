@@ -24,6 +24,21 @@ class Step2 extends React.Component{
           value={this.props.price}
         />
         <label>
+          Electric Charging Point
+        </label>
+        <div>
+          <input
+            type="radio"
+            name="electricChargingPoint"
+            value={true}
+          />
+          <input
+            type="radio"
+            name="electricChargingPoint"
+            value={false}
+          />
+        </div>
+        <label>
           Description
         </label>
         <textarea
