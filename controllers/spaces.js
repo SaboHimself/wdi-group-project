@@ -43,10 +43,12 @@ function editSpace(req, res, next){
       if(!space || !space.owner || !space.owner._id.equals(req.currentUser._id)){
         return res.json({ message: 'Unauthorized' })
       }
-      return space.update(req.body)
+      Object.assign(space, req.body)
+      return space.save()
     })
     .then(() => res.sendStatus(202))
     .catch(next)
+
 }
 
 function deleteSpace(req, res, next){

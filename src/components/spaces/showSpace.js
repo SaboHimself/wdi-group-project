@@ -36,7 +36,9 @@ class ShowSpace extends React.Component{
         <SpaceRepeatedField
           space={space}
         />
-        <Link className="button is-warning" to={`/spaces/${space._id}/edit1`}>Edit</Link>
+        <Link
+        className="button is-warning"
+        to={`/spaces/${space._id}/edit1`}>Edit</Link>
         <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
       </main>
     )

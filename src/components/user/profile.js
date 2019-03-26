@@ -17,9 +17,6 @@ class Profile extends React.Component{
 
   }
 
-
-
-
   render(){
     if(!this.state.user) return null
     const { user } = this.state
