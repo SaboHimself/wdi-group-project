@@ -26,11 +26,11 @@ class Map2 extends React.Component {
     this.map()
   }
 
-  handleClick( e ){
+  handleClick(e){
     console.log(e.lngLat)
     this.map.flyTo({
       center: [e.lngLat.lng, e.lngLat.lat],
-      zoom: 15
+      zoom: 16
     })
     const {lng, lat} = e.lngLat
     this.setMarkers({lng, lat})
