@@ -1,7 +1,5 @@
 import React from 'react'
 
-// GET LOCATION DATA
-
 class Step3 extends React.Component{
   constructor() {
     super()
@@ -16,13 +14,9 @@ class Step3 extends React.Component{
 
     return(
       <div>
-        <input
-          name="price"
-          placeholder="Price"
-          type="number"
-          onChange={this.props.handleChange}
-          value={this.props.price}
-        />
+        <button
+          type="button"
+          onClick={this.props.handlePhotoModal}>upload photo</button>
         <button>Submit</button>
       </div>
     )

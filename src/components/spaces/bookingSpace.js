@@ -12,15 +12,23 @@ class BookingSpace extends React.Component{
     super()
 
     this.state = {
-      startDate: new Date(Date.parse(HomePageDate.getStartDate())) || new Date(),
-      endDate: new Date(Date.parse(HomePageDate.getEndDate())) || new Date()
+      startDate: new Date(),
+      endDate: new Date()
     }
+
+    // this.dates = {
+    //   start: moment(this.state.startDate),
+    //   end: moment(this.state.endDate)
+    // }
 
     this.handleChangeStart = this.handleChangeStart.bind(this)
     this.handleChangeEnd = this.handleChangeEnd.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
+
+  // new Date(Date.parse(HomePageDate.getStartDate()))
+  // new Date(Date.parse(HomePageDate.getEndDate()))
 
   handleChangeStart(date) {
     this.setState({
@@ -34,8 +42,7 @@ class BookingSpace extends React.Component{
   }
 
   componentDidMount(){
-    axios.get(`/api/spaces/${this.props.location.state}`)
-      .then(res => this.setState({ space: res.data }))
+    this.getSpaces()
   }
 
   handleClick(e) {
@@ -46,13 +53,23 @@ class BookingSpace extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault()
+    this.postBooking()
+  }
+
+  postBooking(){
     axios.post('/api/bookings',
       this.state,
       { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
+      .then(res => console.log(res))
       .catch(err => this.setState({ errors: err.response.data.errors}))
+  }
+  getSpaces(){
+    axios.get(`/api/spaces/${this.props.location.state}`)
+      .then(res => this.setState({ space: res.data }))
   }
 
   render() {
+    console.log(this.state.space)
     if(!this.state.space) return null
     return(
       <main>
@@ -65,6 +82,7 @@ class BookingSpace extends React.Component{
             handleChangeStart={this.handleChangeStart}
             startDate={this.state.startDate}
             endDate={this.state.endDate}
+            dates={this.state.space.bookingsDates}
           />
           <BookingModal />
           <button onClick={this.handleClick}>Confirm</button>

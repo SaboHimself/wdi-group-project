@@ -22,29 +22,25 @@ class Map extends React.Component {
       markers: []
     }
 
-    this.handleChange = this.handleChange.bind(this)
     this.flytoSelectedSide = this.flytoSelectedSide.bind(this)
-  }
-
-  handleChange({ target }) {
-    const data = {...this.state.data, geocoder: target.value }
-    this.setState({ data })
   }
 
   componentDidMount() {
     this.map()
-    this.getValue()
     this.getDataToPopulate()
     this.setCenterMarkers()
   }
 
   componentDidUpdate(){
     this.setMarkers()
-    if(this.state.data.geocoder === '' || this.state.data.geocoder.length < 10) return null
-    this.getLocation()
   }
 
   map(){
+    const geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      countries: 'gb',
+      bbox: [-0.3593290040392958,51.34340087048329,0.13880151602074875,51.66165693410957]
+    })
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -52,15 +48,16 @@ class Map extends React.Component {
       zoom: 15,
       maxBounds: bounds
     })
-      .addControl(new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
-      }))
+      .addControl(geocoder)
+    geocoder.on('result', e => {
+      console.log(e)
+      this.setState({ center: e.center })
+    })
   }
 
   setMarkers(){
     if(!this.state.lnglat) return null
     this.state.lnglat.map(coordinates => {
-      // console.log(coordinates.geometry)
       return new mapboxgl.Marker()
         .setLngLat({ lng: coordinates.geometry.coordinates[0], lat: coordinates.geometry.coordinates[1]})
         .addTo(this.map)
@@ -75,17 +72,6 @@ class Map extends React.Component {
       .addTo(this.map)
   }
 
-  getLocation(){
-    axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${this.state.data.geocoder}.json?access_token=${mapboxgl.accessToken}`)
-      .then(res => this.setState({center: res.data.features[0].center}))
-  }
-
-  getValue(){
-    const searchBox = document.querySelector('#root > div > div > div > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-right > div > input[type="text"]')
-    searchBox.value = this.state.data.geocoder
-    searchBox.addEventListener('change', this.handleChange)
-  }
-
   getDataToPopulate(){
     axios.get('/api/spaces')
       .then(res => this.setState({lnglat: res.data}))
@@ -97,11 +83,6 @@ class Map extends React.Component {
       .then(res => Promise.all(res))
       .then(res => this.setState({spaces: res}))
   }
-
-  // getNearDataToPopulate(){
-  //   axios.get(`/api/nearspaces?lng=${this.state.center.lng}&lat=${this.state.center.lat}`)
-  //     .then(res => console.log(res))
-  // }
 
   flytoSelectedSide({ _id }){
     const lnglat = this.state.lnglat.find(space => space._id === _id).geometry.coordinates

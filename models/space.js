@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 // const validate = require('mongoose-validator')
 
 const commentSchema = new mongoose.Schema({
@@ -36,6 +37,35 @@ const spacesSchema = new mongoose.Schema({
   electricChargingPoint: { type: Boolean },
   owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
   comments: [ commentSchema ]
+})
+
+spacesSchema.virtual('bookings', {
+  ref: 'Booking',
+  localField: '_id',
+  foreignField: 'space'
+})
+
+spacesSchema.virtual('bookingsDates')
+  .get(function() {
+    const dates = []
+    if(!this.bookings) return null
+    this.bookings.forEach(function(booking){
+      const start = booking.startDate
+      const end = booking.endDate
+      function getDateArray(start, end) {
+        var dt = new Date(start)
+        while (dt <= end) {
+          dates.push(new Date(dt))
+          dt.setDate(dt.getDate() + 1)
+        }
+      }
+      getDateArray(start, end)
+    })
+    return dates
+  })
+
+spacesSchema.set('toJSON', {
+  virtuals: true
 })
 
 module.exports = mongoose.model('Space', spacesSchema)
