@@ -19,10 +19,27 @@ class Map2 extends React.Component {
         lng: -0.127758
       }
     }
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
     this.map()
+  }
+
+  handleClick(e){
+    this.map.flyTo({
+      center: [e.lngLat.lng, e.lngLat.lat],
+      zoom: 16
+    })
+    const {lng, lat} = e.lngLat
+    this.setMarkers({lng, lat})
+  }
+
+  setMarkers({lng, lat}){
+    this.marker = new mapboxgl.Marker()
+      .setLngLat({ lng, lat})
+      .addTo(this.map)
+    return this.marker
   }
 
   map(){
@@ -30,11 +47,12 @@ class Map2 extends React.Component {
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: this.state.center,
-      zoom: 15,
+      zoom: 10,
       maxBounds: bounds
     })
       .addControl(geocoder)
 
+    this.map.on('click', this.handleClick)
     geocoder.on('result', e => {
       this.setState({...this.state, coordinates: e.result.geometry.coordinates}, () => {
         this.props.geometryChange(this.state.coordinates)

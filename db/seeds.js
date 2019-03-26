@@ -1515,7 +1515,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           comments: { text: []},
           price: 7.20,
           electricChargingPoint: false,
-          owner: user[18]
+          owner: user[2]
         },
         {
           geometry: {

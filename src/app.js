@@ -13,7 +13,9 @@ import ShowSpace from './components/spaces/showSpace'
 import BookingSpace from './components/spaces/bookingSpace'
 import ConfirmSpace from './components/spaces/confirmSpace'
 import IndexSpace from './components/spaces/indexSpace'
+import EditSpace from './components/spaces/editSpace'
 import SpaceForm from './components/spaces/new-space-forms/spaceForm'
+import AdjustmentForm from './components/spaces/new-space-forms/adjustmentForm'
 //this and bulma will be removed later on - only for testing
 
 import './stylesheets/main.scss' //main stylesheet import
@@ -31,12 +33,14 @@ class App extends React.Component {
           <Switch>
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
-            <Route path='/account' component={Profile} />
+            <Route path='/users/:id' component={Profile} />
             <Route path='/bookings/:id' component={ConfirmSpace} />
+            <Route exact path="/spaces/:id/edit" component={EditSpace} />
             <Route path='/bookings' component={BookingSpace} />
-            <Route path='/spaces/new' component={SpaceForm} />
-            <Route path='/spaces/:id' component={ShowSpace} />
-            <Route path='/spaces' component={IndexSpace} />
+            <Route exact path='/spaces/new' component={SpaceForm} />
+            <Route exact path='/spaces/:id/edit1' component={AdjustmentForm} />
+            <Route exact path='/spaces/:id' component={ShowSpace} />
+            <Route exact path='/spaces' component={IndexSpace} />
             <Route path='/map' component={Map} />
             <Route exact path='/' component={Home} />
           </Switch>

@@ -30,12 +30,13 @@ class ShowSpace extends React.Component{
   render() {
     if(!this.state.space) return null
     const { space } = this.state
+    console.log(this.state)
     return(
       <main>
         <SpaceRepeatedField
           space={space}
         />
-        <Link className="button is-warning" to={`/spaces/${space._id}/edit`}>Edit</Link>
+        <Link className="button is-warning" to={`/spaces/${space._id}/edit1`}>Edit</Link>
         <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
       </main>
     )

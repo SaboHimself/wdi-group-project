@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import * as filestack from 'filestack-js'
 
 import Auth from '../../auth/userAuthentication'
 import Map2 from './spacemap'
@@ -7,6 +8,8 @@ import Map2 from './spacemap'
 import Step1 from './step1'
 import Step2 from './step2'
 import Step3 from './step3'
+
+const client = filestack.init('A4TDqBlHpRmZTAuIpcMYJz')
 
 class SpaceForm extends React.Component {
   constructor(props) {
@@ -23,18 +26,26 @@ class SpaceForm extends React.Component {
         suitability: '',
         description: '',
         electricChargingPoint: false,
-        price: ''
-      }
+        price: '',
+        images: ''
+      },
+      image: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleTypeSelect = this.handleTypeSelect.bind(this)
     this.handleSuitabilitySelect = this.handleSuitabilitySelect.bind(this)
-    this.handleChargeSelect = this.handleChargeSelect.bind(this)
+    this.handleChargeRadio = this.handleChargeRadio.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
     this.handleGeometryChange = this.handleGeometryChange.bind(this)
+    this.handlePhotoModal = this.handlePhotoModal.bind(this)
+  }
+
+  returnURL(url){
+    console.log('here')
+    console.log(url)
   }
 
   handleChange({ target: {name, value}}) {
@@ -52,14 +63,26 @@ class SpaceForm extends React.Component {
     this.setState({ data })
   }
 
-  handleChargeSelect({ value }) {
-    const data = { ...this.state.data, electricChargingPoint: value }
+  handleChargeRadio(e) {
+    const data = { ...this.state.data, electricChargingPoint: e.target.value }
     this.setState({ data })
+  }
+
+  handlePhotoModal() {
+    const options = {
+      fromSources: ['local_file_system','instagram','facebook'],
+      accept: ['image/*'],
+      onFileUploadFinished: file => {
+        this.setState({ image: file.url })
+      }
+    }
+    client.picker(options).open()
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    axios.post('/api/spaces', this.state.data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
+    const data = {...this.state.data, images: [this.state.image] }
+    axios.post('/api/spaces', data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
       .then(res => console.log(res))
   }
 
@@ -117,8 +140,6 @@ class SpaceForm extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
-    const { data } = this.state
     return(
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
@@ -127,24 +148,24 @@ class SpaceForm extends React.Component {
             geometryChange={this.handleGeometryChange}
           />
           <Step1
-            data={data}
-            handleChange={this.handleChange}
-          />
-          <Step2
             currentStep={this.state.data.currentStep}
             handleChange={this.handleChange}
             handleTypeSelect={this.handleTypeSelect}
             handleSuitabilitySelect={this.handleSuitabilitySelect}
-            handleChargeSelect={this.handleChargeSelect}
+            handleChargeRadio={this.handleChargeRadio}
             type={this.state.data.type}
             suitability={this.state.data.suitability}
             description={this.state.data.description}
             electricChargingPoint={this.state.data.electricChargingPoint}
           />
-          <Step3
+          <Step2
             currentStep={this.state.data.currentStep}
             handleChange={this.handleChange}
             price={this.state.data.price}
+          />
+          <Step3
+            currentStep={this.state.data.currentStep}
+            handlePhotoModal={this.handlePhotoModal}
           />
           {this.previousButton}
           {this.nextButton}
