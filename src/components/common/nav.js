@@ -27,7 +27,7 @@ class Nav extends React.Component {
         <Link to='/spaces'>Spaces</Link>
         <Link to='/register'>Register</Link>
         <Link to='/login'>login</Link>
-        <Link to='/account'>Account</Link>
+        <Link to='/users/:id'>Account</Link>
         <Link to='/spaces/new'>Create Space</Link>
         <a onClick={this.logout}>Logout</a>
       </nav>
