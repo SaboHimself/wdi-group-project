@@ -1,16 +1,17 @@
 // Colors
 
-$red: red;
-$blue: blue;
-$green: green;
-
-$primary-color: $red;
+$primary-color: red;
 $primary-color-light: lighten($primary-color, 15%);
 $primary-color-dark: darken($primary-color, 15%);
 
-$secondary-color: $blue;
+$secondary-color: blue;
 $secondary-color-light: lighten($secondary-color, 15%);
 $secondary-color-light: darken($secondary-color, 15%);
+
+$border-color: grey;
+
+$border-color-light: lighten($border-color, 15%);
+$border-color-dark: darken($border-color, 15%);
 
 // Fonts
 $serif: serif;
@@ -19,3 +20,6 @@ $monospace: monospace;
 
 $primary-font: $sans-serif;
 $secondary-font: $serif;
+
+$font-size-primary: 16px
+$font-size-header: 30px;
