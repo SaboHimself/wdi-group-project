@@ -1,18 +1,6 @@
 import React from 'react'
-import Select from 'react-select'
 
-const typeOptions = [
-  { value: 'On Road', label: 'On Road' },
-  { value: 'Off Road', label: 'Off Road' },
-  { value: 'Drive', label: 'Drive' },
-  { value: 'Garage', label: 'Garage' }
-]
-
-const suitabilityOptions = [
-  { value: 'Car', label: 'Car' },
-  { value: 'Van', label: 'Van' },
-  { value: 'Bike', label: 'Bike' }
-]
+// GET LOCATION DATA
 
 class Step2 extends React.Component{
   constructor() {
@@ -25,41 +13,16 @@ class Step2 extends React.Component{
     if(this.props.currentStep !== 2) {
       return null
     }
+
     return(
       <div>
-        <label>
-          Type
-        </label>
-        <Select
-          name="type"
-          options={typeOptions}
-          onChange={this.props.handleTypeSelect}
-          value={!this.props.type || {value: this.props.type, label: this.props.type}}
+        <input
+          name="price"
+          placeholder="Price"
+          type="number"
+          onChange={this.props.handleChange}
+          value={this.props.price}
         />
-        <label>
-          Suitability
-        </label>
-        <Select
-          name="suitability"
-          options={suitabilityOptions}
-          onChange={this.props.handleSuitabilitySelect}
-          value={!this.props.suitability || {value: this.props.suitability, label: this.props.suitability}}
-        />
-        <label>
-          Electric Charging Point
-        </label>
-        <div>
-          <input
-            type="radio"
-            name="electricChargingPoint"
-            value="true"
-          />
-          <input
-            type="radio"
-            name="electricChargingPoint"
-            value="false"
-          />
-        </div>
         <label>
           Description
         </label>
@@ -69,6 +32,7 @@ class Step2 extends React.Component{
           onChange={this.props.handleChange}
           value={this.props.description}
         />
+        <button>Submit</button>
       </div>
     )
   }

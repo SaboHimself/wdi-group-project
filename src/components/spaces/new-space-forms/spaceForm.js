@@ -6,7 +6,6 @@ import Map2 from './spacemap'
 
 import Step1 from './step1'
 import Step2 from './step2'
-import Step3 from './step3'
 
 class SpaceForm extends React.Component {
   constructor(props) {
@@ -30,7 +29,7 @@ class SpaceForm extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleTypeSelect = this.handleTypeSelect.bind(this)
     this.handleSuitabilitySelect = this.handleSuitabilitySelect.bind(this)
-    this.handleChargeSelect = this.handleChargeSelect.bind(this)
+    this.handleChargeRadio = this.handleChargeRadio.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleNext = this.handleNext.bind(this)
     this.handlePrev = this.handlePrev.bind(this)
@@ -52,8 +51,8 @@ class SpaceForm extends React.Component {
     this.setState({ data })
   }
 
-  handleChargeSelect({ value }) {
-    const data = { ...this.state.data, electricChargingPoint: value }
+  handleChargeRadio(e) {
+    const data = { ...this.state.data, electricChargingPoint: e.target.value }
     this.setState({ data })
   }
 
@@ -99,7 +98,7 @@ class SpaceForm extends React.Component {
   get nextButton(){
     const currentStep = this.state.data.currentStep
 
-    if(currentStep < 3){
+    if(currentStep < 2){
       return (
         <button
           type="button"
@@ -118,6 +117,7 @@ class SpaceForm extends React.Component {
 
   render() {
     const { data } = this.state
+    console.log(data)
     return(
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
@@ -126,21 +126,17 @@ class SpaceForm extends React.Component {
             geometryChange={this.handleGeometryChange}
           />
           <Step1
-            data={data}
-            handleChange={this.handleChange}
-          />
-          <Step2
             currentStep={this.state.data.currentStep}
             handleChange={this.handleChange}
             handleTypeSelect={this.handleTypeSelect}
             handleSuitabilitySelect={this.handleSuitabilitySelect}
-            handleChargeSelect={this.handleChargeSelect}
+            handleChargeRadio={this.handleChargeRadio}
             type={this.state.data.type}
             suitability={this.state.data.suitability}
             description={this.state.data.description}
             electricChargingPoint={this.state.data.electricChargingPoint}
           />
-          <Step3
+          <Step2
             currentStep={this.state.data.currentStep}
             handleChange={this.handleChange}
             price={this.state.data.price}

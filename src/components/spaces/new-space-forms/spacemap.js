@@ -28,7 +28,10 @@ class Map2 extends React.Component {
 
   handleClick( e ){
     console.log(e.lngLat)
-    this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
+    this.map.flyTo({
+      center: [e.lngLat.lng, e.lngLat.lat],
+      zoom: 15
+    })
     const {lng, lat} = e.lngLat
     this.setMarkers({lng, lat})
   }
@@ -45,7 +48,7 @@ class Map2 extends React.Component {
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: this.state.center,
-      zoom: 15,
+      zoom: 10,
       maxBounds: bounds
     })
       .addControl(geocoder)

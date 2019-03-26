@@ -1,37 +1,70 @@
 import React from 'react'
-import mapboxgl from 'mapbox-gl'
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g'
+import Select from 'react-select'
 
-const geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken
-})
+const typeOptions = [
+  { value: 'On Road', label: 'On Road' },
+  { value: 'Off Road', label: 'Off Road' },
+  { value: 'Drive', label: 'Drive' },
+  { value: 'Garage', label: 'Garage' }
+]
 
-const bounds = [[-0.483702, 51.334679], [0.190262, 51.655070]] // Restricts map bounds to London
+const suitabilityOptions = [
+  { value: 'Car', label: 'Car' },
+  { value: 'Van', label: 'Van' },
+  { value: 'Bike', label: 'Bike' }
+]
 
-// GET LOCATION DATA
-
-class Step1 extends React.Component {
+class Step2 extends React.Component{
   constructor() {
     super()
 
-    this.state = {
-      center: {
-        lat: 51.507351,
-        lng: -0.127758
-      }
-    }
+    this.state = {}
   }
 
   render() {
-    if(this.props.data.currentStep !== 1) {
+    if(this.props.currentStep !== 1) {
       return null
     }
     return(
       <div>
+        <label>
+          Type
+        </label>
+        <Select
+          name="type"
+          options={typeOptions}
+          onChange={this.props.handleTypeSelect}
+          value={!this.props.type || {value: this.props.type, label: this.props.type}}
+        />
+        <label>
+          Suitability
+        </label>
+        <Select
+          name="suitability"
+          options={suitabilityOptions}
+          onChange={this.props.handleSuitabilitySelect}
+          value={!this.props.suitability || {value: this.props.suitability, label: this.props.suitability}}
+        />
+        <label>
+          Electric Charging Point
+        </label>
+        <div>
+          <input
+            type="radio"
+            name="electricChargingPoint"
+            value={true}
+            onChange={this.props.handleChargeRadio}
+          />
+          <input
+            type="radio"
+            name="electricChargingPoint"
+            value={false}
+            onChange={this.props.handleChargeRadio}
+          />
+        </div>
       </div>
     )
   }
 }
 
-export default Step1
+export default Step2
