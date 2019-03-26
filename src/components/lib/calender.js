@@ -7,9 +7,14 @@ import setHours from 'date-fns/setHours'
 import 'react-datepicker/dist/react-datepicker.css'
 
 class Calender extends React.Component{
+  constructor(){
+    super()
+
+    this.state = {}
+  }
 
   render() {
-    const { handleChangeEnd, handleChangeStart, startDate, endDate} = this.props
+    const { handleChangeEnd, handleChangeStart, startDate, endDate, dates} = this.props
     return(
       <main>
         <DatePicker
@@ -19,6 +24,8 @@ class Calender extends React.Component{
           startDate={startDate}
           endDate={endDate}
           onChange={handleChangeStart}
+          excludeDates={dates}
+          isClearable={true}
           showTimeSelect
           timeFormat="HH:mm"
           injectTimes={[
@@ -35,6 +42,8 @@ class Calender extends React.Component{
           startDate={startDate}
           endDate={endDate}
           onChange={handleChangeEnd}
+          excludeDates={dates}
+          isClearable={true}
           showTimeSelect
           timeFormat="HH:mm"
           injectTimes={[
@@ -48,7 +57,5 @@ class Calender extends React.Component{
     )
   }
 }
-
-
 
 export default Calender
