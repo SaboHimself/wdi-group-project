@@ -14,6 +14,9 @@ class Step3 extends React.Component{
 
     return(
       <div>
+        <button
+          type="button"
+          onClick={this.props.handlePhotoModal}>upload photo</button>
         <button>Submit</button>
       </div>
     )

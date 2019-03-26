@@ -69,7 +69,7 @@ class SpaceForm extends React.Component {
   }
 
   handlePhotoModal(e) {
-    e.preventDefault()
+    // e.preventDefault()
 
     const options = {
       fromSources: ['local_file_system','instagram','facebook'],
@@ -167,11 +167,11 @@ class SpaceForm extends React.Component {
           />
           <Step3
             currentStep={this.state.data.currentStep}
+            handlePhotoModal={this.handlePhotoModal}
           />
           {this.previousButton}
           {this.nextButton}
         </form>
-        <button onClick={this.handlePhotoModal}>upload photo</button>
       </React.Fragment>
     )
   }
