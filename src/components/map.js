@@ -51,7 +51,7 @@ class Map extends React.Component {
   handleClickSidebar(e){
 
     {this.state.findSidebarDiv.listDiv && this.state.findSidebarDiv.listDiv.classList.remove('active')}
-    this.hack(e)
+
     e.target.classList.add('active')
     this.removeClass()
   }
