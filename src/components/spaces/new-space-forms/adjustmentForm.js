@@ -26,53 +26,11 @@ class AdjustmentForm extends React.Component{
   constructor() {
     super()
 
-    this.state = {
-      type: '',
-      suitability: '',
-      description: '',
-      electricChargingPoint: false,
-      price: ''
-    }
-
-    // this.handleChange = this.handleChange.bind(this)
-    this.handleTypeSelect = this.handleTypeSelect.bind(this)
-    this.handleSuitabilitySelect = this.handleSuitabilitySelect.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {}
   }
-
-  // componentDidMount() {
-  //   console.log(this.props)
-  //   axios.get(`/api/spaces/${this.props.match.params.id}`)
-  //     .then(res => this.setState({ data: res.data }))
-  //     .catch(err => console.log(err.message))
-  // }
-
-  // handleChange({ target: {name, value}}) {
-  //   const data = {...this.state.data, [name]: value}
-  //   this.setState({ data })
-  // }
-
-  handleTypeSelect({ value }) {
-    const data = { ...this.state.data, type: value }
-    this.setState({ data })
-  }
-
-  handleSuitabilitySelect({ value }) {
-    const data = { ...this.state.data, suitability: value }
-    this.setState({ data })
-  }
-
-  // handleSubmit(e) {
-  //   e.preventDefault()
-  //   console.log('data is', this.state.data)
-  //   axios.put(`/api/spaces/${this.props.match.params.id}`, this.state.data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-  //     .then(() => this.props.history.push('/spaces'))
-  //     .catch(err => console.log(err.response.data.errors))
-  // }
 
   render(){
-    // console.log(this.state.data)
-    const { data, handleSubmit, handleChange } = this.props
+    const { data, handleSubmit, handleChange, handleTypeSelect, handleSuitabilitySelect } = this.props
     console.log(data)
     return(
       <div>
@@ -83,7 +41,7 @@ class AdjustmentForm extends React.Component{
           <Select
             name="type"
             options={typeOptions}
-            onChange={this.handleTypeSelect}
+            onChange={handleTypeSelect}
             value={{value: data.type, label: data.type}}
           />
           <label>
@@ -92,7 +50,7 @@ class AdjustmentForm extends React.Component{
           <Select
             name="suitability"
             options={suitabilityOptions}
-            onChange={this.handleSuitabilitySelect}
+            onChange={handleSuitabilitySelect}
             value={!data || {value: data.suitability, label: data.suitability}}
           />
           <label>

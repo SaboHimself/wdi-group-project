@@ -55,6 +55,7 @@ class Map extends React.Component {
 
     if(e.target.classList.contains('button')) return null
     else {
+      // this.listDivs = this.listDivs.bind(this)
       e.target.classList.add('active')
       this.removeClass()
     }
