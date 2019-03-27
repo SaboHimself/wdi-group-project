@@ -110,6 +110,7 @@ class SpaceForm extends React.Component {
     if(currentStep !== 1){
       return (
         <button
+          className="button"
           type="button"
           onClick={this.handlePrev}>
           Previous
@@ -125,6 +126,7 @@ class SpaceForm extends React.Component {
     if(currentStep < 3){
       return (
         <button
+          className="button"
           type="button"
           onClick={this.handleNext}>
           Next
@@ -136,7 +138,7 @@ class SpaceForm extends React.Component {
 
   handleGeometryChange(value) {
     const data = {...this.state.data.geometry, coordinates: value}
-    this.setState(state => ({...state, data: {...state.data, geometry: data} }), () => console.log(this.state.data))
+    this.setState(state => ({...state, data: {...state.data, geometry: data} }))
   }
 
   render() {

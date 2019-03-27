@@ -4,7 +4,7 @@ import axios from 'axios'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g'
 
-import MapModal from './map/mapModal'
+import SideBarItem from './map/mapSideBar'
 
 const bounds = [[-0.483702, 51.334679], [0.190262, 51.655070]] // Restricts map bounds to London
 
@@ -19,10 +19,11 @@ class Map extends React.Component {
       },
       data: { geocoder: '' },
       spaces: [],
-      markers: []
+      markers: [],
+      active: false
     }
-
-    this.flytoSelectedSide = this.flytoSelectedSide.bind(this)
+    this.myClass = 'mapboxgl-marker'
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -33,6 +34,20 @@ class Map extends React.Component {
 
   componentDidUpdate(){
     this.setMarkers()
+  }
+
+  handleClick(e){
+    this.elements()
+    console.log(e)
+    if(e.originalEvent.path[4].classList.contains(this.myClass))
+      this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
+    e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#FFA07A')
+  }
+
+  elements(){
+    const markerColor = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div > svg > g > g:nth-child(2)')
+    const markerColorArray = [].slice.call(markerColor)
+    markerColorArray.find(marker => marker.setAttribute('fill', '#3FB1CE'))
   }
 
   map(){
@@ -49,8 +64,8 @@ class Map extends React.Component {
       maxBounds: bounds
     })
       .addControl(geocoder)
+    this.map.on('click', this.handleClick)
     geocoder.on('result', e => {
-      console.log(e)
       this.setState({ center: e.center })
     })
   }
@@ -58,11 +73,14 @@ class Map extends React.Component {
   setMarkers(){
     if(!this.state.lnglat) return null
     this.state.lnglat.map(coordinates => {
-      return new mapboxgl.Marker()
+      this.marker = new mapboxgl.Marker()
         .setLngLat({ lng: coordinates.geometry.coordinates[0], lat: coordinates.geometry.coordinates[1]})
         .addTo(this.map)
+      return this.marker
     })
   }
+
+
 
   setCenterMarkers(){
     if(!this.props.location.state) return null
@@ -84,11 +102,6 @@ class Map extends React.Component {
       .then(res => this.setState({spaces: res}))
   }
 
-  flytoSelectedSide({ _id }){
-    const lnglat = this.state.lnglat.find(space => space._id === _id).geometry.coordinates
-    this.map.flyTo({center: lnglat})
-  }
-
   render() {
     const { spaces } = this.state
     return(
@@ -99,18 +112,17 @@ class Map extends React.Component {
         >
           <div className='heading'>
             <h1>Our locations</h1>
-          </div>
-          {spaces && spaces.map((space, id) => (
-            <div onClick={() => this.flytoSelectedSide(space)} key={id} className='listings'>
-              <div>{space.geometry}</div>
-              <div>{space.type}</div>
-              <div>{space.suitability}</div>
-              <div>£{space.price}</div>
-              <MapModal
+            {spaces && spaces.map((space, id) => (
+              <SideBarItem
+                className="listing"
+                key={id}
                 space={space}
+                lnglat={this.state.lnglat}
+                map={this.map}
+                onClick={this.toggleSelected}
               />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <div className="map" ref={el => this.mapDiv = el}/>
       </div>
