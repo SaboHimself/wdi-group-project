@@ -429,10 +429,430 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
       number: '+447283493221'
     },
     {
+      username: 'Purlicue',
+      email: 'bjornk@yahoo.com',
+      password: 'Matty9',
+      passwordConfirmation: 'Matty9',
+      number: '+447283493233'
+    },
+    {
+      username: 'Abstar1Varia',
+      email: 'uqmcolyv@outlook.com',
+      password: 'XyeLxTYpl',
+      passwordConfirmation: 'XyeLxTYpl',
+      number: '+447284293883'
+    },
+    {
+      username: 'Thecate',
+      email: 'msroth@yahoo.ca',
+      password: 'VnimxwiyB',
+      passwordConfirmation: 'VnimxwiyB',
+      number: '+447283493943'
+    },
+    {
+      username: 'chalon.alan',
+      email: 'pthomsen@optonline.net',
+      password: 'hSUQyzSrI',
+      passwordConfirmation: 'hSUQyzSrI',
+      number: '+447283409883'
+    },
+    {
+      username: 'raisehayes',
+      email: 'ivoibs@verizon.net',
+      password: 'mxzCkXIzm',
+      passwordConfirmation: 'mxzCkXIzm',
+      number: '+447283493093'
+    },
+    {
+      username: 'hayes_the_praise',
+      email: 'boein@hotmail.com',
+      password: 'eDcXCOqFU',
+      passwordConfirmation: 'eDcXCOqFU',
+      number: '+447283493843'
+    },
+    {
+      username: 'claudius93ozumv',
+      email: 'arnold@outlook.com',
+      password: 'beIlsBakS',
+      passwordConfirmation: 'beIlsBakS',
+      number: '+447283493093'
+    },
+    {
+      username: 'Bronomeister',
+      email: 'haddawy@comcast.net',
+      password: 'jUejUcKCz',
+      passwordConfirmation: 'jUejUcKCz',
+      number: '+447283493880'
+    },
+    {
+      username: 'Brony',
+      email: 'seano@comcast.net',
+      password: 'kqIlsJKjx',
+      passwordConfirmation: 'kqIlsJKjx',
+      number: '+447283493881'
+    },
+    {
+      username: 'Brooksy',
+      email: 'majordick@yahoo.com',
+      password: 'PxWuZHBWY',
+      passwordConfirmation: 'PxWuZHBWY',
+      number: '+447283423903'
+    },
+    {
+      username: 'Claudettebug',
+      email: 'mugwump@aol.com',
+      password: 'duzqExNGK',
+      passwordConfirmation: 'duzqExNGK',
+      number: '+447283413893'
+    },
+    {
+      username: 'Claudbob',
+      email: 'dhrakar@gmail.com',
+      password: 'qgtJIKMTq',
+      passwordConfirmation: 'qgtJIKMTq',
+      number: '+447283499093'
+    },
+    {
+      username: 'EricssonAnything',
+      email: 'pizza@aol.com',
+      password: 'OvHAAupWU',
+      passwordConfirmation: 'OvHAAupWU',
+      number: '+447283493874'
+    },
+    {
+      username: 'AnythingSwallow',
+      email: 'ramollin@aol.com',
+      password: 'bKLPqQPuf',
+      passwordConfirmation: 'bKLPqQPuf',
+      number: '+447283424883'
+    },
+    {
+      username: 'GilletteAnything',
+      email: 'jkegl@att.net',
+      password: 'tdsOxEmVN',
+      passwordConfirmation: 'tdsOxEmVN',
+      number: '+447281393883'
+    },
+    {
+      username: 'StationAnything',
+      email: 'lstaf@outlook.com',
+      password: 'BOJrFUmvS',
+      passwordConfirmation: 'BOJrFUmvS',
+      number: '+447283192833'
+    },
+    {
+      username: 'tastebrogley',
+      email: 'itstatus@verizon.net',
+      password: 'ynbkPvYws',
+      passwordConfirmation: 'ynbkPvYws',
+      number: '+447283903883'
+    },
+    {
+      username: 'huddlesort',
+      email: 'shaffei@outlook.com',
+      password: 'HbCVIaSpA',
+      passwordConfirmation: 'HbCVIaSpA',
+      number: '+447283493123'
+    },
+    {
+      username: 'reducedstrike',
+      email: 'mxiao@mac.com',
+      password: 'ldapFzMUy',
+      passwordConfirmation: 'ldapFzMUy',
+      number: '+447283493113'
+    },
+    {
+      username: 'wastefulfaculty',
+      email: 'penna@outlook.com',
+      password: 'xgLDuHMHh',
+      passwordConfirmation: 'xgLDuHMHh',
+      number: '+447283409893'
+    },
+    {
+      username: 'disksbarrage',
+      email: 'paina@yahoo.ca',
+      password: 'qwEPEguuD',
+      passwordConfirmation: 'qwEPEguuD',
+      number: '+447283493003'
+    },
+    {
+      username: 'paralysisrefund',
+      email: 'mlewan@hotmail.com',
+      password: 'weqVQUNQY',
+      passwordConfirmation: 'weqVQUNQY',
+      number: '+447283493001'
+    },
+    {
+      username: 'spanishstray',
+      email: 'syncnine@gmail.com',
+      password: 'ZYLWiJTwu',
+      passwordConfirmation: 'ZYLWiJTwu',
+      number: '+447283493804'
+    },
+    {
+      username: 'depravedhug',
+      email: 'johnh@comcast.net',
+      password: 'OOSizjZwT',
+      passwordConfirmation: 'OOSizjZwT',
+      number: '+447283493823'
+    },
+    {
+      username: 'stoppableruffian',
+      email: 'ryanvm@icloud.com',
+      password: 'SnRpeUJXk',
+      passwordConfirmation: 'SnRpeUJXk',
+      number: '+447283890483'
+    },
+    {
+      username: 'storkspecialist',
+      email: 'nweaver@gmail.com',
+      password: 'nFOhEdfYI',
+      passwordConfirmation: 'nFOhEdfYI',
+      number: '+447283409083'
+    },
+    {
+      username: 'neodymiumbeetle',
+      email: 'smcnabb@gmail.com',
+      password: 'jfvCqQVfQ',
+      passwordConfirmation: 'jfvCqQVfQ',
+      number: '+447283449587'
+    },
+    {
+      username: 'commodoreplates',
+      email: 'zyghom@verizon.net',
+      password: 'BrAZpBaKw',
+      passwordConfirmation: 'BrAZpBaKw',
+      number: '+447283493883'
+    },
+    {
+      username: 'puncturedcramer',
+      email: 'rwelty@outlook.com',
+      password: 'cdECwzDxh',
+      passwordConfirmation: 'cdECwzDxh',
+      number: '+447283493883'
+    },
+    {
+      username: 'renovatorhyperlink',
+      email: 'bwcarty@hotmail.com',
+      password: 'ZJyVuHqtk',
+      passwordConfirmation: 'ZJyVuHqtk',
+      number: '+447289889323'
+    },
+    {
+      username: 'slouchinglabored',
+      email: 'fviegas@verizon.net',
+      password: 'shCAHeDyV',
+      passwordConfirmation: 'shCAHeDyV',
+      number: '+447283490000'
+    },
+    {
+      username: 'andromedadocument',
+      email: 'djpig@yahoo.ca',
+      password: 'hJpSTLurA',
+      passwordConfirmation: 'hJpSTLurA',
+      number: '+447283490001'
+    },
+    {
+      username: 'indianwhooper',
+      email: 'spadkins@gmail.com',
+      password: 'dLSsBKwhR',
+      passwordConfirmation: 'dLSsBKwhR',
+      number: '+447283490002'
+    },
+    {
+      username: 'dbasesteamy',
+      email: 'yamla@yahoo.com',
+      password: 'zRnVmVKVa',
+      passwordConfirmation: 'zRnVmVKVa',
+      number: '+447283493883'
+    },
+    {
+      username: 'sassyshiny',
+      email: 'crusader@att.net',
+      password: 'UwKcuDFNn',
+      passwordConfirmation: 'UwKcuDFNn',
+      number: '+447283493883'
+    },
+    {
+      username: 'kindredhalo',
+      email: 'granboul@comcast.net',
+      password: 'bbpyeMFxZ',
+      passwordConfirmation: 'bbpyeMFxZ',
+      number: '+447283493883'
+    },
+    {
+      username: 'fermatdoudy',
+      email: 'parrt@me.com',
+      password: 'IyMbfCRaN',
+      passwordConfirmation: 'IyMbfCRaN',
+      number: '+447283493883'
+    },
+    {
+      username: 'swaggerriches',
+      email: 'dunstan@msn.com',
+      password: 'smHhQNQGJ',
+      passwordConfirmation: 'smHhQNQGJ',
+      number: '+447283493883'
+    },
+    {
+      username: 'Cocoa1',
+      email: 'drezet@yahoo.com',
+      password: 'lUsBknRzm',
+      passwordConfirmation: 'lUsBknRzm',
+      number: '+447283493883'
+    },
+    {
+      username: 'Abattoir56',
+      email: 'philen@icloud.com',
+      password: 'ZoyVRujip',
+      passwordConfirmation: 'ZoyVRujip',
+      number: '+447283493883'
+    },
+    {
+      username: 'Luminous',
+      email: 'wainwrig@comcast.net',
+      password: 'mUorQdYII',
+      passwordConfirmation: 'mUorQdYII',
+      number: '+447283493883'
+    },
+    {
+      username: 'Cecilsce5000',
+      email: 'dpitts@comcast.net',
+      password: 'dLeCZUUPm',
+      passwordConfirmation: 'dLeCZUUPm',
+      number: '+447283493883'
+    },
+    {
+      username: 'Brayergor141201',
+      email: 'wortmanj@live.com',
+      password: 'IOSClhyDC',
+      passwordConfirmation: 'IOSClhyDC',
+      number: '+447283493883'
+    },
+    {
+      username: 'LanterGirdle',
+      email: 'malvar@me.com',
+      password: 'ssCHhiXom',
+      passwordConfirmation: 'ssCHhiXom',
+      number: '+447283493883'
+    },
+    {
+      username: 'JakekGewgaw',
+      email: 'bflong@mac.com',
+      password: 'ORMnclXNR',
+      passwordConfirmation: 'ORMnclXNR',
+      number: '+447283493883'
+    },
+    {
+      username: 'BosstasFlink',
+      email: 'enintend@live.com',
+      password: 'YcpgjRCaB',
+      passwordConfirmation: 'YcpgjRCaB',
+      number: '+447283493883'
+    },
+    {
+      username: 'Benlet1Unau',
+      email: 'aardo@outlook.com',
+      password: 'SSSDdUCcsd',
+      passwordConfirmation: 'SSSDdUCcsd',
+      number: '+447283493883'
+    },
+    {
+      username: 'Harry1',
+      email: 'harrymcdonald@hotmail.com',
+      password: 'harry1',
+      passwordConfirmation: 'harry1',
+      number: '+447345928372'
+    },
+    {
+      username: 'JaneOwen',
+      email: 'jc123@hotmail.co.uk',
+      password: 'passwordJane',
+      passwordConfirmation: 'passwordJane',
+      number: '+447345928374'
+    },
+    {
+      username: 'MichealOgrant',
+      email: 'mikeyj@hotmail.com',
+      password: 'mo246',
+      passwordConfirmation: 'mo246',
+      number: '+447345948372'
+    },
+    {
+      username: 'DavetheRave',
+      email: 'davidtinkleberry@yahoo.co.uk',
+      password: 'tinkers1',
+      passwordConfirmation: 'tinkers1',
+      number: '+447745928372'
+    },
+    {
+      username: 'JohnSmith',
+      email: 'johnnyboy@hotmail.com',
+      password: 'harry1',
+      passwordConfirmation: 'harry1',
+      number: '+447345928372'
+    },
+    {
+      username: 'Martinorigin',
+      email: 'missionstatement@hotmail.com',
+      password: 'Statement1',
+      passwordConfirmation: 'Statement1',
+      number: '+447935263374'
+    },
+    {
+      username: 'Luke-Skywalker',
+      email: 'thelastjedi@gmail.com',
+      password: 'lightsaber',
+      passwordConfirmation: 'lightsaber',
+      number: '+447823776732'
+    },
+    {
+      username: 'Adam_O_Reilly',
+      email: 'adders90@gmail.com',
+      password: 'adam',
+      passwordConfirmation: 'adam',
+      number: '+447283494883'
+    },
+    {
+      username: 'ArmyCadet89',
+      email: 'camoflauge@gmail.com',
+      password: 'camo',
+      passwordConfirmation: 'camo',
+      number: '+447283493283'
+    },
+    {
+      username: 'MathewMcdonald',
+      email: 'MathewMc@gmail.com',
+      password: 'Matty5',
+      passwordConfirmation: 'Matty',
+      number: '+447283493883'
+    },
+    {
+      username: 'ThomasAndrews',
+      email: 'tommyt@yahoo.com',
+      password: 'tomthedom',
+      passwordConfirmation: 'tomthedom',
+      number: '+447283499383'
+    },
+    {
+      username: 'alexandergreat',
+      email: 'alexgreen105@hotmail.com',
+      password: 'password123',
+      passwordConfirmation: 'password123',
+      number: '+447283493110'
+    },
+    {
+      username: 'Amy-Right',
+      email: 'amyright@am.com',
+      password: 'iamright',
+      passwordConfirmation: 'iamright',
+      number: '+447283493221'
+    },
+    {
       username: 'GutenWabbit',
       email: 'offthelip@gmail.com',
       password: 'Matty3',
-      passwordConfirmation: 'Matty3',
+      passwordConfirmation: 'Matty',
       number: '+447283493883'
     },
     {
@@ -1318,7 +1738,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.148370, 51.505170]
           },
+<<<<<<< HEAD
+          location: 'Brick St, London NW8',
+=======
           location: 'Brick St, London E18',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/3fcd27babff8db37c04780e5a222afbb.jpeg', 'https://static.yourparkingspace.co.uk/large/d2a409d69ceaab0dfba4e56c4a9cb2b6.jpeg', 'https://static.yourparkingspace.co.uk/large/bf01bd1b495d989a4bb1c50d9c93297e.png'],
@@ -1335,7 +1759,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.073590, 51.503470]
           },
+<<<<<<< HEAD
+          location: 'Shad Thames, London NW8',
+=======
           location: 'Shad Thames, London E18',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/ab9d95e28b6f9c58ba75d8146fdc142d.jpeg', 'https://static.yourparkingspace.co.uk/large/2ca9d6d65746825d40659604bd65867a.jpeg'],
@@ -1352,7 +1780,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.095654, 51.516040]
           },
+<<<<<<< HEAD
+          location: 'St Thomas Court, London NW8',
+=======
           location: 'St Thomas Court, London NW7',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle',
           images: ['https://static.yourparkingspace.co.uk/large/6e367aa03deb333a6e29a56a28be0131.jpeg'],
@@ -1369,7 +1801,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.095605, 51.512366]
           },
+<<<<<<< HEAD
+          location: 'Friday Street, London NW8',
+=======
           location: 'Friday Street, London SE2',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Sheltered drive-way',
           suitability: 'Motorcyle, Hatchback, Car, 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/0a39a688fcd7b50651b266f96d1b42c9.jpeg', 'https://static.yourparkingspace.co.uk/large/139ed5efde61c3d52983e329e43d5020.jpeg'],
@@ -1386,7 +1822,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.099735, 51.528851]
           },
+<<<<<<< HEAD
+          location: 'Moreland Street, London NW8',
+=======
           location: 'Moreland Street, London W1',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/5c9225475d4271392a135e395819c108.png', 'https://static.yourparkingspace.co.uk/large/f9863d3d498096f4ebf77822fdaad282.png'],
@@ -1403,7 +1843,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.120818, 51.562464]
           },
+<<<<<<< HEAD
+          location: 'Shaw Court, London NW8',
+=======
           location: 'Shaw Court, London WC2',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/5409841dcd462-normal.jpg', 'https://uploads.justpark.com/media/uploaded/listing-photos/54098434b2a47-normal.jpg'],
@@ -1420,7 +1864,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.150320, 51.563627]
           },
+<<<<<<< HEAD
+          location: 'Langbourne Avenue, London NW8',
+=======
           location: 'Langbourne Avenue, London WC2',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/cdn/media/uploaded/listing-photos/5b76a69e5e087-normal.jpg'],
@@ -1515,7 +1963,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           comments: { text: []},
           price: 7.20,
           electricChargingPoint: false,
+<<<<<<< HEAD
+          owner: user[18]
+=======
           owner: user[2]
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
         },
         {
           geometry: {
@@ -1607,7 +2059,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.089170, 51.494251]
           },
+<<<<<<< HEAD
+          location: 'New Kent Road, London NW8',
+=======
           location: 'New Kent Road, London SE3',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/e82029a2ec491654e58f16aca7babfa3.png', 'https://static.yourparkingspace.co.uk/large/6dc492dc4afa935177b8694df2ccc14d.png'],
@@ -1624,7 +2080,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.065110, 51.514820]
           },
+<<<<<<< HEAD
+          location: 'Commercial Rd, London NW8',
+=======
           location: 'Commercial Rd, London E1',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/6e3588bafd2caf90e230bc3733a2aefe.jpeg', 'https://static.yourparkingspace.co.uk/large/07be673a8c90d597395ef661de4614a5.jpeg'],
@@ -1641,7 +2101,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.060604, 51.515702]
           },
+<<<<<<< HEAD
+          location: 'Aldgate, London NW8',
+=======
           location: 'Aldgate, London EC3',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/c8a37cf53e45acdfa4f93e41d26a5b21.png', 'https://static.yourparkingspace.co.uk/large/684222fb701f4e8f811b5567316a16b0.jpeg'],
@@ -1675,7 +2139,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.079720, 51.497730]
           },
+<<<<<<< HEAD
+          location: 'Bermondsey, London NW8',
+=======
           location: 'Bermondsey, London E1',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Roadside',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/5a91cbf2850df714a841181e3b0aa9f4.jpeg'],
@@ -1726,7 +2194,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.058830, 51.509510]
           },
+<<<<<<< HEAD
+          location: 'Wapping Lane, London NW8',
+=======
           location: 'Wapping Lane, London E8',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/a452a92e9ded7d90ac5df967e43a6719.jpeg', 'https://static.yourparkingspace.co.uk/large/4212462585b3b10a9731ad2742a1b34d.jpeg'],
@@ -1760,7 +2232,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.100489, 51.49472]
           },
+<<<<<<< HEAD
+          location: 'Elephant & Castle, London NW8',
+=======
           location: 'Elephant & Castle, London SE1',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/f2f0b786a927118614ad1c92fbe54929.png', 'https://static.yourparkingspace.co.uk/large/2373d0eadd01367eda7fc25de1673e6a.png', 'https://static.yourparkingspace.co.uk/large/bf01bd1b495d989a4bb1c50d9c93297e.png'],
@@ -1845,7 +2321,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.119304, 51.51832]
           },
+<<<<<<< HEAD
+          location: 'Catton St, London NW8',
+=======
           location: 'Catton St, London WC2',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/51af1fa0603c3-normal.jpg', 'https://uploads.justpark.com/media/uploaded/listing-photos/51af1edf8b455-normal.jpg'],
@@ -1896,7 +2376,11 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.084502, 51.52845]
           },
+<<<<<<< HEAD
+          location: 'Hoffman Square, London NW8',
+=======
           location: 'Hoffman Square, London E8',
+>>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/b21cd92c14b872c94ed7d716e04b2416.jpeg'],

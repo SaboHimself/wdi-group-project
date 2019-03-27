@@ -51,12 +51,15 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div className="blue">
+      <div>
+      <span className="input">
         <Search
+
           value={this.state.value}
           change={this.onChange}
           lnglatChange={this.handleLngLatChange}
         />
+      </span>
         <Calender
           handleChangeEnd={this.handleChangeEnd}
           handleChangeStart={this.handleChangeStart}
@@ -67,7 +70,7 @@ class Home extends React.Component {
           pathname: '/map',
           state: this.state.lnglat }
         }>
-          <button className="button" onClick={this.handleClick}>Map</button>
+          <button onClick={this.handleClick}>Map</button>
         </Link>
       </div>
     )
