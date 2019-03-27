@@ -21,16 +21,17 @@ class Nav extends React.Component {
 
   render(){
     return(
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/map'>Map</Link>
-        <Link to='/spaces'>Spaces</Link>
-        {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
-        {!Auth.isAuthenticated() && <Link to='/login'>login</Link>}
-        <Link to='/users/:id'>Account</Link>
-        {Auth.isAuthenticated() && <Link to='/spaces/new'>Create Space</Link>}
-        {Auth.isAuthenticated() &&<a onClick={this.logout}>Logout</a>}
-      </nav>
+      <div className="header">
+        <h1 className="logo"><Link to='/'>SPACES</Link></h1>
+        <nav className="nav">
+          <Link to='/map'>Map</Link>
+          {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
+          {!Auth.isAuthenticated() && <Link to='/login'>login</Link>}
+          <Link to='/users/:id'>Account</Link>
+          {Auth.isAuthenticated() && <Link to='/spaces/new' className="create">Create</Link>}
+          {Auth.isAuthenticated() &&<a onClick={this.logout}>Logout</a>}
+        </nav>
+      </div>
     )
   }
 }

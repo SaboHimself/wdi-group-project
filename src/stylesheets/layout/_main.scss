@@ -1,0 +1,15 @@
+.main {
+	height: 65vh;
+}
+
+@media (min-width: 780px) {
+	.main {
+		height: 80vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .main {
+    height: 85vh;
+  }
+}

@@ -105,13 +105,12 @@ class Map extends React.Component {
   render() {
     const { spaces } = this.state
     return(
-      <div id="main">
+      <div id="main" className="map-wrapper">
         <div
-          className='sidebar pad2'
+          className='sidebar'
           ref={el => this.sidebar = el}
         >
           <div className='heading'>
-            <h1>Our locations</h1>
             {spaces && spaces.map((space, id) => (
               <SideBarItem
                 className="listing"

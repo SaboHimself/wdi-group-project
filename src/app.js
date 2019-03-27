@@ -8,6 +8,7 @@ import Register from './components/auth/registerForm'
 import Home from './components/page/home'
 import Profile from './components/user/profile'
 import Nav from './components/common/nav'
+import Footer from './components/common/footer'
 
 import ShowSpace from './components/spaces/showSpace'
 import BookingSpace from './components/spaces/bookingSpace'
@@ -30,8 +31,8 @@ class App extends React.Component {
   render() {
     return(
       <Browser>
-        <div>
-          <Nav />
+        <Nav />
+        <div className="main">
           <Switch>
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
@@ -47,6 +48,7 @@ class App extends React.Component {
             <Route exact path='/' component={Home} />
           </Switch>
         </div>
+        <Footer />
       </Browser>
     )
   }

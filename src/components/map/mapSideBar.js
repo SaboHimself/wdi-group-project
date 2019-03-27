@@ -36,9 +36,7 @@ class SideBarItem extends React.Component {
           this.toggleSelected()
         }}
       >
-        <div>{space.geometry}</div>
-        <div>{space.type}</div>
-        <div>{space.suitability}</div>
+        <div className="location">{space.geometry}</div>
         <div>£{space.price}</div>
         <MapModal
           space={space}
