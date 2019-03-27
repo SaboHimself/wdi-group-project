@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import { Link } from 'react-router-dom'
 
-import 'bulma'
+// import 'bulma'
 
 class IndexSpace extends React.Component {
 

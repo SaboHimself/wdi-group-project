@@ -1,26 +1,22 @@
 @import '~mapbox-gl/dist/mapbox-gl.css';
 @import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.6/mapbox-gl-geocoder.css");
 
-*{
-  box-sizing: border-box;
-}
-
 #root > div > div {
   display: flex;
   height: 95vh;
 }
 
-.map{
+.map {
   width:100vw;
   height: 100%;
 }
 
-.map2{
+.map2 {
   width:50vw;
   height:50vh;
 }
 
-.sidebar{
+.sidebar {
   width: 30%;
   height: 100%;
   overflow-y: auto;
@@ -31,6 +27,15 @@
   border-bottom: 1px solid #eee;
   padding: 10px;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.active {
+  background: blue;
+}
+
+.noClick {
+  // pointer-events: none;
 }
 
 .active {

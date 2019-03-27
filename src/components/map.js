@@ -4,7 +4,7 @@ import axios from 'axios'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g'
 
-import MapModal from './map/mapModal'
+import SideBarItem from './map/mapSideBar'
 
 const bounds = [[-0.483702, 51.334679], [0.190262, 51.655070]] // Restricts map bounds to London
 
@@ -19,10 +19,10 @@ class Map extends React.Component {
       },
       data: { geocoder: '' },
       spaces: [],
-      markers: []
+      markers: [],
+      active: false
     }
     this.myClass = 'mapboxgl-marker'
-    this.flytoSelectedSide = this.flytoSelectedSide.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -102,11 +102,6 @@ class Map extends React.Component {
       .then(res => this.setState({spaces: res}))
   }
 
-  flytoSelectedSide({ _id }){
-    const lnglat = this.state.lnglat.find(space => space._id === _id).geometry.coordinates
-    this.map.flyTo({center: lnglat})
-  }
-
   render() {
     const { spaces } = this.state
     return(
@@ -117,18 +112,17 @@ class Map extends React.Component {
         >
           <div className='heading'>
             <h1>Our locations</h1>
-          </div>
-          {spaces && spaces.map((space, id) => (
-            <div onClick={() => this.flytoSelectedSide(space)} key={id} className='listings'>
-              <div>{space.geometry}</div>
-              <div>{space.type}</div>
-              <div>{space.suitability}</div>
-              <div>£{space.price}</div>
-              <MapModal
+            {spaces && spaces.map((space, id) => (
+              <SideBarItem
+                className="listing"
+                key={id}
                 space={space}
+                lnglat={this.state.lnglat}
+                map={this.map}
+                onClick={this.toggleSelected}
               />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <div className="map" ref={el => this.mapDiv = el}/>
       </div>
