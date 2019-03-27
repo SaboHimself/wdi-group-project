@@ -37,8 +37,6 @@ class EditSpace extends React.Component{
       .catch(err => this.setState({errors: err.response.data.errors}))
   }
 
-
-
   render(){
     return(
       <main>

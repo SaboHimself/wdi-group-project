@@ -22,32 +22,50 @@ class Map extends React.Component {
       markers: [],
       active: false
     }
+
+    this.listDivs = {}
     this.myClass = 'mapboxgl-marker'
     this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
+    console.log('first')
     this.map()
     this.getDataToPopulate()
     this.setCenterMarkers()
   }
 
   componentDidUpdate(){
+    console.log('second')
     this.setMarkers()
   }
 
   handleClick(e){
-    this.elements()
-    console.log(e)
+    this.divElements()
+    this.gElements()
+    // console.log(e)
     if(e.originalEvent.path[4].classList.contains(this.myClass))
       this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
     e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#FFA07A')
+    const id = e.originalEvent.path[4].getAttribute('id')
+    // console.log(id)
+    this.scrollTo(id)
   }
 
-  elements(){
+  scrollTo(id) {
+    this.listDivs[id].listDiv.scrollIntoView({behavior: 'smooth'})
+  }
+
+  gElements(){
     const markerColor = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div > svg > g > g:nth-child(2)')
     const markerColorArray = [].slice.call(markerColor)
     markerColorArray.find(marker => marker.setAttribute('fill', '#3FB1CE'))
+  }
+
+  divElements(){
+    const divMongooseId = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div')
+    const divMongooseIdArray = [].slice.call(divMongooseId)
+    divMongooseIdArray.map((div, i) => div.setAttribute('id', `${this.state.lnglat[i]._id}`))
   }
 
   map(){
@@ -72,15 +90,15 @@ class Map extends React.Component {
 
   setMarkers(){
     if(!this.state.lnglat) return null
-    this.state.lnglat.map(coordinates => {
-      this.marker = new mapboxgl.Marker()
-        .setLngLat({ lng: coordinates.geometry.coordinates[0], lat: coordinates.geometry.coordinates[1]})
-        .addTo(this.map)
-      return this.marker
-    })
+    if(!this.markers) {
+      this.markers = this.state.lnglat.map(coordinates => {
+        this.marker = new mapboxgl.Marker()
+          .setLngLat({ lng: coordinates.geometry.coordinates[0], lat: coordinates.geometry.coordinates[1]})
+          .addTo(this.map)
+        return this.marker
+      })
+    } else return null
   }
-
-
 
   setCenterMarkers(){
     if(!this.props.location.state) return null
@@ -120,6 +138,7 @@ class Map extends React.Component {
                 lnglat={this.state.lnglat}
                 map={this.map}
                 onClick={this.toggleSelected}
+                ref={el => (this.listDivs[space._id] = el)}
               />
             ))}
           </div>
