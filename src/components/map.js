@@ -17,43 +17,58 @@ class Map extends React.Component {
         lat: 51.507351,
         lng: -0.127758
       },
-      data: { geocoder: '' },
       spaces: [],
       markers: [],
-      active: false
+      findSidebarDiv: {}
     }
 
     this.listDivs = {}
     this.myClass = 'mapboxgl-marker'
     this.handleClick = this.handleClick.bind(this)
+    this.handleClickSidebar = this.handleClickSidebar.bind(this)
   }
 
   componentDidMount() {
-    console.log('first')
     this.map()
     this.getDataToPopulate()
     this.setCenterMarkers()
   }
-
   componentDidUpdate(){
-    console.log('second')
     this.setMarkers()
   }
-
   handleClick(e){
+    console.log(e)
     this.divElements()
     this.gElements()
-    // console.log(e)
     if(e.originalEvent.path[4].classList.contains(this.myClass))
       this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
+    if(!e.originalEvent.path) return null
     e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#FFA07A')
-    const id = e.originalEvent.path[4].getAttribute('id')
-    // console.log(id)
+    const id = e.originalEvent.path[4].getAttribute('mId')
     this.scrollTo(id)
   }
 
+  handleClickSidebar(e){
+
+    {this.state.findSidebarDiv.listDiv && this.state.findSidebarDiv.listDiv.classList.remove('active')}
+
+    e.target.classList.add('active')
+    this.removeClass()
+  }
+
+  removeClass(){
+    this.setState({...this.state.findSidebarDiv, findSidebarDiv: Object.values(this.listDivs).find(div => div.listDiv.classList.contains('active'))})
+  }
+
   scrollTo(id) {
-    this.listDivs[id].listDiv.scrollIntoView({behavior: 'smooth'})
+    {this.state.findSidebarDiv.listDiv && this.state.findSidebarDiv.listDiv.classList.remove('active')}
+
+    if(!this.listDivs[id]) return null
+    else {
+      this.listDivs[id].listDiv.scrollIntoView({behavior: 'smooth'})
+      this.listDivs[id].listDiv.classList.add('active')
+    }
+    this.removeClass()
   }
 
   gElements(){
@@ -61,13 +76,11 @@ class Map extends React.Component {
     const markerColorArray = [].slice.call(markerColor)
     markerColorArray.find(marker => marker.setAttribute('fill', '#3FB1CE'))
   }
-
   divElements(){
     const divMongooseId = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div')
     const divMongooseIdArray = [].slice.call(divMongooseId)
-    divMongooseIdArray.map((div, i) => div.setAttribute('id', `${this.state.lnglat[i]._id}`))
+    divMongooseIdArray.map((div, i) => div.setAttribute('mId', `${this.state.lnglat[i]._id}`))
   }
-
   map(){
     const geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
@@ -87,7 +100,6 @@ class Map extends React.Component {
       this.setState({ center: e.center })
     })
   }
-
   setMarkers(){
     if(!this.state.lnglat) return null
     if(!this.markers) {
@@ -99,7 +111,6 @@ class Map extends React.Component {
       })
     } else return null
   }
-
   setCenterMarkers(){
     if(!this.props.location.state) return null
     this.map.jumpTo({center: [this.props.location.state.Longitude, this.props.location.state.Latitude]})
@@ -107,7 +118,6 @@ class Map extends React.Component {
       .setLngLat([this.props.location.state.Longitude, this.props.location.state.Latitude])
       .addTo(this.map)
   }
-
   getDataToPopulate(){
     axios.get('/api/spaces')
       .then(res => this.setState({lnglat: res.data}))
@@ -126,17 +136,15 @@ class Map extends React.Component {
       <div id="main" className="map-wrapper">
         <div
           className='sidebar'
-          ref={el => this.sidebar = el}
+          onClick={this.handleClickSidebar}
         >
           <div className='heading'>
             {spaces && spaces.map((space, id) => (
               <SideBarItem
-                className="listing"
                 key={id}
                 space={space}
                 lnglat={this.state.lnglat}
                 map={this.map}
-                onClick={this.toggleSelected}
                 ref={el => (this.listDivs[space._id] = el)}
               />
             ))}

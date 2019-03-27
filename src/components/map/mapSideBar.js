@@ -6,17 +6,13 @@ class SideBarItem extends React.Component {
   constructor() {
     super()
 
-    this.state = {
-      active: false
-    }
+    this.state = {}
 
-    this.listDivs = {}
     this.flytoSelectedSide = this.flytoSelectedSide.bind(this)
-    this.toggleSelected = this.toggleSelected.bind(this)
   }
 
-  toggleSelected() {
-    this.setState({active: !this.state.active})
+  removeClass(){
+    this.setState({...this.state.findSidebarDiv, findSidebarDiv: Object.values(this.props.divs).find(div =>  div.listDiv.classList.contains('active'))})
   }
 
   flytoSelectedSide({ _id }){
@@ -32,10 +28,9 @@ class SideBarItem extends React.Component {
     return(
       <div
         id={`${space._id}`}
-        className={`listing ${this.state.active ? 'active' : ''}`}
+        className='listing'
         onClick={() => {
           this.flytoSelectedSide(space)
-          this.toggleSelected()
         }}
         ref={el => (this.listDiv = el)}
       >
