@@ -51,7 +51,7 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="blue">
         <Search
           value={this.state.value}
           change={this.onChange}
