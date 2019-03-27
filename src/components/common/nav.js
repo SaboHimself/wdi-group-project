@@ -26,9 +26,9 @@ class Nav extends React.Component {
         <nav className="nav">
           <Link to='/map'>Map</Link>
           {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
-          {!Auth.isAuthenticated() && <Link to='/login'>login</Link>}
+          {!Auth.isAuthenticated() && <Link to='/login'>Login</Link>}
           <Link to='/users/:id'>Account</Link>
-          {Auth.isAuthenticated() && <Link to='/spaces/new'>Create</Link>}
+          {Auth.isAuthenticated() && <Link to='/spaces/new'>Rent Out Your Space</Link>}
           {Auth.isAuthenticated() && <Link to='/' onClick={this.logout}>Logout</Link>}
         </nav>
       </div>

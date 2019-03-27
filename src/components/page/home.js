@@ -53,32 +53,19 @@ class Home extends React.Component {
     return(
 
       <div className="home-container">
-      <div className="home-text">
-      Find and Book a Parking Spot
-      </div>
-      <span  className="input">
-        <Search
-          placeholder="Search Postcode or Location"
-          className="search"
-          value={this.state.value}
-          change={this.onChange}
-          lnglatChange={this.handleLngLatChange}
-        />
-        </span>
-        <div className="calender">
-        <Calender
-          handleChangeEnd={this.handleChangeEnd}
-          handleChangeStart={this.handleChangeStart}
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-        />
-        <Link to={{
-          pathname: '/map',
-          state: this.state.lnglat }
-        }>
-          <button onClick={this.handleClick}>Map</button>
-        </Link>
+        <div className="home-text">
+        Find and Book a Parking Spot
         </div>
+        <span  className="input">
+          <Search
+            placeholder="Search Postcode or Location"
+            className="search"
+            value={this.state.value}
+            change={this.onChange}
+            lnglatChange={this.handleLngLatChange}
+          />
+        </span>
+        <button className="button" onClick={this.handleClick}>Search</button>
       </div>
     )
   }
