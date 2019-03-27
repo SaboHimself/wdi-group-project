@@ -1,0 +1,24 @@
+.map-modal {
+  margin: 9% auto;
+  height: 70%;
+  width: 50%;
+  overflow-y: auto;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .modal-image-wrapper {
+    display: block;
+    margin: 0 auto;
+    height: 400px;
+    width: 500px;
+  }
+}
+
+.map-modal-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
