@@ -27,7 +27,7 @@ class Nav extends React.Component {
           <Link to='/map'>Map</Link>
           {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
           {!Auth.isAuthenticated() && <Link to='/login'>login</Link>}
-          <Link to='/users/:id'>Account</Link>
+          {Auth.isAuthenticated() && <Link to='/users/:id'>Account</Link>}
           {Auth.isAuthenticated() && <Link to='/spaces/new'>Create</Link>}
           {Auth.isAuthenticated() && <Link to='/' onClick={this.logout}>Logout</Link>}
         </nav>

@@ -1,0 +1,18 @@
+.profilePage{
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  .profileWrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  section {
+    div{
+      img {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+}

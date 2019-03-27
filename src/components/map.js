@@ -37,7 +37,7 @@ class Map extends React.Component {
     this.setMarkers()
   }
   handleClick(e){
-    console.log(e)
+    // console.log(e)
     this.divElements()
     this.gElements()
     if(e.originalEvent.path[4].classList.contains(this.myClass))
@@ -49,11 +49,15 @@ class Map extends React.Component {
   }
 
   handleClickSidebar(e){
+    console.log(e.target)
+    // console.log(this.state.findSidebarDiv.listDiv)
+    {!e.target.classList.contains('button') && this.state.findSidebarDiv.listDiv && this.state.findSidebarDiv.listDiv.classList.remove('active')}
 
-    {this.state.findSidebarDiv.listDiv && this.state.findSidebarDiv.listDiv.classList.remove('active')}
-
-    e.target.classList.add('active')
-    this.removeClass()
+    if(e.target.classList.contains('button')) return null
+    else {
+      e.target.classList.add('active')
+      this.removeClass()
+    }
   }
 
   removeClass(){
