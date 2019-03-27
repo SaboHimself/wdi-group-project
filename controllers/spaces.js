@@ -3,7 +3,7 @@ const Space = require('../models/space')
 function indexSpace(req, res, next){
   Space
     .find()
-    .populate('owner')
+    .populate('owner bookings')
     .then(spaces => res.status(200).json(spaces))
     .catch(next)
 }
@@ -11,7 +11,7 @@ function indexSpace(req, res, next){
 function showSpace(req, res, next){
   Space
     .findById(req.params.id)
-    .populate('owner')
+    .populate('owner bookings')
     .then(space => res.status(200).json(space))
     .catch(next)
 }
@@ -33,10 +33,12 @@ function editSpace(req, res, next){
       if(!space || !space.owner || !space.owner._id.equals(req.currentUser._id)){
         return res.json({ message: 'Unauthorized' })
       }
-      return space.update(req.body)
+      Object.assign(space, req.body)
+      return space.save()
     })
     .then(() => res.sendStatus(202))
     .catch(next)
+
 }
 
 function deleteSpace(req, res, next){

@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const spaces = require('../controllers/spaces')
 const bookings = require('../controllers/bookings')
+const users = require('../controllers/user')
 const secureRoute = require('../lib/secureRoute')
 const auth = require('../controllers/auth')
 
@@ -17,10 +18,15 @@ router.route('/spaces')
   .get(spaces.index)
   .post(secureRoute, spaces.create)
 
+// router.get('/nearspaces', spaces.query)
+
 router.route('/spaces/:id')
   .get(spaces.show)
   .put(secureRoute, spaces.edit)
   .delete(secureRoute, spaces.delete)
+
+router.get('/users', users.index)
+router.get('/users/:id', users.show)
 
 router.post('/spaces/:id/comments', secureRoute, spaces.commentCreate)
 router.delete('/spaces/:id/comments/:commentId', secureRoute, spaces.commentDelete)

@@ -1,0 +1,32 @@
+// Colors
+
+$color-alpha: #ECA400;
+$color-alpha-light: lighten($color-alpha, 10%);
+$color-alpha-dark: darken($color-alpha, 10%);
+
+$color-beta: #001D4A;
+$color-beta-light: lighten($color-beta, 10%);
+$color-beta-dark: darken($color-beta, 10%);
+
+$color-gamma: #27476E;
+$color-gamma-light: lighten($color-gamma, 10%);
+$color-gamma-dark: darken($color-gamma, 10%);
+
+$color-psi: #006992;
+$color-psi-light: lighten($color-psi, 10%);
+$color-psi-dark: darken($color-psi, 10%);
+
+$color-omega: #CFDBD5;
+$color-omega-light: lighten($color-omega, 10%);
+$color-omega-dark: darken($color-omega, 10%);
+
+// Fonts
+$serif: serif;
+$sans-serif: sans-serif;
+$monospace: monospace;
+
+$primary-font: $sans-serif;
+$secondary-font: $serif;
+
+$font-size-primary: 16px;
+$font-size-header: 30px;
