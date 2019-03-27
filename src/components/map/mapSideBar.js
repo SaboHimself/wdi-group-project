@@ -34,11 +34,19 @@ class SideBarItem extends React.Component {
         }}
         ref={el => (this.listDiv = el)}
       >
-        <div className="location">{space.geometry}</div>
-        <div>£{space.price}</div>
-        <MapModal
-          space={space}
-        />
+        <div className="location">
+          <img src={space.images[0]}/>
+          <div className="details">
+            <div className="type">{space.type}</div>
+            <div className="address">{space.geometry}</div>
+          </div>
+        </div>
+        <div className="bottom">
+          <MapModal
+            space={space}
+          />
+          <div className="price">£{space.price}</div>
+        </div>
       </div>
     )
   }

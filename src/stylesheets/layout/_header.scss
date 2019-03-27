@@ -1,14 +1,3 @@
-body {
-	font-family: 'Montserrat', sans-serif;
-	line-height: 1.6;
-	margin: 0;
-	max-height: 100vh;
-}
-
-a {
-	text-decoration: none;
-}
-
 .logo {
 	margin: 0;
 	display: inline-block;
@@ -17,6 +6,15 @@ a {
 
 .nav {
 	margin-top: 5px;
+
+		a {
+			color: $color-gamma;
+			font-size: .99em;
+
+			&:hover {
+				color: $color-gamma-light;
+			}
+		}
 }
 
 .logo,
@@ -27,17 +25,8 @@ a {
 	display: block;
 }
 
-.nav a {
-	color: $color-gamma;
-	font-size: .99em;
-}
-
-.nav a:hover {
-	color: $color-gamma-light;
-}
-
 .header {
-	height: calc(30% - 14px);
+	height: 30%;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid $color-omega;
@@ -53,7 +42,7 @@ a {
 	}
 
 	.header {
-		height: calc(15% - 14px);
+		height: 15%;
 		flex-direction: column;
 		align-items: center;
 	}
@@ -61,7 +50,7 @@ a {
 
 @media (min-width: 1000px) {
 	.header {
-		height: calc(10% - 14px);
+		height: 10%;
 		flex-direction: row;
 		justify-content: space-between;
 	}

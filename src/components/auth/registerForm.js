@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from './userAuthentication'
+import { Link } from 'react-router-dom'
 
 class Register extends React.Component {
   constructor() {
@@ -39,9 +40,10 @@ class Register extends React.Component {
 
   render() {
     return(
-      <div className='registerForm'>
-        <div className='formWrapper'>
-          <div>Register</div>
+      <div className="auth-main">
+        <div className='register'>
+          <img className="auth-logo" src="../../assets/logo-light.png" />
+          <h2>Register</h2>
           <form onSubmit={ this.handleSubmit }>
             <label>
               <span>Username</span>
@@ -85,8 +87,9 @@ class Register extends React.Component {
                 value={ this.state.data.passwordConfirmation }
               />
             </label>
-            <input type="submit" name="submit" value="Log in"/>
+            <button>Register</button>
           </form>
+          <p>Already Registered? <Link to='/login'>Login Here</Link></p>
         </div>
       </div>
     )

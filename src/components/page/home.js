@@ -1,8 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
 import HomePageDate from '../lib/homePageDate'
-import Calender from '../lib/calender'
 import Search from '../lib/searchbox'
 
 class Home extends React.Component {
@@ -53,9 +50,7 @@ class Home extends React.Component {
     return(
 
       <div className="home-container">
-        <div className="home-text">
-        Find and Book a Parking Spot
-        </div>
+        <p className="home-text">Find and Book a Parking Space</p>
         <span  className="input">
           <Search
             placeholder="Search Postcode or Location"
@@ -65,20 +60,6 @@ class Home extends React.Component {
             lnglatChange={this.handleLngLatChange}
           />
         </span>
-        <div className="calender">
-          <Calender
-            handleChangeEnd={this.handleChangeEnd}
-            handleChangeStart={this.handleChangeStart}
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
-          />
-          <Link to={{
-            pathname: '/map',
-            state: this.state.lnglat }
-          }>
-            <button onClick={this.handleClick}>Map</button>
-          </Link>
-        </div>
       </div>
     )
   }

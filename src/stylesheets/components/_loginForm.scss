@@ -1,33 +1,49 @@
-.loginForm{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  div {
-    width:35%;
-    padding: 20px;
-    background: $color-omega;
-    div {
-      text-align: center;
-      width: calc(100% - 40px);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+.login {
+  width: 25%;
+  border: 3px solid black;
+  box-shadow: 0 0 250px #000;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: $color-beta;
+  opacity: 0.9;
+
+  .auth-logo {
+    margin: 0;
+  	display: inline-block;
+  	width: 90%;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+    font-weight: 100;
+    margin: 0 0 1rem;
+    color: $color-omega-light;
+    text-transform: uppercase;
+  }
+
+  input {
+    outline: 0;
+    padding: .5rem 1rem;
+    border: 3px solid $color-omega-light;
+    border-radius: 999px;
+    text-align: center;
+
+    &[name="email"],
+    &[name="password"] {
       width: 100%;
-      label {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        span {
-          width: 100%;
-        }
-        input {
-          width: 100%;
-        }
-      }
     }
   }
 
+  label {
+    color: $color-omega-light;
+  }
+
+  p {
+    color: $color-omega-light;
+  }
+
+  a {
+    color: $color-omega-light;
+    text-decoration: underline;
+  }
 }

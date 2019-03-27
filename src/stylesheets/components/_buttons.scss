@@ -8,13 +8,13 @@
   font-family: $primary-font;
   font-weight: 300;
   color: $color-omega-light;
-  background-color: $color-psi-light;
+  background: $color-psi-light;
   text-align: center;
   opacity: 0.6;
   transition: all 0.3s;
   cursor: pointer;
   &:hover {
-   filter: brightness(120%);
+    background: $color-psi;
   }
 }
 
@@ -30,6 +30,6 @@
   cursor: pointer;
   transition: all 0.3s;
   &:hover {
-     filter: brightness(120%);
+       background: $color-psi;
   }
 }
