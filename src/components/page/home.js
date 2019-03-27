@@ -51,7 +51,7 @@ class Home extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="blue">
         <Search
           value={this.state.value}
           change={this.onChange}
@@ -67,7 +67,7 @@ class Home extends React.Component {
           pathname: '/map',
           state: this.state.lnglat }
         }>
-          <button onClick={this.handleClick}>Map</button>
+          <button className="button" onClick={this.handleClick}>Map</button>
         </Link>
       </div>
     )
