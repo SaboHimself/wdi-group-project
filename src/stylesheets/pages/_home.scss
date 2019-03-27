@@ -1,0 +1,132 @@
+
+
+.home-container {
+	text-align: center;
+	align-items: center;
+  background-image: url('../assets/images/ruffa-jane-reyes-670602-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: space;
+  background-blend-mode: exclusion;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+.home-text{
+  align-content: flex-start;
+  flex-direction: column;
+  color: #ffffff;
+  font-family: "Cera-Pro";
+  font-size: 60px;
+  margin-bottom: 50px;
+  // flex: 1;
+}
+
+.react-autosuggest_container{
+
+position: relative;
+display: block;
+background-color: black;
+flex-direction: column;
+margin: 50px;
+margin-top: 100px;
+}
+
+.react-autosuggest__input{
+	border: 2px solid rgba(255,255,255,.5);
+	font-size: 1.75em;
+  color: rgba(255,255,255,.5);
+  $placeholder-color: rgba(255,255,255,.5);
+	padding: .25em .5em .3125em;
+	color: rgba(255,255,255,.5);
+	border-radius: .25em;
+	background: transparent;
+	transition:all .100s;
+  margin: 50px;
+  margin-top: 110px;
+}
+.react-autosuggest__input:focus{
+		outline: none;
+		color: rgba(255,255,255,.75);
+		border-color: rgba(255,255,255,.75);
+	}
+
+  @font-face{
+    font-family: "Cera-Pro";
+    src: url('../assets/fonts/CeraPro-Regular.ttf');
+  }
+
+	// &.keyup {
+	// 	color: white;
+	// 	border-color: white;
+	// 	text-shadow:0 0 .125em white;
+	// 	box-shadow:0 0 .25em white,inset 0 0 .25em white;
+	// }
+
+  // suggestion search box-shadow
+
+.react-autosuggest__container {
+  position: relative;
+}
+
+// .react-autosuggest__input {
+//   width: 240px;
+//   height: 30px;
+//   padding: 10px 20px;
+//   font-family: Helvetica, sans-serif;
+//   font-weight: 300;
+//   font-size: 16px;
+//   border: 1px solid #aaa;
+//   border-radius: 4px;
+// }
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  top: 51px;
+  width: 280px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.react-autosuggest__suggestion-match {
+  color: red;
+  font-weight: bold;
+}
