@@ -136,7 +136,7 @@ class SpaceForm extends React.Component {
 
   handleGeometryChange(value) {
     const data = {...this.state.data.geometry, coordinates: value}
-    this.setState(state => ({...state, data: {...state.data, geometry: data} }), () => console.log(this.state.data))
+    this.setState(state => ({...state, data: {...state.data, geometry: data} }))
   }
 
   render() {
