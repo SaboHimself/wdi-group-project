@@ -22,7 +22,7 @@ class Nav extends React.Component {
   render(){
     return(
       <div className="header">
-        <Link to='/'><img className="logo" src="../../assets/logo.png" /></Link>
+        <Link to='/'><img className="logo" src="../../assets/logo-dark.png" /></Link>
         <nav className="nav">
           <Link to='/map'>Map</Link>
           {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}

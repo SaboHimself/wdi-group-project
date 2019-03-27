@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from './userAuthentication'
 import Flash from './flash'
+import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
   constructor() {
@@ -41,27 +42,32 @@ class Login extends React.Component {
   render() {
     return(
       <div className="auth-main">
-        <form onSubmit={ this.handleSubmit }>
-          <label>
-          Email
-            <input
-              onChange={ this.handleChange }
-              name="email"
-              type="email"
-              value={ this.state.data.email }
-            />
-          </label>
-          <label>
-          Password
-            <input
-              onChange={ this.handleChange }
-              type="password"
-              name="password"
-              value={ this.state.data.password }
-            />
-          </label>
-          <button>Login</button>
-        </form>
+        <div className="register">
+          <img className="auth-logo" src="../../assets/logo-light.png" />
+          <form onSubmit={ this.handleSubmit }>
+            <h2>LOGIN</h2>
+            <label>
+            Email
+              <input
+                onChange={ this.handleChange }
+                name="email"
+                type="email"
+                value={ this.state.data.email }
+              />
+            </label>
+            <label>
+            Password
+              <input
+                onChange={ this.handleChange }
+                type="password"
+                name="password"
+                value={ this.state.data.password }
+              />
+            </label>
+            <button>Login</button>
+          </form>
+          <p>Not a member? <Link to='/register'>Register Here</Link></p>
+        </div>
       </div>
     )
   }

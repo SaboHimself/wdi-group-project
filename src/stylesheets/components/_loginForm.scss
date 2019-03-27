@@ -1,4 +1,4 @@
-.register {
+.login {
   width: 25%;
   border: 3px solid black;
   box-shadow: 0 0 250px #000;
@@ -8,7 +8,7 @@
   opacity: 0.9;
 
   .auth-logo {
-    margin: 0 0 0 10px;
+    margin: 0;
   	display: inline-block;
   	width: 90%;
   }
@@ -28,11 +28,8 @@
     border-radius: 999px;
     text-align: center;
 
-    &[name="username"],
     &[name="email"],
-    &[name="number"],
-    &[name="password"],
-    &[name="passwordConfirmation"] {
+    &[name="password"] {
       width: 100%;
     }
   }

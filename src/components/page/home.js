@@ -53,9 +53,7 @@ class Home extends React.Component {
     return(
 
       <div className="home-container">
-        <div className="home-text">
-        Find and Book a Parking Spot
-        </div>
+        <p className="home-text">Find and Book a Parking Space</p>
         <span  className="input">
           <Search
             placeholder="Search Postcode or Location"
