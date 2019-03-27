@@ -43,7 +43,7 @@ class Map extends React.Component {
     if(e.originalEvent.path[4].classList.contains(this.myClass))
       this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
     if(!e.originalEvent.path) return null
-    e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#FFA07A')
+    e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#ECA400')
     const id = e.originalEvent.path[4].getAttribute('mId')
     this.scrollTo(id)
   }
@@ -79,7 +79,7 @@ class Map extends React.Component {
   gElements(){
     const markerColor = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div > svg > g > g:nth-child(2)')
     const markerColorArray = [].slice.call(markerColor)
-    markerColorArray.find(marker => marker.setAttribute('fill', '#3FB1CE'))
+    markerColorArray.find(marker => marker.setAttribute('fill', '#001D4A'))
   }
   divElements(){
     const divMongooseId = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div')
