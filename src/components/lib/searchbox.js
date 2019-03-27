@@ -77,6 +77,7 @@ class Search extends React.Component {
     return (
 
       <Autosuggest
+    
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         inputProps={inputProps}

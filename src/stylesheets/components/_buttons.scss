@@ -8,12 +8,28 @@
   font-family: $primary-font;
   font-weight: 300;
   color: $color-omega-light;
-  background-color: #4eb5f1;
+  background-color: $color-psi-light;
   text-align: center;
   opacity: 0.6;
   transition: all 0.3s;
-
+  cursor: pointer;
   &:hover {
-    background-color: #4095c6;
+   filter: brightness(120%);
+  }
+}
+
+.close-modal {
+  color: $color-omega-light;
+  line-height: 1.5em;
+  display: inline-block;
+  align-self: flex-end;
+  margin: .4em .5em 0 0;
+  padding: 0 .5em 0 .5em;
+  border: 1px solid $color-omega-dark;
+  background: $color-psi-light;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+     filter: brightness(120%);
   }
 }

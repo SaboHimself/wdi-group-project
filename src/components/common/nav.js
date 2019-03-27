@@ -22,14 +22,14 @@ class Nav extends React.Component {
   render(){
     return(
       <div className="header">
-        <h1 className="logo"><Link to='/'>SPACES</Link></h1>
+        <Link to='/'><img className="logo" src="../../assets/logo.png" /></Link>
         <nav className="nav">
           <Link to='/map'>Map</Link>
           {!Auth.isAuthenticated() && <Link to='/register'>Register</Link>}
           {!Auth.isAuthenticated() && <Link to='/login'>login</Link>}
           <Link to='/users/:id'>Account</Link>
-          {Auth.isAuthenticated() && <Link to='/spaces/new' className="create">Create</Link>}
-          {Auth.isAuthenticated() &&<a onClick={this.logout}>Logout</a>}
+          {Auth.isAuthenticated() && <Link to='/spaces/new'>Create</Link>}
+          {Auth.isAuthenticated() && <Link to='/' onClick={this.logout}>Logout</Link>}
         </nav>
       </div>
     )

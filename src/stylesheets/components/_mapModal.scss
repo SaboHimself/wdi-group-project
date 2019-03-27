@@ -1,0 +1,51 @@
+.map-modal {
+  margin: 9% auto;
+  height: 50%;
+  width: 70%;
+  overflow-y: auto;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-color: $color-omega-dark;
+
+  .modal-image-wrapper {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+  }
+
+  .map-modal-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 780px) {
+  .map-modal {
+    margin: 25% auto;
+    height: 50%;
+    width: 50%;
+
+    .modal-image-wrapper {
+      height: 300px;
+      width: 300px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .map-modal {
+    margin: 9% auto;
+    height: 70%;
+    width: 50%;
+
+    .modal-image-wrapper {
+      height: 400px;
+      width: 500px;
+    }
+  }
+}

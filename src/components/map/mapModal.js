@@ -29,12 +29,11 @@ class MapModal extends React.Component {
         <ReactModal
           isOpen={this.state.showModal}
           ariaHideApp={false}
-          // className="map-modal"
+          className="map-modal"
         >
-          <div>
-            {space.images.map((image, id) => (
-              <img key={id} src={image} />
-            ))}
+          <div className="close-modal" onClick={this.handleCloseModal}>X</div>
+          <img className="modal-image-wrapper" src={space.images[0]} />
+          <div className="map-modal-description">
             <div>{space.type}</div>
             <span>At</span>
             <div>{space.geometry}</div>
@@ -48,7 +47,6 @@ class MapModal extends React.Component {
               <button className="button">Book this Space</button>
             </Link>
           </div>
-          <button className="button" onClick={this.handleCloseModal}>X</button>
         </ReactModal>
       </div>
     )

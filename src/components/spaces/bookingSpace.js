@@ -85,7 +85,6 @@ class BookingSpace extends React.Component{
             dates={this.state.space.bookingsDates}
           />
           <BookingModal />
-          <button onClick={this.handleClick}>Confirm</button>
         </form>
       </main>
     )
