@@ -37,7 +37,7 @@ a {
 }
 
 .header {
-	// height: 30vh;
+	height: calc(30% - 14px);
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid $color-omega;
@@ -53,7 +53,7 @@ a {
 	}
 
 	.header {
-		// height: 15vh;
+		height: calc(15% - 14px);
 		flex-direction: column;
 		align-items: center;
 	}
@@ -61,7 +61,7 @@ a {
 
 @media (min-width: 1000px) {
 	.header {
-		// height: 5vh;
+		height: calc(10% - 14px);
 		flex-direction: row;
 		justify-content: space-between;
 	}

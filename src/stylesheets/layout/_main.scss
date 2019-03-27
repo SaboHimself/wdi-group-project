@@ -1,13 +1,19 @@
+#root {
+	height: 100vh;
+}
+
 .main {
+	height: 60%;
 }
 
 @media (min-width: 780px) {
 	.main {
+		height: 75%;
   }
 }
 
 @media (min-width: 1000px) {
-  .main {
-		height: 100vh;
+   .main {
+			height: 80%;
   }
 }
