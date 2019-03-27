@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .login {
   width: 25%;
   border: 3px solid black;
@@ -47,38 +46,4 @@
     color: $color-omega-light;
     text-decoration: underline;
   }
-=======
-.loginForm{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  div {
-    width:35%;
-    padding: 20px;
-    background: $color-omega;
-    div {
-      text-align: center;
-      width: calc(100% - 40px);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      label {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        span {
-          width: 100%;
-        }
-        input {
-          width: 100%;
-        }
-      }
-    }
-  }
-
->>>>>>> 5168abc629f9b55a8e85293403197a8e959607a0
 }
