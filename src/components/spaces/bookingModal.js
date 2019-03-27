@@ -24,17 +24,17 @@ class BookingModal extends React.Component {
   render () {
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Confirm Booking</button>
+        <button className="button" onClick={this.handleOpenModal}>Confirm Booking</button>
         <ReactModal
           isOpen={this.state.showModal}
           ariaHideApp={false}
-          // className="map-modal"
+          className="map-modal"
         >
           <p>Space Confirmed</p>
           <Link to="/">
-            <button>Find another Space</button>
+            <button className="button" >Find another Space</button>
           </Link>
-          <button onClick={this.handleCloseModal}>X</button>
+          <button className="close-modal" onClick={this.handleCloseModal}>X</button>
         </ReactModal>
       </div>
     )

@@ -1,7 +1,7 @@
 .map-modal {
   margin: 9% auto;
-  height: 70%;
-  width: 50%;
+  height: 50%;
+  width: 70%;
   overflow-y: auto;
   background: #fff;
   display: flex;
@@ -12,8 +12,8 @@
   .modal-image-wrapper {
     display: block;
     margin: 0 auto;
-    height: 400px;
-    width: 500px;
+    height: 300px;
+    width: 300px;
   }
 
   .map-modal-description {
@@ -22,20 +22,30 @@
     justify-content: center;
     align-items: center;
   }
+}
 
-  .close-modal {
-    color: $color-omega-light;
-    line-height: 1.5em;
-    display: inline-block;
-    align-self: flex-end;
-    margin: .4em .5em 0 0;
-    padding: 0 .5em 0 .5em;
-    border: 1px solid $color-omega-dark;
-    background: $color-psi-light;
-    cursor: pointer;
+@media (min-width: 780px) {
+  .map-modal {
+    margin: 25% auto;
+    height: 50%;
+    width: 50%;
 
-    &:hover {
-      background: $color-psi;
+    .modal-image-wrapper {
+      height: 300px;
+      width: 300px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .map-modal {
+    margin: 9% auto;
+    height: 70%;
+    width: 50%;
+
+    .modal-image-wrapper {
+      height: 400px;
+      width: 500px;
     }
   }
 }
