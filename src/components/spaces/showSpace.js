@@ -27,19 +27,22 @@ class ShowSpace extends React.Component{
       .catch(err => console.log(err))
   }
 
+  isOwner() {
+  return Auth.isAuthenticated() && this.state.cheese.user._id === Auth.getPayload().sub
+}
+
   render() {
     if(!this.state.space) return null
     const { space } = this.state
     console.log(this.state)
+    console.log(isOwner)
     return(
       <main>
         <SpaceRepeatedField
           space={space}
         />
-        <Link
-        className="button is-warning"
-        to={`/spaces/${space._id}/edit1`}>Edit</Link>
-        <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+          {this.isOwner() && <Link className="button is-warning" to={`/spaces/${space._id}/edit1`}>Edit</Link>}
+          {this.isOwner() &&<button className="button is-danger" onClick={this.handleDelete}>Delete</button>}
       </main>
     )
   }

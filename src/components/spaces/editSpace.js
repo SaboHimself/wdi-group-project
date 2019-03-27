@@ -43,7 +43,6 @@ class EditSpace extends React.Component{
     return(
       <main>
         <div>
-          <h1>yoyoyyo</h1>
           <AdjustmentForm
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
