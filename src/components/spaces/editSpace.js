@@ -8,12 +8,19 @@ class EditSpace extends React.Component{
     super()
 
     this.state = {
-      data: {}
+      data: {
+        type: '',
+        suitability: '',
+        description: '',
+        electricChargingPoint: false,
+        price: ''
+      }
       // errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-
+    this.handleTypeSelect = this.handleTypeSelect.bind(this)
+    this.handleSuitabilitySelect = this.handleSuitabilitySelect.bind(this)
   }
   componentDidMount(){
     axios.get(`/api/spaces/${this.props.match.params.id}`)
@@ -27,12 +34,25 @@ class EditSpace extends React.Component{
     this.setState({ data })
   }
 
+  handleTypeSelect({ value }) {
+    const data = { ...this.state.data, type: value }
+    this.setState({ data })
+  }
+
+  handleSuitabilitySelect({ value }) {
+    const data = { ...this.state.data, suitability: value }
+    this.setState({ data })
+  }
+
   handleSubmit(e){
     e.preventDefault()
     axios.put(`api/spaces/${this.props.match.params.id}`,
       this.state.data,
       { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-      .then(() => this.props.history.push('/api/spaces'))
+      .then((res) => {
+        console.log(res)
+        this.props.history.push('/api/spaces')
+      })
       .catch(err => this.setState({errors: err.response.data.errors}))
   }
 
@@ -45,6 +65,8 @@ class EditSpace extends React.Component{
           <AdjustmentForm
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
+            handleSuitabilitySelect={this.handleSuitabilitySelect}
+            handleTypeSelect={this.handleTypeSelect}
             data={this.state.data}
           />
         </div>
