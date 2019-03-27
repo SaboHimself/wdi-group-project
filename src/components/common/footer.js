@@ -4,7 +4,7 @@ const Footer = () => {
 
   return(
     <div className="footer">
-      <span>SPACES &copy;</span>
+      <img className="logo" src="../../assets/logo.png" />
     </div>
   )
 }
