@@ -17,9 +17,6 @@ class Profile extends React.Component{
 
   }
 
-
-
-
   render(){
     if(!this.state.user) return null
     const { user } = this.state
@@ -37,15 +34,8 @@ class Profile extends React.Component{
           {user.userSpaces.map((space, id) => (
             <div key={id}>
               <Link to={`/spaces/${space._id}`}>
-                <div>{space.location}</div>
+                <div src={space.images}></div>
               </Link>
-              <div>{space.type}</div>
-              <div>{space.suitability}</div>
-              <div>{space.price}</div>
-              {space.images.map((image, id) => (
-                <img key={id} src={image} />
-              ))}
-
             </div>
 
           ))}

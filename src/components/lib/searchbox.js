@@ -75,6 +75,7 @@ class Search extends React.Component {
     }
 
     return (
+
       <Autosuggest
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
@@ -83,6 +84,7 @@ class Search extends React.Component {
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
       />
+
     )
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from './userAuthentication'
+import Flash from './flash'
 
 class Login extends React.Component {
   constructor() {
@@ -28,10 +29,13 @@ class Login extends React.Component {
     e.preventDefault()
     axios.post('/api/login', this.state.data)
       .then(res => {
+        Flash.setMessage('success', res.data.message)
         Auth.setToken(res.data.token)
         this.props.history.push('/map')
       })
-      .catch(err => console.log(err))
+      .catch(() => {
+        this.setState({ error: 'Invalid Credentials'})
+      })
   }
 
   render() {

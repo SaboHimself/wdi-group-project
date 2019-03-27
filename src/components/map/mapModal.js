@@ -25,7 +25,7 @@ class MapModal extends React.Component {
     const space = this.props.space
     return (
       <div>
-        <button onClick={this.handleOpenModal}>More details</button>
+        <button className="button" onClick={this.handleOpenModal}>More details</button>
         <ReactModal
           isOpen={this.state.showModal}
           ariaHideApp={false}
@@ -45,10 +45,10 @@ class MapModal extends React.Component {
             <Link to={{
               pathname: '/bookings',
               state: `${space._id}`}}>
-              <button>Book this Space</button>
+              <button className="button">Book this Space</button>
             </Link>
           </div>
-          <button onClick={this.handleCloseModal}>X</button>
+          <button className="button" onClick={this.handleCloseModal}>X</button>
         </ReactModal>
       </div>
     )

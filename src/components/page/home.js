@@ -52,11 +52,14 @@ class Home extends React.Component {
   render() {
     return(
       <div>
+      <span className="input">
         <Search
+
           value={this.state.value}
           change={this.onChange}
           lnglatChange={this.handleLngLatChange}
         />
+      </span>
         <Calender
           handleChangeEnd={this.handleChangeEnd}
           handleChangeStart={this.handleChangeStart}

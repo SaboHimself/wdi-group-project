@@ -21,15 +21,18 @@ class SpaceRepeatedField extends React.Component{
     const { space } = this.props
     return(
       <div>
+      <label>Address</label>
         <div>{this.state.address}</div>
         <div>{space.suitability}</div>
         {space.images.map((image, id) => (
           <img key={id} src={image} />
         ))}
         <hr />
+
         <div>{space.type}</div>
         <div>{!space.availability || space.availability.toString()}</div>
         <div>£{space.price}</div>
+        <label>Description</label>
         <div>{space.description}</div>
         <div>{space.electricChargingPoint.toString()}</div>
         <div>{space.owner.username}</div>
