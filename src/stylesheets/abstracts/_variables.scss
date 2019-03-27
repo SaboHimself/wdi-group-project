@@ -1,17 +1,26 @@
 // Colors
 
-$primary-color: red;
-$primary-color-light: lighten($primary-color, 15%);
-$primary-color-dark: darken($primary-color, 15%);
+$color-alpha: #55dde0;
+$color-alpha-light: lighten($color-alpha, 10%);
+$color-alpha-dark: darken($color-alpha, 10%);
 
-$secondary-color: blue;
-$secondary-color-light: lighten($secondary-color, 15%);
-$secondary-color-light: darken($secondary-color, 15%);
+$color-beta: #33658a;
+$color-beta-light: lighten($color-beta, 10%);
+$color-beta-dark: darken($color-beta, 10%);
 
-$border-color: grey;
+$color-gamma: #2f4858;
+$color-gamma-light: lighten($color-gamma, 10%);
+$color-gamma-dark: darken($color-gamma, 10%);
 
-$border-color-light: lighten($border-color, 15%);
-$border-color-dark: darken($border-color, 15%);
+$color-psi: #f6ae2d;
+$color-psi-light: lighten($color-psi, 10%);
+$color-psi-dark: darken($color-psi, 10%);
+
+$color-omega: #f26419;
+$color-omega-light: lighten($color-omega, 10%);
+$color-omega-dark: darken($color-omega, 10%);
+
+$color-background: #eaf2ef;
 
 // Fonts
 $serif: serif;
@@ -21,5 +30,5 @@ $monospace: monospace;
 $primary-font: $sans-serif;
 $secondary-font: $serif;
 
-$font-size-primary: 16px
+$font-size-primary: 16px;
 $font-size-header: 30px;
