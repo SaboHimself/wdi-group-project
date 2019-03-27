@@ -1,8 +1,5 @@
 import React from 'react'
 import Select from 'react-select'
-// import { Link } from 'react-router-dom'
-// import axios from 'axios'
-// import Auth from '../../auth/userAuthentication'
 
 const typeOptions = [
   { value: 'On Road', label: 'On Road' },
@@ -31,7 +28,6 @@ class AdjustmentForm extends React.Component{
 
   render(){
     const { data, handleSubmit, handleChange, handleTypeSelect, handleSuitabilitySelect } = this.props
-    console.log(data)
     return(
       <div>
         <form onSubmit={handleSubmit}>

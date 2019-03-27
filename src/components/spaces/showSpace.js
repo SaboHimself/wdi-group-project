@@ -22,7 +22,7 @@ class ShowSpace extends React.Component{
     axios.delete(`/api/spaces${this.props.match.params.id}`,{ headers: { Authorization: `Bearer ${Auth.getToken()}`}})
       .then(()=> {
         // Flash.setMessage('danger', 'Cheese deleted')
-        this.props.history.push('/cheeses')
+        this.props.history.push('/map')
       })
       .catch(err => console.log(err))
   }

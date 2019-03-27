@@ -46,18 +46,18 @@ class EditSpace extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    axios.put(`api/spaces/${this.props.match.params.id}`,
+    console.log(this.props)
+    axios.put(`/api/spaces/${this.props.match.params.id}`,
       this.state.data,
       { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
       .then((res) => {
         console.log(res)
-        this.props.history.push('/api/spaces')
+        this.props.history.push(`/spaces/${this.props.match.params.id}`)
       })
       .catch(err => this.setState({errors: err.response.data.errors}))
   }
 
   render(){
-    // console.log(this.state.data)
     if(!this.state.data) return null
     return(
       <main>
