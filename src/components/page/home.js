@@ -1,8 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
 import HomePageDate from '../lib/homePageDate'
-import Calender from '../lib/calender'
 import Search from '../lib/searchbox'
 
 class Home extends React.Component {
@@ -63,7 +60,6 @@ class Home extends React.Component {
             lnglatChange={this.handleLngLatChange}
           />
         </span>
-        <button className="button" onClick={this.handleClick}>Search</button>
       </div>
     )
   }

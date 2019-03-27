@@ -8,24 +8,23 @@ class EditSpace extends React.Component{
     super()
 
     this.state = {
-      data: {},
-      errors: {}
+      data: {}
+      // errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
   }
   componentDidMount(){
-    axios.get(`/api/spaces/
-        ${this.props.match.params.id}`)
+    axios.get(`/api/spaces/${this.props.match.params.id}`)
       .then(res => this.setState({ data: res.data }))
-      .catch(err => console.log(err.message))
+      .catch(err => console.log(err))
   }
 
   handleChange({ target: { name, value }}) {
     const data = {...this.state.data, [name]: value }
-    const errors = {...this.state.errors, [name]: ''}
-    this.setState({ data, errors })
+    // const errors = {...this.state.errors, [name]: ''}
+    this.setState({ data })
   }
 
   handleSubmit(e){
@@ -38,6 +37,8 @@ class EditSpace extends React.Component{
   }
 
   render(){
+    // console.log(this.state.data)
+    if(!this.state.data) return null
     return(
       <main>
         <div>
@@ -45,11 +46,11 @@ class EditSpace extends React.Component{
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             data={this.state.data}
-            errors={this.state.errors}
           />
         </div>
       </main>
     )
   }
 }
+// errors={this.state.errors}
 export default EditSpace

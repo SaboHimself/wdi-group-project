@@ -40,10 +40,16 @@ class Register extends React.Component {
 
   render() {
     return(
+<<<<<<< HEAD
       <div className="auth-main">
         <div className='register'>
           <img className="auth-logo" src="../../assets/logo-light.png" />
           <h2>Register</h2>
+=======
+      <div className='registerForm'>
+        <div className='formWrapper'>
+          <div>Register</div>
+>>>>>>> 5168abc629f9b55a8e85293403197a8e959607a0
           <form onSubmit={ this.handleSubmit }>
             <label>
               <span>Username</span>
@@ -87,9 +93,14 @@ class Register extends React.Component {
                 value={ this.state.data.passwordConfirmation }
               />
             </label>
+<<<<<<< HEAD
             <button>Register</button>
           </form>
           <p>Already Registered? <Link to='/login'>Login Here</Link></p>
+=======
+            <input type="submit" name="submit" value="Log in"/>
+          </form>
+>>>>>>> 5168abc629f9b55a8e85293403197a8e959607a0
         </div>
       </div>
     )

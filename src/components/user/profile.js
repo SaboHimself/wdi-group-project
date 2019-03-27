@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 class Profile extends React.Component{
   constructor() {
-    console.log('up and runnning')
+
     super()
     this.state = {}
   }
@@ -21,27 +21,29 @@ class Profile extends React.Component{
     if(!this.state.user) return null
     const { user } = this.state
     console.log(this.state)
+
     return(
-
-      <div id="main">
-        <div>
-          <p>{user.username}</p>
-          <div>{user.email}</div>
-          <hr />
-        </div>
-        <div>
-          <h1>Spaces Available</h1>
-          {user.userSpaces.map((space, id) => (
-            <div key={id}>
-              <Link to={`/spaces/${space._id}`}>
-                <div src={space.images}></div>
-              </Link>
-            </div>
-
-          ))}
+      <div className="profilePage">
+        <div className="profileWrapper">
+          <section>
+            <h1>{user.username}</h1>
+            <span>{user.email}</span>
+            <hr />
+          </section>
+          <section>
+            <h1>Spaces Available</h1>
+            {user.userSpaces.map((space, id) => (
+              <div key={id}>
+                <Link to={`/spaces/${space._id}`}>
+                  <img src={space.images[0]} />
+                </Link>
+              </div>
+            ))}
+          </section>
         </div>
       </div>
     )
   }
 }
+
 export default Profile
