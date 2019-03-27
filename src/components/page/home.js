@@ -67,7 +67,7 @@ class Home extends React.Component {
           pathname: '/map',
           state: this.state.lnglat }
         }>
-          <button onClick={this.handleClick}>Map</button>
+          <button className="button" onClick={this.handleClick}>Map</button>
         </Link>
       </div>
     )
