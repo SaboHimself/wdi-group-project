@@ -15,7 +15,7 @@ class Step2 extends React.Component{
     }
 
     return(
-      <div>
+      <div className="step2">
         <input
           name="price"
           placeholder="Price"
@@ -23,9 +23,6 @@ class Step2 extends React.Component{
           onChange={this.props.handleChange}
           value={this.props.price}
         />
-        <label>
-          Description
-        </label>
         <textarea
           placeholder="description"
           name="description"
@@ -37,4 +34,7 @@ class Step2 extends React.Component{
   }
 }
 
+// <label>
+//   Description
+// </label>
 export default Step2
