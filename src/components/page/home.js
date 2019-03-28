@@ -2,6 +2,8 @@ import React from 'react'
 import HomePageDate from '../lib/homePageDate'
 import Search from '../lib/searchbox'
 
+import {Link} from 'react-router-dom'
+
 class Home extends React.Component {
   constructor() {
     super()
@@ -48,7 +50,6 @@ class Home extends React.Component {
 
   render() {
     return(
-
       <div className="home-container">
         <p className="home-text">Find and Book a Parking Space</p>
         <span  className="input">
@@ -59,7 +60,14 @@ class Home extends React.Component {
             change={this.onChange}
             lnglatChange={this.handleLngLatChange}
           />
+
         </span>
+        <Link to={{
+          pathname: '/map',
+          state: this.state.lnglat }
+        }>
+          <button>Map</button>
+        </Link>
       </div>
     )
   }
