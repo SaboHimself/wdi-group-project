@@ -1,0 +1,131 @@
+.createSpaceFormWrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../src/assets/images/ruffa-jane-reyes-670602-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: exclusion;
+
+  .createSpace {
+    height:100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .map2 {
+      height: 80%;
+      width: 50%;
+      box-shadow: 0 0 1em #000;
+      margin: 5px;
+    }
+
+    .createSpaceForm{
+      width: 50%;
+      height: 80%;
+      max-height: 43em;
+      width: 30em;
+      border: 3px solid black;
+      box-shadow: 0 0 1em #000;
+      text-align: center;
+      padding: 4rem 2rem;
+      background-color: $color-beta;
+      opacity: 0.9;
+      margin: 5px;
+
+
+      p {
+        height: 15%;
+        font-size: 2.75rem;
+        font-weight: 100;
+        margin: 0 0 1rem;
+        color: $color-omega-light;
+        text-transform: uppercase;
+      }
+
+      //input
+      div.step1 {
+        height: 70%;
+        label {
+          text-align: center;
+          color:white;
+        }
+        .css-10nd86i {
+          border-radius: 999px;
+          .css-bl6clz{
+            border-radius: 999px;
+          }
+          .css-2o5izw{
+            border-radius: 999px;
+          }
+          .css-vj8t7z {
+            border-radius: 999px;
+          }
+        }
+
+        input[type="radio"] {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      div.step2 {
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        input[name=price] {
+          outline: 0;
+          padding: .5rem 1rem;
+          border: 3px solid $color-omega-light;
+          border-radius: 999px;
+          text-align: center;
+          width: 60%;
+          margin-bottom: 20px;
+        }
+        textarea {
+          margin-top: 20px;
+          width: 60%;
+          height: 50%;
+          resize:none;
+          border-radius: 5px;
+          &::placeholder{
+            font-size: 18px;
+            text-align: center;
+            line-height: 100px;
+          }
+        }
+      }
+
+      div.step3 {
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        div.submit {
+          height: 40%;
+          button {
+            outline: 0;
+            padding: .5rem 1rem;
+            border: 3px solid $color-omega-light;
+            border-radius: 999px;
+            text-align: center;
+            margin: 5px;
+          }
+        }
+        div.errors {
+          height: 60%;
+        }
+      }
+    }
+  }
+}
+
+.danger {
+  color: red;
+}

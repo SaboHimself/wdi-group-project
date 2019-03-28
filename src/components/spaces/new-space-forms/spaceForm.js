@@ -29,7 +29,8 @@ class SpaceForm extends React.Component {
         price: '',
         images: ''
       },
-      image: ''
+      image: '',
+      errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -83,7 +84,14 @@ class SpaceForm extends React.Component {
     e.preventDefault()
     const data = {...this.state.data, images: [this.state.image] }
     axios.post('/api/spaces', data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res)
+        this.props.history.push(`/spaces/${res.data._id}`)
+      })
+      .catch(err => {
+        console.log(err.response.data)
+        this.setState({ errors: err.response.data.errors})
+      })
   }
 
   handleNext() {
@@ -144,33 +152,40 @@ class SpaceForm extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
-          <p>Step {this.state.data.currentStep}</p>
-          <Map2
-            geometryChange={this.handleGeometryChange}
-          />
-          <Step1
-            currentStep={this.state.data.currentStep}
-            handleChange={this.handleChange}
-            handleTypeSelect={this.handleTypeSelect}
-            handleSuitabilitySelect={this.handleSuitabilitySelect}
-            handleChargeRadio={this.handleChargeRadio}
-            type={this.state.data.type}
-            suitability={this.state.data.suitability}
-            description={this.state.data.description}
-            electricChargingPoint={this.state.data.electricChargingPoint}
-          />
-          <Step2
-            currentStep={this.state.data.currentStep}
-            handleChange={this.handleChange}
-            price={this.state.data.price}
-          />
-          <Step3
-            currentStep={this.state.data.currentStep}
-            handlePhotoModal={this.handlePhotoModal}
-          />
-          {this.previousButton}
-          {this.nextButton}
+        <form onSubmit={this.handleSubmit} className="createSpaceFormWrapper">
+          <div className="createSpace">
+            <Map2
+              geometryChange={this.handleGeometryChange}
+            />
+            <div className="createSpaceForm">
+              <p>Step {this.state.data.currentStep}</p>
+              <Step1
+                currentStep={this.state.data.currentStep}
+                handleChange={this.handleChange}
+                handleTypeSelect={this.handleTypeSelect}
+                handleSuitabilitySelect={this.handleSuitabilitySelect}
+                handleChargeRadio={this.handleChargeRadio}
+                type={this.state.data.type}
+                suitability={this.state.data.suitability}
+                description={this.state.data.description}
+                electricChargingPoint={this.state.data.electricChargingPoint}
+                errors={this.state.errors}
+              />
+              <Step2
+                currentStep={this.state.data.currentStep}
+                handleChange={this.handleChange}
+                price={this.state.data.price}
+                errors={this.state.errors}
+              />
+              <Step3
+                currentStep={this.state.data.currentStep}
+                handlePhotoModal={this.handlePhotoModal}
+                errors={this.state.errors}
+              />
+              {this.previousButton}
+              {this.nextButton}
+            </div>
+          </div>
         </form>
       </React.Fragment>
     )
