@@ -1,9 +1,17 @@
 .space-wrapper {
   height: 100%;
   width: 100%;
-  background: red;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.image-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .spaceShow {
@@ -11,16 +19,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+
+  .description-container{
+    width: 30%;
+  }
 
   .address {
+    font-family: "Cera-ProBold";
+    font-size: 25px;
     text-align: center;
     font-weight: bold;
     padding: 10px;
+    color: rgb(18, 41, 91);
+  }
+.block{
+  display: inline-block;
+}
+  .calender{
+
+  }
+
+  .description{
+    width: 30%;
+    margin: 50px 20px 0 20px;
+    font-size: 15px;
   }
 
   img {
     display: block;
     height: auto;
-    width: 50%;
+    width: 300px;
+    // height: 60%;
+    flex: 1;
+    margin: 50px;
+    border: 1px solid rgb(18, 41, 91);
+    border-radius: 4px;
+    padding: 10px;
+
   }
+}
+
+@font-face{
+	font-family: "Cera-ProBold";
+	src: url('../assets/fonts/CeraPro-Bold.ttf');
 }

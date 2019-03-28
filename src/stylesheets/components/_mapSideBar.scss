@@ -8,6 +8,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  font-family: "Cera-Pro";
   border-bottom: 1px solid $color-omega-dark;
   background-color: $color-gamma;
   padding: 10px;
@@ -26,6 +28,20 @@
     justify-content: space-around;
   }
 
+  .price{
+    font-family: "Cera-Pro";
+    font-size: 30px;
+    text-shadow: 1px 1px $color-omega-light;
+  }
+
+  .price > .perHour{
+  font-family: "Cera-Pro";
+  font-size: 18px;
+  text-shadow: 1px 1px $color-omega-light;
+}
+
+
+
   .location {
     display: flex;
     flex-direction: row;
@@ -37,8 +53,8 @@
       padding: 10px;
 
       img {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         border-radius: 100%;
         border: 3px solid $color-omega-light;
       }
@@ -67,6 +83,11 @@
   //   width: 100%;
   // }
 // }
+
+@font-face{
+	font-family: "Cera-Pro";
+	src: url('../assets/fonts/CeraPro-Regular.ttf');
+}
 
 @media (min-width: 1000px) {
   .sidebar {
