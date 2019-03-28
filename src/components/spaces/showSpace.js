@@ -35,7 +35,7 @@ class ShowSpace extends React.Component{
     if(!this.state.space) return null
     const { space } = this.state
     return(
-      <main>
+      <main className="space-wrapper">
         <SpaceRepeatedField
           space={space}
         />

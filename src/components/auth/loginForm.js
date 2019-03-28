@@ -42,7 +42,7 @@ class Login extends React.Component {
   render() {
     return(
       <div className="auth-main">
-        <div className="register">
+        <div className="register animated zoomIn">
           <img className="auth-logo" src="../../assets/logo-light.png" />
           <form onSubmit={ this.handleSubmit }>
             <h2>LOGIN</h2>

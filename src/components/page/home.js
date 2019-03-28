@@ -49,7 +49,7 @@ class Home extends React.Component {
   render() {
     return(
 
-      <div className="home-container">
+      <div className="home-container animated fadeIn slower">
         <p className="home-text">Find and Book a Parking Space</p>
         <span  className="input">
           <Search

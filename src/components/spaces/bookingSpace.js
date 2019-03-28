@@ -72,7 +72,7 @@ class BookingSpace extends React.Component{
     console.log(this.state.space)
     if(!this.state.space) return null
     return(
-      <main>
+      <main className="space-wrapper">
         <SpaceRepeatedField
           space={this.state.space}
         />

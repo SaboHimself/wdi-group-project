@@ -138,7 +138,7 @@ class Map extends React.Component {
   render() {
     const { spaces } = this.state
     return(
-      <div id="main" className="map-wrapper">
+      <div id="main" className="map-wrapper animated fadeIn slower">
         <div
           className='sidebar'
           onClick={this.handleClickSidebar}

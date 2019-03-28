@@ -41,7 +41,7 @@ class Register extends React.Component {
   render() {
     return(
       <div className="auth-main">
-        <div className='register'>
+        <div className="register animated zoomIn">
           <img className="auth-logo" src="../../assets/logo-light.png" />
           <h2>Register</h2>
           <form onSubmit={ this.handleSubmit }>
