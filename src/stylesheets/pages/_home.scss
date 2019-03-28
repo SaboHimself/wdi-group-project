@@ -80,7 +80,7 @@
   top: 51px;
   width: 280px;
   border: 1px solid #aaa;
-  background-color: #fff;
+  background-color: $color-omega-light;
   font-family: Helvetica, sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -101,5 +101,5 @@
 }
 
 .react-autosuggest__suggestion--highlighted {
- background-color: #ddd;
+ background-color: $color-omega-light;
 }

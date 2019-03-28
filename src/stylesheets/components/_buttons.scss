@@ -21,40 +21,53 @@
 .close-modal {
   color: $color-omega-light;
   line-height: 1.5em;
+  box-shadow: 0px 1px 0px 2px rgb(18, 41, 91);
   display: inline-block;
   align-self: flex-end;
   margin: .4em .5em 0 0;
   padding: 0 .5em 0 .5em;
-  border: 1px solid $color-omega-dark;
-  background: $color-psi-light;
+  border: 1px solid #4e6096;
+  border-radius: 100%;
+  background-color: rgb(18, 41, 91);
+  background: linear-gradient(to bottom, #476e9e 5%, rgb(18, 41, 91) 100%);
   cursor: pointer;
   transition: all 0.3s;
-  
+  font-family: Arial;
+  outline: none;
+
   &:hover {
-       background: $color-psi;
+    background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color: #476e9e;
+    outline: none;
   }
 }
 
 .button{
   box-shadow: 0px 1px 0px 2px rgb(18, 41, 91);
-  background:linear-gradient(to bottom, #476e9e 5%, rgb(18, 41, 91) 100%);
+  background: linear-gradient(to bottom, #476e9e 5%, rgb(18, 41, 91) 100%);
   background-color: rgb(18, 41, 91);
   border-radius: 10px;
   border: 1px solid #4e6096;
   cursor: pointer;
-  color: #fff;
+  color: $color-omega-light;
   font-family: Arial;
   font-size: 16px;
   padding: 8px 35px;
   text-decoration: none;
   text-shadow: 0px 1px 1px #283966;
+  outline: none;
 
   &:hover {
     background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
     background-color: #476e9e;
+    outline: none;
   }
 
   &:active {
-    top:1px;
+    outline: none;
   }
+}
+
+.pad {
+  margin-top: 10px;
 }
