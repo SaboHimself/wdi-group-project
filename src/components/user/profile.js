@@ -94,11 +94,13 @@ class Profile extends React.Component{
           <ReactModal
             isOpen={this.state.showModal}
             ariaHideApp={false}
-            className="map-modal"
+            className="delete-modal"
           >
-            <button className="button" onClick={this.handleCloseModal}>Back</button>
-            <button className="button" onClick={this.handleDelete}>Delete Booking</button>
-            <div>Are you sure you want to cancel your booking?</div>
+            <div className="button-wrapper">
+              <button className="button" onClick={this.handleCloseModal}>Back</button>
+              <button className="button" onClick={this.handleDelete}>Delete Booking</button>
+            </div>
+            <div className="pad-top">Are you sure you want to cancel your booking?</div>
           </ReactModal>
         </div>
       </div>
