@@ -65,18 +65,16 @@ class EditSpace extends React.Component{
   render(){
     if(!this.state.data) return null
     return(
-      <main>
-        <div>
-          <AdjustmentForm
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-            handleSuitabilitySelect={this.handleSuitabilitySelect}
-            handleTypeSelect={this.handleTypeSelect}
-            data={this.state.data}
-            errors={this.state.errors}
-          />
-        </div>
-      </main>
+      <div className="edit-wrapper">
+        <AdjustmentForm
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          handleSuitabilitySelect={this.handleSuitabilitySelect}
+          handleTypeSelect={this.handleTypeSelect}
+          data={this.state.data}
+          errors={this.state.errors}
+        />
+      </div>
     )
   }
 }

@@ -37,13 +37,15 @@ class ShowSpace extends React.Component{
     if(!this.state.space) return null
     const { space } = this.state
     return(
-      <main className="space-wrapper">
-        <SpaceRepeatedField
-          space={space}
-        />
-        {this.isOwner() && <Link className="button is-warning" to={`/spaces/${space._id}/edit`}>Edit</Link>}
-        {this.isOwner() &&<button className="button is-danger" onClick={this.handleDelete}>Delete</button>}
-      </main>
+      <div>
+        <main className="space-wrapper">
+          <SpaceRepeatedField
+            space={space}
+          />
+        </main>
+        {this.isOwner() && <Link className="button" to={`/spaces/${space._id}/edit`}>Edit</Link>}
+        {this.isOwner() &&<button className="button" onClick={this.handleDelete}>Delete</button>}
+      </div>
     )
   }
 }

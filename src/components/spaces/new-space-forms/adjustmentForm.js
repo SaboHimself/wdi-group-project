@@ -25,7 +25,7 @@ class AdjustmentForm extends React.Component{
     const { data, handleSubmit, handleChange, handleTypeSelect, handleSuitabilitySelect, handleChargeRadio, errors } = this.props
     return(
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="edit">
           <label>
           Type
           </label>
@@ -46,27 +46,6 @@ class AdjustmentForm extends React.Component{
             value={!data || {value: data.suitability, label: data.suitability}}
           />
           {errors.suitability && <div><small className="danger">{errors.suitability}</small></div>}
-          <label>
-          Electric Charging Point
-          </label>
-          <div>
-            <input
-              id="c1"
-              type="radio"
-              name="electricChargingPoint"
-              value="true"
-              onChange={handleChargeRadio}
-            />
-            <label htmlFor="c1"><span></span>True </label>
-            <input
-              id="c2"
-              type="radio"
-              name="electricChargingPoint"
-              value="false"
-              onChange={handleChargeRadio}
-            />
-            <label htmlFor="c2"><span></span>false </label>
-          </div>
           <label>
           Price
           </label>
