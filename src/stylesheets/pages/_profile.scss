@@ -4,15 +4,37 @@
   justify-content: center;
   align-items:center;
   .profileWrapper{
+    height:100%;
+    width:80%;
     display: flex;
     flex-direction: column;
-  }
-  section {
-    div{
-      img {
-        height: 100px;
-        width: 100px;
+    section.headerSection {
+      width: 100%;
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    section.spaceSection {
+      width:100%;
+      height: 40%;
+      div.spaceSectionHeader{
+        text-align: center;
+        height: 10%;
       }
+      div.bookings{
+        width: 33%;
+        height: 90%;
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+    section.bookingSection{
+      width: 100%;
+      height: 40%;
     }
   }
 }
