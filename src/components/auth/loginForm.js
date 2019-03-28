@@ -64,7 +64,7 @@ class Login extends React.Component {
                 value={ this.state.data.password }
               />
             </label>
-            <button className="button">Login</button>
+            <button className="button pad">Login</button>
           </form>
           <p>Not a member? <Link to='/register'>Register Here</Link></p>
         </div>

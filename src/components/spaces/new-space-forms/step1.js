@@ -26,7 +26,7 @@ class Step2 extends React.Component{
       return null
     }
     return(
-      <div>
+      <div className="step1">
         <label>
           Type
         </label>
@@ -50,17 +50,21 @@ class Step2 extends React.Component{
         </label>
         <div>
           <input
+            id="c1"
             type="radio"
             name="electricChargingPoint"
             value={true}
             onChange={this.props.handleChargeRadio}
           />
+          <label htmlFor="c1"><span></span>True </label>
           <input
+            id="c1"
             type="radio"
             name="electricChargingPoint"
             value={false}
             onChange={this.props.handleChargeRadio}
           />
+          <label htmlFor="c2"><span></span>False </label>
         </div>
       </div>
     )

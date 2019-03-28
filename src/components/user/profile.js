@@ -31,7 +31,7 @@ class Profile extends React.Component{
           </section>
           <hr />
           <section className="spaceSection">
-            <div className="spaceSectionHeader">Spaces Available</div>
+            <div className="spaceSectionHeader">Your Spaces</div>
             {user.userSpaces.map((space, id) => (
               <div key={id} className="bookings">
                 <Link to={`/spaces/${space._id}`}>

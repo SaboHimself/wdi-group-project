@@ -87,7 +87,7 @@ class Register extends React.Component {
                 value={ this.state.data.passwordConfirmation }
               />
             </label>
-            <button className="button">Register</button>
+            <button className="button pad">Register</button>
           </form>
           <p>Already Registered? <Link to='/login'>Login Here</Link></p>
         </div>

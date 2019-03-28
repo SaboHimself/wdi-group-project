@@ -1,0 +1,15 @@
+.booking-modal {
+  margin: 9% auto;
+  height: 70%;
+  width: 50%;
+  overflow-y: auto;
+  background: $color-gamma;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-color: $color-gamma;
+  border-radius: 20px;
+  opacity: 0.9;
+  color: $color-omega-light;
+  outline: none;
+}

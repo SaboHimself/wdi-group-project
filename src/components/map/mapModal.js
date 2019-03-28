@@ -32,7 +32,9 @@ class MapModal extends React.Component {
           className="map-modal"
         >
           <div className="close-modal" onClick={this.handleCloseModal}>X</div>
-          <img className="modal-image-wrapper" src={space.images[0]} />
+          <div className="modal-image-wrapper">
+            <img src={space.images[0]} />
+          </div>
           <div className="map-modal-description">
             <div>{space.type}</div>
             <span>At</span>

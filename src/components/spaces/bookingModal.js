@@ -28,7 +28,7 @@ class BookingModal extends React.Component {
         <ReactModal
           isOpen={this.state.showModal}
           ariaHideApp={false}
-          className="map-modal"
+          className="booking-modal"
         >
           <p>Space Confirmed</p>
           <Link to="/">
