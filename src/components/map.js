@@ -37,26 +37,22 @@ class Map extends React.Component {
     this.setMarkers()
   }
   handleClick(e){
-    // console.log(e)
     this.divElements()
     this.gElements()
     if(e.originalEvent.path[4].classList.contains(this.myClass))
       this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
-    if(!e.originalEvent.path) return null
-    e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#ECA400')
+    {(e.originalEvent.path && e.originalEvent.path[2].childNodes[1]) &&    e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#ECA400')}
     const id = e.originalEvent.path[4].getAttribute('mId')
     this.scrollTo(id)
   }
 
   handleClickSidebar(e){
-    // console.log(e.target)
-    // e.stopPropagation()
-    // console.log(this.state.findSidebarDiv.listDiv)
-    {!e.target.classList.contains('button') && this.state.findSidebarDiv &&  this.state.findSidebarDiv.listDiv.classList.remove('active')}
+    if(!e.target) return null
+
+    {(this.state.findSidebarDiv && this.state.findSidebarDiv.listDiv) &&  this.state.findSidebarDiv.listDiv.classList.remove('active')}
 
     if(e.target.classList.contains('button')) return null
     else {
-      // this.listDivs = this.listDivs.bind(this)
       e.target.classList.add('active')
       this.removeClass()
     }
@@ -67,7 +63,7 @@ class Map extends React.Component {
   }
 
   scrollTo(id) {
-    {this.state.findSidebarDiv.listDiv && this.state.findSidebarDiv.listDiv.classList.remove('active')}
+    {(this.state.findSidebarDiv && this.state.findSidebarDiv.listDiv) && this.state.findSidebarDiv.listDiv.classList.remove('active')}
 
     if(!this.listDivs[id]) return null
     else {
@@ -80,7 +76,7 @@ class Map extends React.Component {
   gElements(){
     const markerColor = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div > svg > g > g:nth-child(2)')
     const markerColorArray = [].slice.call(markerColor)
-    markerColorArray.find(marker => marker.setAttribute('fill', '#001D4A'))
+    markerColorArray.find(marker => marker.setAttribute('fill', '#3FB1CE'))
   }
   divElements(){
     const divMongooseId = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div')
