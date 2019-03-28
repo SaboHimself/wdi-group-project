@@ -824,7 +824,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
       username: 'MathewMcdonald',
       email: 'MathewMc@gmail.com',
       password: 'Matty5',
-      passwordConfirmation: 'Matty',
+      passwordConfirmation: 'Matty5',
       number: '+447283493883'
     },
     {
@@ -852,7 +852,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
       username: 'GutenWabbit',
       email: 'offthelip@gmail.com',
       password: 'Matty3',
-      passwordConfirmation: 'Matty',
+      passwordConfirmation: 'Matty3',
       number: '+447283493883'
     },
     {
@@ -1464,23 +1464,6 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
         {
           geometry: {
             type: 'Point',
-            coordinates: [-0.159150, 51.513321]
-          },
-          location: 'Fursecroft, George Street, Marble Arch, London W1H',
-          type: 'Garage',
-          suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
-          images: ['https://static.yourparkingspace.co.uk/large/c8e5e3fd5f6252f4602ef60fc6aa9f0d.jpeg, https://static.yourparkingspace.co.uk/large/6beb1e0f8d568bc4fa8129c7d2f2dae3.jpeg'],
-          availability: true,
-          rating: 4.9,
-          description: 'Parking spaces located on George Street in London . The spaces are suitable for vehicles up to the size of a Large - (4x4). On-site there is Covered Parking, CCTV, Security Lighting and Security Guards. The spaces are available 24 hours on all days. Secure car park located in the heart of central London. Situated just off Oxford Street this car park is perfect for anyone shopping or visiting the nearby attractions, including Hyde Park. Spaces available for both daily and monthly bookings. Covered parking, open 24/7, with CCTV access. If you\'\re driving a van please be aware that there is a height restriction of 1.98m. The car park is located inside the Congestion Charge Zone.',
-          comments: { text: ['Easy to find and fairly near to where i needed to get to. Lots of good sized spaces when i arrived at 0745. i would recommend pre-booking and will be back again next week', 'best car park ever best value wide spaces secure staff very attentive could be cleaner but then again people could be less of pigs', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
-          price: 12,
-          electricChargingPoint: false,
-          owner: user[6]
-        },
-        {
-          geometry: {
-            type: 'Point',
             coordinates: [-0.189350, 51.540852]
           },
           location: 'Abbey Road, London NW8',
@@ -1738,11 +1721,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.148370, 51.505170]
           },
-<<<<<<< HEAD
-          location: 'Brick St, London NW8',
-=======
           location: 'Brick St, London E18',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/3fcd27babff8db37c04780e5a222afbb.jpeg', 'https://static.yourparkingspace.co.uk/large/d2a409d69ceaab0dfba4e56c4a9cb2b6.jpeg', 'https://static.yourparkingspace.co.uk/large/bf01bd1b495d989a4bb1c50d9c93297e.png'],
@@ -1759,11 +1738,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.073590, 51.503470]
           },
-<<<<<<< HEAD
-          location: 'Shad Thames, London NW8',
-=======
           location: 'Shad Thames, London E18',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/ab9d95e28b6f9c58ba75d8146fdc142d.jpeg', 'https://static.yourparkingspace.co.uk/large/2ca9d6d65746825d40659604bd65867a.jpeg'],
@@ -1780,11 +1755,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.095654, 51.516040]
           },
-<<<<<<< HEAD
-          location: 'St Thomas Court, London NW8',
-=======
           location: 'St Thomas Court, London NW7',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle',
           images: ['https://static.yourparkingspace.co.uk/large/6e367aa03deb333a6e29a56a28be0131.jpeg'],
@@ -1801,11 +1772,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.095605, 51.512366]
           },
-<<<<<<< HEAD
-          location: 'Friday Street, London NW8',
-=======
           location: 'Friday Street, London SE2',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Sheltered drive-way',
           suitability: 'Motorcyle, Hatchback, Car, 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/0a39a688fcd7b50651b266f96d1b42c9.jpeg', 'https://static.yourparkingspace.co.uk/large/139ed5efde61c3d52983e329e43d5020.jpeg'],
@@ -1822,11 +1789,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.099735, 51.528851]
           },
-<<<<<<< HEAD
-          location: 'Moreland Street, London NW8',
-=======
           location: 'Moreland Street, London W1',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/5c9225475d4271392a135e395819c108.png', 'https://static.yourparkingspace.co.uk/large/f9863d3d498096f4ebf77822fdaad282.png'],
@@ -1843,11 +1806,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.120818, 51.562464]
           },
-<<<<<<< HEAD
-          location: 'Shaw Court, London NW8',
-=======
           location: 'Shaw Court, London WC2',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/5409841dcd462-normal.jpg', 'https://uploads.justpark.com/media/uploaded/listing-photos/54098434b2a47-normal.jpg'],
@@ -1864,11 +1823,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.150320, 51.563627]
           },
-<<<<<<< HEAD
           location: 'Langbourne Avenue, London NW8',
-=======
-          location: 'Langbourne Avenue, London WC2',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://uploads.justpark.com/cdn/media/uploaded/listing-photos/5b76a69e5e087-normal.jpg'],
@@ -1896,23 +1851,6 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           price: 5.40,
           electricChargingPoint: false,
           owner: user[14]
-        },
-        {
-          geometry: {
-            type: 'Point',
-            coordinates: [-0.187323, 51.558247]
-          },
-          location: 'Reddington Gardens, London NW7',
-          type: 'Garage',
-          suitability: 'Motorcyle, Hatchback, Car, Van',
-          images: ['https://www.yourparkingspace.co.uk/search?end_date=26-03-2019&end_time=11%3A30&lat=51.5078788&lng=-0.08773210000003928&location=London%20Bridge%2C%20London%2C%20UK&page=3&per_page=50&radius=10mi&rental=long&space_size=&spaces_available=1&start_date=26-03-2019&start_time=11%3A00&type=both', 'https://www.yourparkingspace.co.uk/search?end_date=26-03-2019&end_time=11%3A30&lat=51.5078788&lng=-0.08773210000003928&location=London%20Bridge%2C%20London%2C%20UK&page=3&per_page=50&radius=10mi&rental=long&space_size=&spaces_available=1&start_date=26-03-2019&start_time=11%3A00&type=both'],
-          availability: true,
-          rating: 4.83,
-          description: 'Parking spaces available to rent on a monthly basis at the Barbican Centre. Located close to Barbican tube station and a short walk from Moorgate tube station and the Museum of London. The car park is covered, secure and has CCTV monitoring.',
-          comments: { text: ['Perfect parking spot', 'For parking in central London, I thought this was good value. The information on entry and exit procedure worked well. however it is a bit dark and dingy, compared to the most modern places', 'Huge space, ideal for the weekend. Id rather pay slightly higher for a safer spot']},
-          price: 7,
-          electricChargingPoint: true,
-          owner: user[15]
         },
         {
           geometry: {
@@ -1963,11 +1901,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
           comments: { text: []},
           price: 7.20,
           electricChargingPoint: false,
-<<<<<<< HEAD
-          owner: user[18]
-=======
           owner: user[2]
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
         },
         {
           geometry: {
@@ -2059,11 +1993,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.089170, 51.494251]
           },
-<<<<<<< HEAD
-          location: 'New Kent Road, London NW8',
-=======
           location: 'New Kent Road, London SE3',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/e82029a2ec491654e58f16aca7babfa3.png', 'https://static.yourparkingspace.co.uk/large/6dc492dc4afa935177b8694df2ccc14d.png'],
@@ -2080,11 +2010,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.065110, 51.514820]
           },
-<<<<<<< HEAD
-          location: 'Commercial Rd, London NW8',
-=======
           location: 'Commercial Rd, London E1',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Car park',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/6e3588bafd2caf90e230bc3733a2aefe.jpeg', 'https://static.yourparkingspace.co.uk/large/07be673a8c90d597395ef661de4614a5.jpeg'],
@@ -2101,11 +2027,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.060604, 51.515702]
           },
-<<<<<<< HEAD
-          location: 'Aldgate, London NW8',
-=======
           location: 'Aldgate, London EC3',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car',
           images: ['https://static.yourparkingspace.co.uk/large/c8a37cf53e45acdfa4f93e41d26a5b21.png', 'https://static.yourparkingspace.co.uk/large/684222fb701f4e8f811b5567316a16b0.jpeg'],
@@ -2139,11 +2061,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.079720, 51.497730]
           },
-<<<<<<< HEAD
-          location: 'Bermondsey, London NW8',
-=======
           location: 'Bermondsey, London E1',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Roadside',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/5a91cbf2850df714a841181e3b0aa9f4.jpeg'],
@@ -2194,11 +2112,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.058830, 51.509510]
           },
-<<<<<<< HEAD
-          location: 'Wapping Lane, London NW8',
-=======
           location: 'Wapping Lane, London E8',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/a452a92e9ded7d90ac5df967e43a6719.jpeg', 'https://static.yourparkingspace.co.uk/large/4212462585b3b10a9731ad2742a1b34d.jpeg'],
@@ -2232,11 +2146,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.100489, 51.49472]
           },
-<<<<<<< HEAD
-          location: 'Elephant & Castle, London NW8',
-=======
           location: 'Elephant & Castle, London SE1',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Not 4X4',
           images: ['https://static.yourparkingspace.co.uk/large/f2f0b786a927118614ad1c92fbe54929.png', 'https://static.yourparkingspace.co.uk/large/2373d0eadd01367eda7fc25de1673e6a.png', 'https://static.yourparkingspace.co.uk/large/bf01bd1b495d989a4bb1c50d9c93297e.png'],
@@ -2321,11 +2231,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.119304, 51.51832]
           },
-<<<<<<< HEAD
-          location: 'Catton St, London NW8',
-=======
           location: 'Catton St, London WC2',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://uploads.justpark.com/media/uploaded/listing-photos/51af1fa0603c3-normal.jpg', 'https://uploads.justpark.com/media/uploaded/listing-photos/51af1edf8b455-normal.jpg'],
@@ -2376,11 +2282,7 @@ mongoose.connect(env.db.development , { useNewUrlParser: true }, (err, db) => {
             type: 'Point',
             coordinates: [-0.084502, 51.52845]
           },
-<<<<<<< HEAD
-          location: 'Hoffman Square, London NW8',
-=======
           location: 'Hoffman Square, London E8',
->>>>>>> 7549bfe571a4fb7d9ebdb7b003a32879167f8b03
           type: 'Garage',
           suitability: 'Motorcyle, Hatchback, Car, Van',
           images: ['https://static.yourparkingspace.co.uk/large/b21cd92c14b872c94ed7d716e04b2416.jpeg'],

@@ -27,13 +27,14 @@ class SpaceRepeatedField extends React.Component{
         <div className="description">{space.description}</div>
 
         <div className="description-container">
-        <div className="block">Suitability:&nbsp;&nbsp;{space.suitability}</div>
+        <div className="block"><span className='strong-text'>Suitability:&nbsp;&nbsp;</span>{space.suitability}</div>
         <br />
-        <div className="block">Type:&nbsp;&nbsp;{space.type}</div>
+        <div className="block"><span className="strong-text"> Type:&nbsp;&nbsp;</span>{space.type}</div>
         <br />
-        <div className="block">Price:&nbsp;&nbsp;£{space.price}</div>
+        <div className="block"><span className="strong-text">Price:&nbsp;&nbsp;</span>£{space.price}</div>
         <br />
         </div>
+
         </div>
       </div>
     )

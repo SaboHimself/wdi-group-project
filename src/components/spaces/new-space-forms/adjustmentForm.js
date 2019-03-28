@@ -14,11 +14,6 @@ const suitabilityOptions = [
   { value: 'Bike', label: 'Bike' }
 ]
 
-// const electricChargingOptions = [
-//   { value: true, label: 'Yes' },
-//   { value: false, label: 'No' }
-// ]
-
 class AdjustmentForm extends React.Component{
   constructor() {
     super()
@@ -27,7 +22,7 @@ class AdjustmentForm extends React.Component{
   }
 
   render(){
-    const { data, handleSubmit, handleChange, handleTypeSelect, handleSuitabilitySelect } = this.props
+    const { data, handleSubmit, handleChange, handleTypeSelect, handleSuitabilitySelect, handleChargeRadio, errors } = this.props
     return(
       <div>
         <form onSubmit={handleSubmit} className="edit">
@@ -40,6 +35,7 @@ class AdjustmentForm extends React.Component{
             onChange={handleTypeSelect}
             value={{value: data.type, label: data.type}}
           />
+          {errors.type && <div><small className="danger">{errors.type}</small></div>}
           <label>
           Suitability
           </label>
@@ -49,6 +45,7 @@ class AdjustmentForm extends React.Component{
             onChange={handleSuitabilitySelect}
             value={!data || {value: data.suitability, label: data.suitability}}
           />
+          {errors.suitability && <div><small className="danger">{errors.suitability}</small></div>}
           <label>
           Price
           </label>
@@ -57,6 +54,7 @@ class AdjustmentForm extends React.Component{
             onChange={handleChange}
             value={!data || data.price}
           />
+          {errors.price && <div><small className="danger">{errors.price}</small></div>}
           <label>
           Description
           </label>
@@ -68,11 +66,11 @@ class AdjustmentForm extends React.Component{
             onChange={handleChange}
             value={!data || data.description}
           />
+          {errors.description && <div><small className="danger">{errors.description}</small></div>}
           <button className="button">Confirm</button>
         </form>
       </div>
     )
   }
-
 }
 export default AdjustmentForm

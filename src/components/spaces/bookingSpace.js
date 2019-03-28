@@ -77,17 +77,17 @@ class BookingSpace extends React.Component{
           space={this.state.space}
         />
         <div className="calender-show">
-        <form onSubmit={this.handleSubmit}>
-          <Calender
+          <form onSubmit={this.handleSubmit}>
+            <Calender
 
-            handleChangeEnd={this.handleChangeEnd}
-            handleChangeStart={this.handleChangeStart}
-            startDate={this.state.startDate}
-            endDate={this.state.endDate}
-            dates={this.state.space.bookingsDates}
-          />
-          <BookingModal />
-        </form>
+              handleChangeEnd={this.handleChangeEnd}
+              handleChangeStart={this.handleChangeStart}
+              startDate={this.state.startDate}
+              endDate={this.state.endDate}
+              dates={this.state.space.bookingsDates}
+            />
+            <BookingModal />
+          </form>
         </div>
       </main>
     )
