@@ -40,7 +40,7 @@ class Register extends React.Component {
 
   render() {
     return(
-      <div className="auth-main">
+      <div className="auth-main animate fadeIn slow">
         <div className="register animated zoomIn">
           <img className="auth-logo" src="../../assets/logo-light.png" />
           <h2>Register</h2>
@@ -87,7 +87,7 @@ class Register extends React.Component {
                 value={ this.state.data.passwordConfirmation }
               />
             </label>
-            <button>Register</button>
+            <button className="button">Register</button>
           </form>
           <p>Already Registered? <Link to='/login'>Login Here</Link></p>
         </div>

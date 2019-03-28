@@ -67,7 +67,7 @@ class Home extends React.Component {
           pathname: '/map',
           state: this.state.lnglat }
         }>
-          <button>Map</button>
+          <button className="button">Find Space</button>
         </Link>
       </div>
     )

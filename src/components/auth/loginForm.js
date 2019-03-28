@@ -41,7 +41,7 @@ class Login extends React.Component {
 
   render() {
     return(
-      <div className="auth-main">
+      <div className="auth-main animate fadeIn slow">
         <div className="register animated zoomIn">
           <img className="auth-logo" src="../../assets/logo-light.png" />
           <form onSubmit={ this.handleSubmit }>
@@ -64,7 +64,7 @@ class Login extends React.Component {
                 value={ this.state.data.password }
               />
             </label>
-            <button>Login</button>
+            <button className="button">Login</button>
           </form>
           <p>Not a member? <Link to='/register'>Register Here</Link></p>
         </div>
