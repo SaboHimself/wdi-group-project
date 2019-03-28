@@ -24,7 +24,7 @@ class Step2 extends React.Component{
           value={this.props.price}
         />
         <textarea
-          placeholder="description"
+          placeholder="Description..."
           name="description"
           onChange={this.props.handleChange}
           value={this.props.description}

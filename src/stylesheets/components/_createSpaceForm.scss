@@ -8,6 +8,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: exclusion;
+  outline: none;
 
   .createSpace {
     height:100%;
@@ -78,6 +79,7 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+
         input[name=price] {
           outline: 0;
           padding: .5rem 1rem;
@@ -87,6 +89,7 @@
           width: 60%;
           margin-bottom: 20px;
         }
+
         textarea {
           margin-top: 20px;
           width: 60%;
@@ -102,29 +105,23 @@
       }
 
       div.step3 {
+
         height: 70%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        div.submit {
-          height: 40%;
-          button {
-            outline: 0;
-            padding: .5rem 1rem;
-            border: 3px solid $color-omega-light;
-            border-radius: 999px;
-            text-align: center;
-            margin: 5px;
-          }
-        }
+      }
         div.errors {
           height: 60%;
         }
       }
     }
   }
-}
+
+  .button {
+    margin: 5px;
+  }
 
 .danger {
   color: red;

@@ -1,47 +1,81 @@
-.profilePage {
+// .profilePage {
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//
+//   .profileWrapper {
+//     height: 100%;
+//     width: 80%;
+//     display: flex;
+//     flex-direction: column;
+//
+//     section.headerSection {
+//       width: 100%;
+//       height: 20%;
+//       display: flex;
+//       justify-content: center;
+//       flex-direction: column;
+//       align-items: center;
+//     }
+//
+//     section.spaceSection {
+//       width: 100%;
+//       height: 40%;
+//
+//       div.spaceSectionHeader {
+//         text-align: center;
+//         height: 10%;
+//       }
+//
+//       div.bookings {
+//         width: 33%;
+//         height: 90%;
+//
+//         img {
+//           height: 100px;
+//           width: 100px;
+//         }
+//       }
+//     }
+//
+//     section.bookingSection {
+//       width: 100%;
+//       height: 40%;
+//     }
+//   }
+// }
+
+
+.profile-wrapper {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 
-  .profileWrapper {
-    height: 100%;
+  .profile {
     width: 80%;
-    display: flex;
-    flex-direction: column;
 
-    section.headerSection {
-      width: 100%;
-      height: 20%;
+    .spaces {
       display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
 
-    section.spaceSection {
-      width: 100%;
-      height: 40%;
-
-      div.spaceSectionHeader {
-        text-align: center;
-        height: 10%;
-      }
-
-      div.bookings {
-        width: 33%;
-        height: 90%;
+      .profile-image-wrapper {
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+        margin: 0;
 
         img {
-          height: 100px;
           width: 100px;
+          height: 100px;
+          border-radius: 100%;
+          border: 4px solid $color-omega-light;
         }
       }
-    }
 
-    section.bookingSection {
-      width: 100%;
-      height: 40%;
+      .description {
+        margin-left: 10px;
+      }
     }
   }
 }

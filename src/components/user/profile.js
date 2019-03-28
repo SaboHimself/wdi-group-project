@@ -23,23 +23,27 @@ class Profile extends React.Component{
     console.log(this.state)
 
     return(
-      <div className="profilePage">
-        <div className="profileWrapper">
+      <div className="profile-wrapper">
+        <div className="profile">
           <section className="headerSection">
             <h1>{user.username}</h1>
             <span>{user.email}</span>
           </section>
           <hr />
           <section className="spaceSection">
-            <div className="spaceSectionHeader">Your Spaces</div>
+            <div>Your Spaces</div>
             {user.userSpaces.map((space, id) => (
-              <div key={id} className="bookings">
+              <div key={id} className="spaces">
                 <Link to={`/spaces/${space._id}`}>
-                  <img src={space.images[0]} />
+                  <div className="profile-image-wrapper">
+                    <img src={space.images[0]} />
+                  </div>
+                </Link>
+                <div className="description">
                   <div>{space.geometry.coordinates}</div>
                   <div>{space.price}</div>
                   <div>{space.description}</div>
-                </Link>
+                </div>
               </div>
             ))}
           </section>

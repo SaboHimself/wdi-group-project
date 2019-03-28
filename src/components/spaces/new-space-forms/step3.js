@@ -14,12 +14,11 @@ class Step3 extends React.Component{
 
     return(
       <div className="step3">
-        <div className="submit">
-          <button
-            type="button"
-            onClick={this.props.handlePhotoModal}>upload photo</button>
-          <button>Submit</button>
-        </div>
+        <button
+          className="button"
+          type="button"
+          onClick={this.props.handlePhotoModal}>Upload a Photo</button>
+        <button className="button">Submit</button>
         <div className="errors">
           {this.props.errors.type && <div><small className="danger">{this.props.errors.type}</small></div>}
           {this.props.errors.type && <div><small className="danger">{this.props.errors.price}</small></div>}
