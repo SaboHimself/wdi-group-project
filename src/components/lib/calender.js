@@ -16,7 +16,7 @@ class Calender extends React.Component{
   render() {
     const { handleChangeEnd, handleChangeStart, startDate, endDate, dates} = this.props
     return(
-      <main>
+      <main className="calender">
         <DatePicker
           placeholderText="Click to select a date"
           selected={startDate}

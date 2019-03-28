@@ -1,11 +1,26 @@
 .space-wrapper {
   height: 100%;
   width: 100%;
-  // overflow: hidden;
+  background: red;
   display: flex;
+  flex-direction: column;
 }
 
 .spaceShow {
   max-height: 43em;
-  background: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .address {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    width: 50%;
+  }
 }
