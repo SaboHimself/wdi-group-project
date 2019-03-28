@@ -14,13 +14,14 @@ class EditSpace extends React.Component{
         description: '',
         electricChargingPoint: false,
         price: ''
-      }
-      // errors: {}
+      },
+      errors: {}
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleTypeSelect = this.handleTypeSelect.bind(this)
     this.handleSuitabilitySelect = this.handleSuitabilitySelect.bind(this)
+    this.handleChargeRadio = this.handleChargeRadio.bind(this)
   }
   componentDidMount(){
     axios.get(`/api/spaces/${this.props.match.params.id}`)
@@ -30,8 +31,8 @@ class EditSpace extends React.Component{
 
   handleChange({ target: { name, value }}) {
     const data = {...this.state.data, [name]: value }
-    // const errors = {...this.state.errors, [name]: ''}
-    this.setState({ data })
+    const errors = {...this.state.errors, [name]: ''}
+    this.setState({ data, errors })
   }
 
   handleTypeSelect({ value }) {
@@ -44,14 +45,18 @@ class EditSpace extends React.Component{
     this.setState({ data })
   }
 
+  handleChargeRadio(e) {
+    const data = { ...this.state.data, electricChargingPoint: e.target.value }
+    this.setState({ data })
+  }
+
   handleSubmit(e){
     e.preventDefault()
     console.log(this.props)
     axios.put(`/api/spaces/${this.props.match.params.id}`,
       this.state.data,
       { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
-      .then((res) => {
-        console.log(res)
+      .then(() => {
         this.props.history.push(`/spaces/${this.props.match.params.id}`)
       })
       .catch(err => this.setState({errors: err.response.data.errors}))
@@ -68,11 +73,11 @@ class EditSpace extends React.Component{
             handleSuitabilitySelect={this.handleSuitabilitySelect}
             handleTypeSelect={this.handleTypeSelect}
             data={this.state.data}
+            errors={this.state.errors}
           />
         </div>
       </main>
     )
   }
 }
-// errors={this.state.errors}
 export default EditSpace
