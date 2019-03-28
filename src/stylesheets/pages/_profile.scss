@@ -1,81 +1,95 @@
-// .profilePage {
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//
-//   .profileWrapper {
-//     height: 100%;
-//     width: 80%;
-//     display: flex;
-//     flex-direction: column;
-//
-//     section.headerSection {
-//       width: 100%;
-//       height: 20%;
-//       display: flex;
-//       justify-content: center;
-//       flex-direction: column;
-//       align-items: center;
-//     }
-//
-//     section.spaceSection {
-//       width: 100%;
-//       height: 40%;
-//
-//       div.spaceSectionHeader {
-//         text-align: center;
-//         height: 10%;
-//       }
-//
-//       div.bookings {
-//         width: 33%;
-//         height: 90%;
-//
-//         img {
-//           height: 100px;
-//           width: 100px;
-//         }
-//       }
-//     }
-//
-//     section.bookingSection {
-//       width: 100%;
-//       height: 40%;
-//     }
-//   }
-// }
-
-
 .profile-wrapper {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
+  background-image: url('../../src/assets/images/ruffa-jane-reyes-670602-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: exclusion;
+  outline: none;
 
   .profile {
-    width: 80%;
+    margin-top: 40px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+
+    .profile-header {
+      display: flex;
+      justify-content: center;
+      font-size: 1.5em;
+      color: $color-omega-light;
+      background-color: $color-beta;
+      border-radius: 20px;
+      opacity: 0.9;
+      font-family: "Cera-Pro";
+      text-shadow: 1px 1px $color-omega-light;
+      margin-bottom: 1em;
+    }
 
     .spaces {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-family: "Cera-Pro";
+      border-bottom: 1px solid $color-omega-dark;
+      background-color: $color-beta;
+      padding: 10px;
+      text-decoration: none;
+      color: $color-omega-light;
+      cursor: pointer;
+      opacity: 0.9;
 
-      .profile-image-wrapper {
-        padding: 10px;
-        width: 100px;
-        height: 100px;
-        margin: 0;
+      &:hover {
+        background-color: $color-beta-light;
+      }
 
-        img {
-          width: 100px;
-          height: 100px;
-          border-radius: 100%;
-          border: 4px solid $color-omega-light;
+      h2 {
+        align-self: center;
+      }
+
+      .price {
+        font-family: "Cera-Pro";
+        font-size: 30px;
+        text-shadow: 1px 1px $color-omega-light;
+
+        .perHour {
+          font-family: "Cera-Pro";
+          font-size: 18px;
+          text-shadow: 1px 1px $color-omega-light;
         }
       }
 
-      .description {
-        margin-left: 10px;
+        .profile-image-wrapper {
+          padding: 10px;
+
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            border: 3px solid $color-omega-light;
+          }
+        }
+
+        .details {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .address {
+            text-align: center;
+          }
+        }
       }
     }
+}
+
+@media (min-width: 1000px) {
+  .profile {
+    max-width: 65%;
   }
 }
