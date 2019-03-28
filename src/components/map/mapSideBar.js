@@ -47,7 +47,7 @@ class SideBarItem extends React.Component {
           <MapModal
             space={space}
           />
-          <div className="price">£{space.price}<span class="perHour">ph</span>
+          <div className="price">£{space.price}<span className="perHour">ph</span>
           </div>
         </div>
       </div>

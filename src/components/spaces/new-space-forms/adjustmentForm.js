@@ -83,7 +83,7 @@ class AdjustmentForm extends React.Component{
             onChange={handleChange}
             value={!data || data.description}
           />
-          <button className="button is-danger">Confirm</button>
+          <button className="button">Confirm</button>
         </form>
       </div>
     )

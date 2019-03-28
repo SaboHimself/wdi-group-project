@@ -28,19 +28,17 @@
     justify-content: space-around;
   }
 
-  .price{
+  .price {
     font-family: "Cera-Pro";
     font-size: 30px;
     text-shadow: 1px 1px $color-omega-light;
+
+    .perHour {
+      font-family: "Cera-Pro";
+      font-size: 18px;
+      text-shadow: 1px 1px $color-omega-light;
+    }
   }
-
-  .price > .perHour{
-  font-family: "Cera-Pro";
-  font-size: 18px;
-  text-shadow: 1px 1px $color-omega-light;
-}
-
-
 
   .location {
     display: flex;
@@ -60,7 +58,6 @@
       }
     }
 
-
     .details {
       display: flex;
       flex-direction: column;
@@ -76,13 +73,6 @@
 .active {
   background-color: $color-gamma-dark;
 }
-
-// @media (min-width: 780px) {
-  // .sidebar {
-  //   height: 30%;
-  //   width: 100%;
-  // }
-// }
 
 @font-face{
 	font-family: "Cera-Pro";
