@@ -6,7 +6,7 @@
   background-image: url('../assets/images/ruffa-jane-reyes-670602-unsplash.jpg');
   background-position: center;
   background-size: cover;
-  background-repeat: space;
+  background-repeat: no-repeat;
   background-blend-mode: exclusion;
   display: flex;
   flex-direction: column;
@@ -15,24 +15,22 @@
 }
 
 
-.home-text{
+.home-text {
   align-content: flex-start;
   flex-direction: column;
   color: #ffffff;
   font-family: "Cera-Pro";
   font-size: 60px;
   margin-bottom: 50px;
-  // flex: 1;
 }
 
-.react-autosuggest_container{
-
-position: relative;
-display: block;
-background-color: black;
-flex-direction: column;
-margin: 50px;
-margin-top: 100px;
+.react-autosuggest_container {
+	position: relative;
+	display: block;
+	background-color: black;
+	flex-direction: column;
+	margin: 50px;
+	margin-top: 100px;
 }
 
 .react-autosuggest__input{

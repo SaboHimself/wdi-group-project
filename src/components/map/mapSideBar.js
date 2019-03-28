@@ -35,7 +35,9 @@ class SideBarItem extends React.Component {
         ref={el => (this.listDiv = el)}
       >
         <div className="location">
-          <img src={space.images[0]}/>
+          <div className="img-wrapper">
+            <img src={space.images[0]}/>
+          </div>
           <div className="details">
             <div className="type">{space.type}</div>
             <div className="address">{space.geometry}</div>

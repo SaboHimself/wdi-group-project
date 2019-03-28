@@ -35,18 +35,16 @@
   -webkit-border-radius: 5px;
 }
 
-// @media (min-width: 780px) {
-	.header,
-	.nav {
-		display: flex;
-	}
+.header,
+.nav {
+	display: flex;
+}
 
-	.header {
-		height: 15%;
-		flex-direction: column;
-		align-items: center;
-	}
-// }
+.header {
+	height: 15%;
+	flex-direction: column;
+	align-items: center;
+}
 
 @media (min-width: 1000px) {
 	.header {
@@ -54,5 +52,4 @@
 		flex-direction: row;
 		justify-content: space-between;
 	}
-
 }
