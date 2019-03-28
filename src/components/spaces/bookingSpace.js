@@ -76,8 +76,10 @@ class BookingSpace extends React.Component{
         <SpaceRepeatedField
           space={this.state.space}
         />
+        <div className="calender-show">
         <form onSubmit={this.handleSubmit}>
           <Calender
+
             handleChangeEnd={this.handleChangeEnd}
             handleChangeStart={this.handleChangeStart}
             startDate={this.state.startDate}
@@ -86,6 +88,7 @@ class BookingSpace extends React.Component{
           />
           <BookingModal />
         </form>
+        </div>
       </main>
     )
   }

@@ -22,11 +22,19 @@ class SpaceRepeatedField extends React.Component{
     return(
       <div className="spaceShow">
         <div className="address">{this.state.address}</div>
+        <div className="image-wrapper">
         <img src={space.images[0]} />
-        <div>{space.suitability}</div>
-        <div>{space.type}</div>
-        <div>£{space.price}</div>
-        <div>{space.description}</div>
+        <div className="description">{space.description}</div>
+
+        <div className="description-container">
+        <div className="block">Suitability:&nbsp;&nbsp;{space.suitability}</div>
+        <br />
+        <div className="block">Type:&nbsp;&nbsp;{space.type}</div>
+        <br />
+        <div className="block">Price:&nbsp;&nbsp;£{space.price}</div>
+        <br />
+        </div>
+        </div>
       </div>
     )
   }
