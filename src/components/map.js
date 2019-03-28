@@ -50,6 +50,7 @@ class Map extends React.Component {
 
   handleClickSidebar(e){
     console.log(e.target)
+    e.stopPropagation()
     // console.log(this.state.findSidebarDiv.listDiv)
     {!e.target.classList.contains('button') && this.state.findSidebarDiv.listDiv && this.state.findSidebarDiv.listDiv.classList.remove('active')}
 

@@ -25,20 +25,26 @@ class Profile extends React.Component{
     return(
       <div className="profilePage">
         <div className="profileWrapper">
-          <section>
+          <section className="headerSection">
             <h1>{user.username}</h1>
             <span>{user.email}</span>
-            <hr />
           </section>
-          <section>
-            <h1>Spaces Available</h1>
+          <hr />
+          <section className="spaceSection">
+            <div className="spaceSectionHeader">Spaces Available</div>
             {user.userSpaces.map((space, id) => (
-              <div key={id}>
+              <div key={id} className="bookings">
                 <Link to={`/spaces/${space._id}`}>
                   <img src={space.images[0]} />
+                  <div>{space.geometry.coordinates}</div>
+                  <div>{space.price}</div>
+                  <div>{space.description}</div>
                 </Link>
               </div>
             ))}
+          </section>
+          <section className="bookingSection">
+            <div>Booking</div>
           </section>
         </div>
       </div>
