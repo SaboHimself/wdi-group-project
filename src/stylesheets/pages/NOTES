@@ -1,0 +1,17 @@
+//       <ul className="social-bar" >
+// <li>
+//   <a className="twitter"(href='https://twitter.com/vineethtrv')
+//     i.fa.fa-twitter
+// <li />
+//   <a className="facebook"(href='https://www.facebook.com/vini.thekingal')
+//     i.fa.fa-facebook
+// <li />
+//   <a className="google-plus"(href='https://plus.google.com/u/0/109987289949504261649/posts')
+//     i.fa.fa-google-plus </a>
+// <li />
+//   <a className="linkedin">
+//     i.fa.fa-linkedin </a>
+// <li />
+//   <a className="pinterest">
+//     i.fa.fa-pinterest-p
+//     </ul>
