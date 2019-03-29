@@ -22,6 +22,3 @@ app.use(errorHandler)
 app.listen(env.port, ()=> `App is listening on port ${env.port}`)
 
 module.exports = app
-
-/* "start": "node index.js",
-"build": "webpack -p", */

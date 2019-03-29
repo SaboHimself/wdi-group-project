@@ -8,6 +8,8 @@
   "scripts": {
     "start:server": "nodemon",
     "start:client": "webpack-dev-server --mode=development",
+    "start": "node index.js",
+    "build": "webpack -p",
     "seed": "node ./db/seeds",
     "test": "node_modules/.bin/_mocha"
   },
