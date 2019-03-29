@@ -76,9 +76,7 @@
 }
 
 .react-autosuggest__suggestions-container--open {
-  display: block;
-  position: absolute;
-  top: 51px;
+  // display: block;
   width: 280px;
   border: 1px solid #aaa;
   background-color: $color-omega-light;
@@ -102,5 +100,6 @@
 }
 
 .react-autosuggest__suggestion--highlighted {
- background-color: $color-omega-light;
+ background-color: $color-beta-light;
+ color: $color-omega-light;
 }

@@ -7,10 +7,13 @@
   align-items: center;
   flex-direction: column;
   border-color: $color-beta-light;
-  border-radius: 20px;
   opacity: 0.8;
   color: $color-omega-light;
   outline: none;
+
+  .location {
+    text-align: center;
+  }
 
   .modal-image-wrapper {
     padding: 10px;
@@ -37,5 +40,6 @@
     margin: 9% auto;
     height: 70%;
     width: 50%;
+    border-radius: 20px;
   }
 }

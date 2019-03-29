@@ -44,7 +44,7 @@ class MapModal extends React.Component {
           <div className="map-modal-description">
             <div>{space.type}</div>
             <span>At</span>
-            <div>{space.geometry}</div>
+            <div className="location">{space.geometry}</div>
             <span>Suitable for</span>
             <div>{space.suitability}</div>
             <span>Cost per hour</span>

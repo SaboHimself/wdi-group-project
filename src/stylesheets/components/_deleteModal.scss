@@ -1,4 +1,4 @@
-.booking-modal {
+.delete-modal {
   height: 100%;
   width: 100%;
   overflow-y: auto;
@@ -9,18 +9,21 @@
   flex-direction: column;
   border-color: $color-beta-light;
   opacity: 0.8;
+  font-size: 1.5em;
+  font-family: "Cera-Pro";
   color: $color-omega-light;
   outline: none;
 
-  p {
-    font-size: 1.5em;
-    color: $color-omega-light;
-    font-family: "Cera-Pro";
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
   }
 }
 
 @media (min-width: 1000px) {
-  .booking-modal {
+  .delete-modal {
     margin: 9% auto;
     height: 25em;
     width: 25em;

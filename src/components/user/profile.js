@@ -53,14 +53,13 @@ class Profile extends React.Component{
   render(){
     if(!this.state.user) return null
     const { user } = this.state
-    // console.log(user)
     return(
       <div className="profile-wrapper animated fadeIn slower">
         <div className="profile">
           <div className="profile-header">
             <p>Welcome {user.username}</p>
           </div>
-          <div>Your Spaces</div>
+          <div className="profile-header">Your Spaces</div>
           {user.userSpaces && user.userSpaces.map((space, id) => (
             <div key={id} className="spaces">
               <Link to={`/spaces/${space._id}`}>
@@ -74,7 +73,7 @@ class Profile extends React.Component{
               </div>
             </div>
           ))}
-          <div>Your Bookings</div>
+          <div className="profile-header">Your Bookings</div>
           {user.bookings && user.bookings.map((booking,id) => (
             <div key={id} className="spaces">
               <div className="profile-image-wrapper">
@@ -94,11 +93,13 @@ class Profile extends React.Component{
           <ReactModal
             isOpen={this.state.showModal}
             ariaHideApp={false}
-            className="map-modal"
+            className="delete-modal"
           >
-            <button className="button" onClick={this.handleCloseModal}>Back</button>
-            <button className="button" onClick={this.handleDelete}>Delete Booking</button>
-            <div>Are you sure you want to cancel your booking?</div>
+            <div className="button-wrapper">
+              <button className="button" onClick={this.handleCloseModal}>Back</button>
+              <button className="button" onClick={this.handleDelete}>Delete Booking</button>
+            </div>
+            <div className="pad-top">Are you sure you want to cancel your booking?</div>
           </ReactModal>
         </div>
       </div>
