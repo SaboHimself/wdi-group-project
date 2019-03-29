@@ -32,9 +32,8 @@ class BookingModal extends React.Component {
         >
           <p>Space Confirmed</p>
           <Link to="/">
-            <button className="button" >Find another Space</button>
+            <button className="button">Find another Space</button>
           </Link>
-          <button className="close-modal" onClick={this.handleCloseModal}>X</button>
         </ReactModal>
       </div>
     )
