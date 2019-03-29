@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 import { Link } from 'react-router-dom'
+import Auth from '../auth/userAuthentication'
 
 class BookingModal extends React.Component {
   constructor () {
@@ -24,7 +25,8 @@ class BookingModal extends React.Component {
   render () {
     return (
       <div>
-        <button className="button" onClick={this.handleOpenModal}>Confirm Booking</button>
+        {Auth.isAuthenticated && <button className="button" onClick={this.handleOpenModal}>Confirm Booking</button>}
+        {!Auth.isAuthenticated && <Link to='/login'><button className="button">Login to Book</button></Link>}
         <ReactModal
           isOpen={this.state.showModal}
           ariaHideApp={false}

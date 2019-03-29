@@ -41,12 +41,12 @@ class ShowSpace extends React.Component{
           <SpaceRepeatedField
             space={space}
           />
-          </div>
-          <div className="calender-show">
-            {this.isOwner() && <Link className="button" to={`/spaces/${space._id}/edit`}>Edit</Link>}
-            {this.isOwner() &&<button className="button" onClick={this.handleDelete}>Delete</button>}
-          </div>
-        </main>
+        </div>
+        <div className="calender-show">
+          {this.isOwner() && <Link className="button" to={`/spaces/${space._id}/edit`}>Edit</Link>}
+          {this.isOwner() &&<button className="button" onClick={this.handleDelete}>Delete</button>}
+        </div>
+      </main>
 
 
     )
