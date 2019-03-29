@@ -4,7 +4,6 @@
 @import 'base/typography';
 
 @import 'components/buttons';
-@import 'components/homeSearch';
 @import 'components/calender';
 @import 'components/map';
 @import 'components/mapSideBar';
@@ -12,11 +11,12 @@
 @import 'components/mapSearch';
 @import 'components/mapModal';
 @import 'components/bookingModal';
-@import 'components/forms';
+@import 'components/deleteModal';
 @import 'components/registerForm';
 @import 'components/loginForm';
 @import 'components/createSpaceForm';
 @import 'components/nav';
+@import 'components/editSpace';
 
 @import 'layout/header';
 @import 'layout/main';

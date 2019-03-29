@@ -4,7 +4,6 @@ const Booking = require('../models/booking')
 function indexBooking(req, res, next){
   Booking
     .find()
-    .populate('space driver')
     .then(bookings => res.status(200).json(bookings))
     .catch(next)
 }
@@ -12,7 +11,6 @@ function indexBooking(req, res, next){
 function showBooking(req, res, next){
   Booking
     .findById(req.params.id)
-    .populate('space driver')
     .then(booking => res.status(200).json(booking))
     .catch(next)
 }

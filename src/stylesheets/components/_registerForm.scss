@@ -1,12 +1,13 @@
 .register {
   max-height: 43em;
-  width: 30em;
+  width: 25em;
   border: 3px solid black;
   box-shadow: 0 0 10em #000;
   text-align: center;
   padding: 4rem 2rem;
   background-color: $color-beta;
   opacity: 0.9;
+  overflow-y: scroll;
 
   .auth-logo {
     margin: 0 0 0 10px;

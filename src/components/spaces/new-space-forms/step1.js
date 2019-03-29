@@ -58,7 +58,7 @@ class Step2 extends React.Component{
           />
           <label htmlFor="c1"><span></span>True </label>
           <input
-            id="c1"
+            id="c2"
             type="radio"
             name="electricChargingPoint"
             value={false}

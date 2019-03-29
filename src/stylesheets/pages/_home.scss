@@ -1,10 +1,8 @@
 .home-container {
 	text-align: center;
   align-items: center;
-  background-image:linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ), url('../assets/images/iphone-x-mockup-of-a-man-listening-to-music-24809.png');
+  background-image: url('../assets/images/iphone-x-mockup-of-a-man-listening-to-music-24809.png');
+	filter: grayscale(15%);
   background-position: center;
   background-size: cover;
   background-repeat: space;
@@ -17,7 +15,7 @@
 
 .home-text {
 	color: #fff;
-	-webkit-text-stroke: 1px black;
+	-webkit-text-stroke: 1px $color-beta;
 	font-family: "Cera-Pro";
 	font-size: 60px;
 	top: -10px;
