@@ -78,6 +78,7 @@ class BookingSpace extends React.Component{
         />
         <div className="calender-show">
           <form onSubmit={this.handleSubmit}>
+
             <Calender
 
               handleChangeEnd={this.handleChangeEnd}
@@ -86,7 +87,10 @@ class BookingSpace extends React.Component{
               endDate={this.state.endDate}
               dates={this.state.space.bookingsDates}
             />
-            <BookingModal />
+            <div>
+            <BookingModal
+             className="button-show" />
+            </div>
           </form>
         </div>
       </main>

@@ -1,98 +1,135 @@
+
+.address {
+  font-family: "Cera-ProBold";
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  color: rgb(18, 41, 91);
+}
+
 .space-wrapper {
   height: 100%;
   width: 100%;
   background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  flex-flow: row wrap;
-  justify-content: space-between;
-
-  .calender-show {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.image-wrapper{
+  position: absolute;
   display: flex;
   flex-direction: row;
+  // flex-flow: row wrap;
   justify-content: space-between;
+
 }
 
-.spaceShow {
-  max-height: 43em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
 
-  .description-container{
-    width: 30%;
-  }
+  .spaceShow {
+    // max-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
 
-  .strong-text{
-    font-family: "Cera-ProBold";
-  }
 
-  .address {
-    font-family: "Cera-ProBold";
-    font-size: 25px;
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    color: rgb(18, 41, 91);
-  }
-.block{
-  display: inline-block;
-  margin: 50px 20px 0 20px;
-  font-family: "Cera-Pro";
+
+
+  .image-wrapper{
+    justify-content: space-between;
+    width: 600px;
+    height: 400px;
 }
-  .calender{
-    flex: 3;
-    flex-flow: row;
-  }
 
-  .description{
-    width: 30%;
-    margin: 50px 20px 0 20px;
-    font-size: 15px;
+    // margin-left: auto;
+
+
+    .strong-text{
+      font-family: "Cera-ProBold";
+    }
+    .description-container{
+      width: 30%;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 5px 20px 0 40px
+      // margin-left: auto;
+    }
+
+    .description{
+      // display: inline-block;
+      margin: 5px 20px 0 20px;
+      font-size: 15px;
+      font-family: "Cera-Pro";
+      line-height: 35px;
+      width: 100%;
+    }
+
+.types{
+  display: block;
+}
+  .block{
+    display: inline-block;
+    margin: 20px 20px 0 40px;
     font-family: "Cera-Pro";
-    line-height: 35px;
+    width: 30%;
   }
 
-  img {
-    display: block;
+
+  .calender-show {
+    // width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: flex-end;
+    position: relative;
+
+  }
+  .calender{
+    // flex: 1;
+    margin-bottom: 190px;
+    margin-top: 100px;
+    margin: 0;
+    background: yellow;
+
+
+  }
+
+  form{
+    margin-bottom: 60px;
+    margin-right: 60px;
+  }
+
+  .button-show {
+    margin: 90px 0 70px 10px;
+    justify-content: center;
+  }
+
+
+
+  .image-space {
+    display: flex;
     height: auto;
-    width: 30%;
-    // height: 60%;
-    flex: 1;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
     margin: 20px 20px 0 20px;
     border: 1px solid rgb(18, 41, 91);
     border-radius: 4px;
     padding: 10px;
 
   }
-//   .social-media{
-//   li{margin:0 2px ;}
-//   a{
-//     background: #fff;
-//     @include transition(transform 1s, background .4s);
-//     @include border-radius(100%);
-//     &:hover{
-//     @include translateY(-10px);
-//     }
-//   }
-//    .twitter{ color:$twt-cl}
-//    .facebook{color:$fb-cl}
-//    .google-plus{color:$gp-cl;}
-//    .linkedin{color:$in-cl}
-//    .pinterest{color:$pin-cl}
-// }
+
 }
 
 @font-face{
-	font-family: "Cera-ProBold";
-	src: url('../assets/fonts/CeraPro-Bold.ttf');
+  font-family: "Cera-ProBold";
+  src: url('../assets/fonts/CeraPro-Bold.ttf');
+}
+@media (min-width: 1000px) {
+  .description {
+    // max-height: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .calender-show{
+    display: block;
+  }
+
 }

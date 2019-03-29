@@ -18,7 +18,7 @@ class Calender extends React.Component{
     return(
       <main className="calender">
         <DatePicker
-          placeholderText="Click to select a date"
+          placeholderText="Date from"
           selected={startDate}
           selectsStart
           startDate={startDate}
@@ -36,7 +36,7 @@ class Calender extends React.Component{
           dateFormat="MMMM d, yyyy h:mm aa"
         />
         <DatePicker
-          placeholderText="Click to select a date"
+          placeholderText="Date to"
           selected={endDate}
           selectsEnd
           startDate={startDate}

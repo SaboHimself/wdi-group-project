@@ -19,7 +19,7 @@ class ConfirmSpace extends React.Component {
     if(!this.state.booking) return null
     const { space, driver, startDate, endDate } = this.state.booking
     return(
-      <div>
+      <div className="space-wrapper">
         <SpaceRepeatedField
           space={space}
         />
