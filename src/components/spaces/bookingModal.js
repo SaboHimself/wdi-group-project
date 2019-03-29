@@ -25,8 +25,8 @@ class BookingModal extends React.Component {
   render () {
     return (
       <div>
-        {Auth.isAuthenticated && <button className="button" onClick={this.handleOpenModal}>Confirm Booking</button>}
-        {!Auth.isAuthenticated && <Link to='/login'><button className="button">Login to Book</button></Link>}
+        {Auth.isAuthenticated() && <button className="button" onClick={this.handleOpenModal}>Confirm Booking</button>}
+        {!Auth.isAuthenticated() && <Link to='/login'><button className="button">Login to Book</button></Link>}
         <ReactModal
           isOpen={this.state.showModal}
           ariaHideApp={false}
