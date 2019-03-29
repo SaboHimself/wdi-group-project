@@ -5,8 +5,7 @@ class SpaceRepeatedField extends React.Component{
   constructor() {
     super()
 
-    this.state = {
-    }
+    this.state = {}
   }
 
   componentDidMount() {
