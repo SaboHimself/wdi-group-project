@@ -3,7 +3,7 @@ import Autosuggest from 'react-autosuggest'
 import axios from 'axios'
 import mapboxgl from 'mapbox-gl'
 
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g'
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN
 
 const getSuggestionValue = suggestion => {
   const newSuggestion = suggestion.Location.Address.Label
@@ -38,8 +38,8 @@ class Search extends React.Component {
         searchtext: `${this.props.value}`,
         mapview: '51.7131,-0.5775;51.2685,0.2905',
         gen: '9',
-        app_id: '5apWzP0clCrbF54oEcxF',
-        app_code: '3CQW9J_Jau4pIb7U7U2J-g'
+        app_id: process.env.GEOCODE_ID,
+        app_code: process.env.GEOCODE_CODE
       }
     }
     )

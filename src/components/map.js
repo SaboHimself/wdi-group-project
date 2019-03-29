@@ -2,7 +2,7 @@ import React from 'react'
 import mapboxgl from 'mapbox-gl'
 import axios from 'axios'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2Fib2hpbXNlbGYiLCJhIjoiY2pzcHgxeXJjMDBpbTQ5czljNHQ4dXVzMCJ9.7KpwLwJFWkQOC_RZo9jc6g'
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN
 
 import SideBarItem from './map/mapSideBar'
 
