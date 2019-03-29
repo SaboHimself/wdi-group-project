@@ -40,7 +40,7 @@ class SideBarItem extends React.Component {
           </div>
           <div className="details">
             <div className="type">{space.type}</div>
-            <div className="address">{space.geometry}</div>
+            <div className="address-side">{space.geometry}</div>
           </div>
         </div>
         <div className="bottom">
