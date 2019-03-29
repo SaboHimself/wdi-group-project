@@ -7,7 +7,7 @@ const env = require('./config/environment')
 const router = require('./config/routes')
 const errorHandler = require('./lib/errorHandler')
 
-mongoose.connect(env.db.development , {useNewUrlParser: true})
+mongoose.connect(env.db[process.env.NODE_ENV] , {useNewUrlParser: true})
 
 app.use(express.static(`${__dirname}/dist`))
 
