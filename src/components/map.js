@@ -41,7 +41,7 @@ class Map extends React.Component {
     this.gElements()
     if(e.originalEvent.path[4].classList.contains(this.myClass))
       this.map.flyTo({center: [e.lngLat.lng, e.lngLat.lat]})
-    {(e.originalEvent.path && e.originalEvent.path[2].childNodes[1]) &&    e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#ECA400')}
+    {(e.originalEvent.path && e.originalEvent.path[2].childNodes[1]) && e.originalEvent.path[2].childNodes[1].setAttribute('fill', '#ECA400')}
     const id = e.originalEvent.path[4].getAttribute('mId')
     this.scrollTo(id)
   }
@@ -79,9 +79,14 @@ class Map extends React.Component {
     markerColorArray.find(marker => marker.setAttribute('fill', '#3FB1CE'))
   }
   divElements(){
+    // console.log('lnglat', this.state.lnglat)
     const divMongooseId = document.querySelectorAll('#main > div.map.mapboxgl-map > div.mapboxgl-canvas-container.mapboxgl-interactive.mapboxgl-touch-drag-pan.mapboxgl-touch-zoom-rotate > div')
     const divMongooseIdArray = [].slice.call(divMongooseId)
-    divMongooseIdArray.map((div, i) => div.setAttribute('mId', `${this.state.lnglat[i]._id}`))
+    // console.log('divMongooseIdArray', divMongooseIdArray)
+    divMongooseIdArray.map((div, i) => {
+      // console.log('id finder', this.state.lnglat, this.state.lnglat[i])
+      div.setAttribute('mId', `${this.state.lnglat[i]._id}`)
+    })
   }
   map(){
     const geocoder = new MapboxGeocoder({
@@ -116,9 +121,9 @@ class Map extends React.Component {
   setCenterMarkers(){
     if(!this.props.location.state) return null
     this.map.jumpTo({center: [this.props.location.state.Longitude, this.props.location.state.Latitude]})
-    return new mapboxgl.Marker()
-      .setLngLat([this.props.location.state.Longitude, this.props.location.state.Latitude])
-      .addTo(this.map)
+    // return new mapboxgl.Marker()
+    //   .setLngLat([this.props.location.state.Longitude, this.props.location.state.Latitude])
+    //   .addTo(this.map)
   }
   getDataToPopulate(){
     axios.get('/api/spaces')

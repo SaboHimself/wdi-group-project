@@ -2,6 +2,8 @@ import React from 'react'
 import ReactModal from 'react-modal'
 import { Link } from 'react-router-dom'
 
+import Auth from '../auth/userAuthentication'
+
 class MapModal extends React.Component {
   constructor () {
     super()
@@ -19,6 +21,10 @@ class MapModal extends React.Component {
 
   handleCloseModal () {
     this.setState({ showModal: false })
+  }
+
+  isOwner() {
+    return Auth.isAuthenticated() && this.props.space.owner._id === Auth.getPayload().sub
   }
 
   render () {
@@ -43,11 +49,11 @@ class MapModal extends React.Component {
             <div>{space.suitability}</div>
             <span>Cost per hour</span>
             <div>£{space.price}</div>
-            <Link to={{
+            {!this.isOwner() && <Link to={{
               pathname: '/bookings',
               state: `${space._id}`}}>
               <button className="button">Book this Space</button>
-            </Link>
+            </Link>}
           </div>
         </ReactModal>
       </div>

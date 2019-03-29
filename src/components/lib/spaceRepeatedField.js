@@ -20,22 +20,22 @@ class SpaceRepeatedField extends React.Component{
     const { space } = this.props
     return(
       <main>
-      <div className="address">{this.state.address}</div>
-      <div className="spaceShow">
-        <div className="image-wrapper">
-        <img className="image-space"src={space.images[0]}/>
-        </div>
-        <div className="description-container">
-        <div className="description">{space.description}</div>
-        <div className="types">
-        <div className="block"><span className='strong-text'>Suitability:&nbsp;&nbsp;</span>{space.suitability}</div>
-        <br />
-        <div className="block"><span className="strong-text"> Type:&nbsp;&nbsp;</span>{space.type}</div>
-        <br />
-        <div className="block"><span className="strong-text">Price:&nbsp;&nbsp;</span>£{space.price}</div>
-        <br />
-        </div>
-        </div>
+        <div className="address">{this.state.address}</div>
+        <div className="spaceShow">
+          <div className="image-wrapper">
+            <img className="image-space"src={space.images[0]}/>
+          </div>
+          <div className="description-container">
+            <div className="description">{space.description}</div>
+            <div className="types">
+              <div className="block"><span className='strong-text'>Suitability:&nbsp;&nbsp;</span>{space.suitability}</div>
+              <br />
+              <div className="block"><span className="strong-text"> Type:&nbsp;&nbsp;</span>{space.type}</div>
+              <br />
+              <div className="block"><span className="strong-text">Price:&nbsp;&nbsp;</span>£{space.price}</div>
+              <br />
+            </div>
+          </div>
         </div>
       </main>
     )

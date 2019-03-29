@@ -12,6 +12,7 @@ class Step3 extends React.Component{
       return null
     }
 
+    // console.log(this.props)
     return(
       <div className="step3">
         <button
@@ -25,6 +26,7 @@ class Step3 extends React.Component{
           {this.props.errors.price && <div><small className="danger">Price is required</small></div>}
           {this.props.errors.suitability && <div><small className="danger">Suitability is required</small></div>}
           {this.props.errors.description && <div><small className="danger">Description is required</small></div>}
+          {(this.props.errors.geometry || this.props.errors['geometry.coordinates']) && <div><small className="danger">Location is required</small></div>}
         </div>
       </div>
     )
