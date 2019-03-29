@@ -69,7 +69,6 @@ class BookingSpace extends React.Component{
   }
 
   render() {
-    console.log(this.state.space)
     if(!this.state.space) return null
     return(
       <main className="space-wrapper">

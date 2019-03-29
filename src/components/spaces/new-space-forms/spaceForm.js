@@ -30,7 +30,7 @@ class SpaceForm extends React.Component {
         images: ''
       },
       image: '',
-      errors: {}
+      errors: { ['geometry.coordinates']: '' }
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -44,10 +44,10 @@ class SpaceForm extends React.Component {
     this.handlePhotoModal = this.handlePhotoModal.bind(this)
   }
 
-  returnURL(url){
-    console.log('here')
-    console.log(url)
-  }
+  // returnURL(url){
+  //   console.log('here')
+  //   console.log(url)
+  // }
 
   handleChange({ target: {name, value}}) {
     const data = {...this.state.data, [name]: value}
@@ -85,11 +85,11 @@ class SpaceForm extends React.Component {
     const data = {...this.state.data, images: [this.state.image] }
     axios.post('/api/spaces', data, { headers: {Authorization: `Bearer ${Auth.getToken()}`}})
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.props.history.push(`/spaces/${res.data._id}`)
       })
       .catch(err => {
-        console.log(err.response.data)
+        // console.log(err.response.data)
         this.setState({ errors: err.response.data.errors})
       })
   }
@@ -150,6 +150,7 @@ class SpaceForm extends React.Component {
   }
 
   render() {
+    // console.log(this.state.errors)
     return(
       <React.Fragment>
         <form onSubmit={this.handleSubmit} className="createSpaceFormWrapper">
@@ -167,13 +168,13 @@ class SpaceForm extends React.Component {
                 handleChargeRadio={this.handleChargeRadio}
                 type={this.state.data.type}
                 suitability={this.state.data.suitability}
-                description={this.state.data.description}
                 electricChargingPoint={this.state.data.electricChargingPoint}
                 errors={this.state.errors}
               />
               <Step2
                 currentStep={this.state.data.currentStep}
                 handleChange={this.handleChange}
+                description={this.state.data.description}
                 price={this.state.data.price}
                 errors={this.state.errors}
               />
